@@ -1,5 +1,6 @@
 ---
 title: WABA Account Management
+summary: WABA health, phone numbers, quality ratings, and account settings.
 excerpt: WABA health, phone numbers, quality ratings, and account settings.
 deprecated: false
 hidden: false
@@ -13,5 +14,6 @@ WABA health, phone numbers, quality ratings, and account settings.
 
 ## Endpoints
 
-- [Phone for an App](../partner-app-management/phone-for-an-app/)
-- [Analytics](../partner-app-management/analytics/)
+- [Get Waba Info](/reference/getwabahealth)
+- [Check Health](/reference/get_partner-app-appid-health)
+- [Register phone](/reference/registerphoneapp)

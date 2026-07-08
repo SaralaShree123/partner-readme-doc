@@ -1,5 +1,6 @@
 ---
 title: Partner Management
+summary: Partner authentication, app listing, and linking applications.
 excerpt: Partner authentication, app listing, and linking applications.
 deprecated: false
 hidden: false
@@ -13,5 +14,6 @@ Partner authentication, app listing, and linking applications.
 
 ## Endpoints
 
-- [Link App with Partner](../partner-app-management/app/)
-- [Partner Linked Application](../partner-app-management/partners-linked-application/)
+- [Get Partner Token](/reference/post_partner-account-login)
+- [Get Partner Apps](/reference/get_partner-account-api-partnerapps)
+- [Link App with Partner](/reference/post_partner-account-api-applink)

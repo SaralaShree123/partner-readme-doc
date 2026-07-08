@@ -1,5 +1,6 @@
 ---
 title: Templates Management
+summary: Create, apply, manage, and send WhatsApp message templates.
 excerpt: Create, apply, manage, and send WhatsApp message templates.
 deprecated: false
 hidden: false
@@ -13,5 +14,7 @@ Create, apply, manage, and send WhatsApp message templates.
 
 ## Endpoints
 
-- [Template APIs](../template-apis/)
-- [Auth Template V2](../auth-template-v2/)
+- [Get Templates](/reference/get_partner-app-appid-templates)
+- [Apply For Templates](/reference/post_partner-app-appid-templates-6)
+- [Delete Template](/reference/delete_partner-app-appid-template-elementname)
+- [Send msg With Template ID](/reference/post_partner-app-appid-template-msg)

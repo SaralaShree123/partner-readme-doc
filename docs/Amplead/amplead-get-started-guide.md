@@ -1,4 +1,5 @@
 ---
+summary: AmpLead Get Started Guide
 title: AmpLead Get Started Guide
 excerpt: ''
 deprecated: false
@@ -192,7 +193,8 @@ Gupshup will help in sharing your WhatsApp event with Meta which will improve yo
 
 OR
 
-* Build your own analytics via our APIs:  Construct an interactive UI and populate data using our API.
+* Build your own analytics via our APIs:
+  Construct an interactive UI and populate data using our API.
 
 ## Step 4: Launch Your Campaign
 

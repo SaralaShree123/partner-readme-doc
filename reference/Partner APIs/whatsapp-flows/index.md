@@ -1,5 +1,6 @@
 ---
 title: WhatsApp Flows
+summary: Create, publish, and manage WhatsApp Flow experiences.
 excerpt: Create, publish, and manage WhatsApp Flow experiences.
 deprecated: false
 hidden: false
@@ -13,4 +14,6 @@ Create, publish, and manage WhatsApp Flow experiences.
 
 ## Endpoints
 
-- [Flow Management](../partner-meta-and-whatsapp-apis/flow-management/)
+- [Create Flow](/reference/createflow)
+- [Get All Flows](/reference/getallflow)
+- [Publish flow](/reference/publishflow)

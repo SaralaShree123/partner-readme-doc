@@ -1,4 +1,5 @@
 ---
+summary: >-
 title: Delete Service Action API
 excerpt: >-
   This API allows you to perform actions (such as delete) on a specific Amplead

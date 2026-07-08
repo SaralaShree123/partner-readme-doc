@@ -1,5 +1,6 @@
 ---
 title: Channel Management
+summary: Create, update, and manage WABA channel applications.
 excerpt: Create, update, and manage WABA channel applications.
 deprecated: false
 hidden: false
@@ -13,7 +14,7 @@ Create, update, and manage WABA channel applications.
 
 ## Endpoints
 
-- [App Onboarding APIs](../app-onboarding-apis/)
-- [Create & Update App](../partner-app-management/app/)
-- [Delete App](../partner-app-management/deleteapp/)
-- [Embed Link Flow](../partner-app-management/obo-to-embed-flow/)
+- [Create App](/reference/post_partner-app)
+- [Update application](/reference/put_partner-app-appid)
+- [Generate Embed Signed Link](/reference/get_partner-app-appid-onboarding-embed-link)
+- [Filter app list](/reference/get_partner-app-list)

@@ -1,5 +1,6 @@
 ---
 title: Marketing Messages Lite
+summary: MM Lite enablement, sending, and insights.
 excerpt: MM Lite enablement, sending, and insights.
 deprecated: false
 hidden: false
@@ -13,4 +14,5 @@ MM Lite enablement, sending, and insights.
 
 ## Endpoints
 
-- [MM Lite APIs](../mmliteapi/)
+- [Enable MM Lite messages](/reference/post_app-appid-mmlite-msg-enable)
+- [MM Lite Send Message](/reference/mmlitesendmessage)

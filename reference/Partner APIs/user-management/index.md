@@ -1,5 +1,6 @@
 ---
 title: User Management
+summary: Block, unblock, and list blocked WhatsApp users.
 excerpt: Block, unblock, and list blocked WhatsApp users.
 deprecated: false
 hidden: false
@@ -13,4 +14,6 @@ Block, unblock, and list blocked WhatsApp users.
 
 ## Endpoints
 
-- [Block User APIs](../partner-app-management/block-user/)
+- [Get Blocked Users list](/reference/get_partner-app-appid-user-blocklist)
+- [Block Users](/reference/post_partner-app-appid-user-block)
+- [Unblock Users](/reference/post_partner-app-appid-user-unblock)

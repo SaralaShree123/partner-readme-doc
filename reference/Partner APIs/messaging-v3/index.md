@@ -1,5 +1,6 @@
 ---
 title: Messaging (V3)
+summary: Send session messages — text, media, interactive, reactions, and more.
 excerpt: Send session messages — text, media, interactive, reactions, and more.
 deprecated: false
 hidden: false
@@ -13,4 +14,6 @@ Send session messages — text, media, interactive, reactions, and more.
 
 ## Endpoints
 
-- [Passthrough APIs (V3)](../partner-meta-and-whatsapp-apis/passthrough-apis/)
+- [Text Message](/reference/post_partner-app-appid-v3-text-message)
+- [Image Message](/reference/post_partner-app-appid-v3-image-message)
+- [Interactive Message](/reference/post_partner-app-appid-v3-interactive-message)
