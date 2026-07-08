@@ -1,7 +1,7 @@
 ---
 title: Overview
-summary: Welcome to the Gupshup Partner Documentation Hub.
-excerpt: Welcome to the Gupshup Partner Documentation Hub.
+summary: Welcome to the Gupshup Partner Documentation Hub
+excerpt: Welcome to the Gupshup Partner Documentation Hub
 deprecated: false
 hidden: false
 metadata:
@@ -9,78 +9,55 @@ metadata:
 slug: overview
 ---
 
-# Gupshup Partner Documentation
+# Overview
 
-This documentation is a central resource for current and prospective **Gupshup integration partners**. It provides the technical and operational guidance needed to build, launch, and scale WhatsApp Business API solutions on the Gupshup platform.
+This documentation is a central resource for current and prospective **Gupshup integration partners**. It provides the technical and operational guidance needed to build, launch, and scale WhatsApp Business API solutions using the Gupshup platform.
 
-> **For Gupshup Partners**
+> 📘 **For Gupshup Partners**
 >
-> This documentation focuses on partner-specific concepts, workflows, and integration requirements for ISVs, Tech Providers, agencies, and enterprises.
+> This documentation is intended for Gupshup Partners and focuses on partner-specific concepts, workflows, and integration requirements.
+>
+> Sign up at [partner.gupshup.io](https://partner.gupshup.io).
 
 ---
 
 ## Get started
 
-Kick off your partner journey with quick access to the most essential guides and tools.
+Kick off your Partner journey with quick access to the most essential guides and tools.
 
-| Resource | Description |
-|----------|-------------|
-| [Quickstarts](/docs/quickstarts) | 5-step path from signup to your first message |
-| [Partner API](/reference/partner-api-overview) | Complete API reference grouped by business capability |
-| [Partner Portal](https://partner.gupshup.io) | Manage apps, billing, and customers |
-| [Support](/docs/support) | Contact and help resources |
+| | |
+|---|---|
+| **[Quickstarts](/docs/quickstarts)** | Five steps from signup to your first WhatsApp message |
+| **[Partner API Reference](/reference/partner-api-overview)** | Explore the complete API reference for building and managing integrations |
+| **[Partner Portal](https://partner.gupshup.io)** | Manage apps, customers, and integrations |
+| **[Support](/docs/support)** | Expert support with escalation paths |
 
 ---
 
 ## Who is Gupshup for?
 
-| Partner Type | How They Benefit |
-|--------------|------------------|
-| **SaaS Platforms** | Add WhatsApp messaging into your product and automate client workflows |
-| **Enterprises** | Deploy large-scale messaging for sales, marketing, and support |
-| **Agencies & Developers** | Build WhatsApp-powered solutions and tools for clients |
-| **ISVs & Tech Providers** | Become a Meta Tech Provider with Gupshup's partner APIs and portal |
+From SaaS platforms to software vendors, Gupshup serves a diverse range of Partner use cases.
+
+| Partner Type | How They Benefit from Gupshup |
+|--------------|-------------------------------|
+| SaaS Platforms | Add WhatsApp messaging into your product and automate client workflows |
+| Enterprises | Deploy large-scale messaging for sales, marketing, and support use cases |
+| Agencies & Developers | Build WhatsApp-powered solutions and tools |
+| ISVs | Become a Meta Tech Provider with Gupshup’s expert guidance |
 
 ---
 
-## Partner journey
+## How it works
 
-### 1. Set up your partner account
+Gupshup provides a developer-first, API-driven approach to WhatsApp Business messaging.
+Easily integrate, onboard clients, and manage messaging workflows within a scalable, partner-friendly ecosystem.
 
-Create a partner account at [partner.gupshup.io](https://partner.gupshup.io), get approved, and access the Partner Portal.
+### Partner journey
 
-→ [Get Started as a Partner](/docs/get-started-as-partner)
-
-### 2. Integrate with Partner APIs
-
-Generate API credentials and understand authentication.
-
-→ [Generate Secret and Token](/docs/generate-secret-and-token) · [Authentication](/docs/authentication)
-
-### 3. Onboard clients and manage WABAs
-
-Create apps, configure webhooks, and onboard WhatsApp Business numbers.
-
-→ [Create your first App](/docs/create-your-first-app) · [Onboarding](/docs/onboarding-overview)
-
-### 4. Send messages and scale
-
-Send template and session messages, then optimize with analytics and billing tools.
-
-→ [Send your first message](/docs/send-your-first-message) · [Messaging](/docs/messaging-overview)
-
----
-
-## Documentation sections
-
-| Section | What it covers |
-|---------|----------------|
-| [Get Started](/docs/overview) | Overview, pricing, quickstarts, Tech Provider program |
-| [Onboarding](/docs/onboarding-overview) | Webhooks, events, coexistence, onboarding APIs |
-| [Partner API](/docs/partner-api-overview) | REST APIs by category |
-| [Partner Hub](/docs/partner-hub-overview) | Portal UI, wallet, billing, support |
-| [Messaging](/docs/messaging-overview) | Templates, session messages, media, voice |
-| [Commerce & Payments](/docs/commerce-overview) | Brazil payments, INR wallet, wire transfers |
+1. **Set up your Partner account** — Create a partner account, set API credentials, and start testing. → [Get Started as a Partner](/docs/get-started-as-partner)
+2. **Integrate WhatsApp API** — Connect Partner APIs and integrate them into your solution. → [Generate Secret and Token](/docs/generate-secret-and-token)
+3. **Onboard clients & manage WABAs** — Add numbers, onboard clients, and start messaging. → [Create your first App](/docs/create-your-first-app)
+4. **Scale & optimise messaging** — Optimise performance and grow. → [Send your first message](/docs/send-your-first-message)
 
 ---
 
@@ -89,5 +66,5 @@ Send template and session messages, then optimize with analytics and billing too
 | | |
 |---|---|
 | [Explore Quickstarts](/docs/quickstarts) | Five steps to your first message |
-| [See Pricing](/docs/pricing) | Billing models, wallet, and commissions |
+| [See Pricing](/docs/pricing) | Costs associated with becoming a Gupshup Partner |
 | [Learn About Tech Providers](/docs/what-is-sp-tp) | Solution Partners & Tech Providers |

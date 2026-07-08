@@ -1,7 +1,7 @@
 ---
 title: Channel Management
-summary: Create, update, and manage WABA channel applications.
-excerpt: Create, update, and manage WABA channel applications.
+summary: Endpoints for creating and managing WABA channel applications.
+excerpt: Endpoints for creating and managing WABA channel applications.
 deprecated: false
 hidden: false
 metadata:
@@ -11,11 +11,28 @@ slug: channel-management
 
 # Channel Management
 
-Create, update, and manage WABA channel applications.
+Endpoints for creating and managing WABA channel applications.
 
-| API | Reference |
-|-----|-----------|
-| Create App | [/reference/post_partner-app](/reference/post_partner-app) |
-| Update application | [/reference/put_partner-app-appid](/reference/put_partner-app-appid) |
-| Generate Embed Signed Link | [/reference/get_partner-app-appid-onboarding-embed-link](/reference/get_partner-app-appid-onboarding-embed-link) |
-| Filter app list | [/reference/get_partner-app-list](/reference/get_partner-app-list) |
+## Create App
+
+> Create a new partner application.
+
+→ Full endpoint docs & Try It: [/reference/post_partner-app](/reference/post_partner-app)
+
+## Update application
+
+> Update an existing application.
+
+→ Full endpoint docs & Try It: [/reference/put_partner-app-appid](/reference/put_partner-app-appid)
+
+## Generate Embed Signed Link
+
+> Generate an embed signed link for onboarding.
+
+→ Full endpoint docs & Try It: [/reference/get_partner-app-appid-onboarding-embed-link](/reference/get_partner-app-appid-onboarding-embed-link)
+
+## Filter app list
+
+> Filter and list partner apps.
+
+→ Full endpoint docs & Try It: [/reference/get_partner-app-list](/reference/get_partner-app-list)

@@ -1,7 +1,7 @@
 ---
 title: Webhook Management
-summary: Set up and manage webhook subscriptions and callback URLs.
-excerpt: Set up and manage webhook subscriptions and callback URLs.
+summary: Endpoints for webhook subscriptions and callbacks.
+excerpt: Endpoints for webhook subscriptions and callbacks.
 deprecated: false
 hidden: false
 metadata:
@@ -11,10 +11,22 @@ slug: webhook-management
 
 # Webhook Management
 
-Set up and manage webhook subscriptions and callback URLs.
+Endpoints for webhook subscriptions and callbacks.
 
-| API | Reference |
-|-----|-----------|
-| Set subscription | [/reference/setsubscription-api-v3](/reference/setsubscription-api-v3) |
-| Get All Subscriptions | [/reference/get_partner-app-appid-subscription](/reference/get_partner-app-appid-subscription) |
-| Update App Subscription | [/reference/put_partner-app-appid-subscription-subscriptionid](/reference/put_partner-app-appid-subscription-subscriptionid) |
+## Set subscription
+
+> Create a webhook subscription.
+
+→ Full endpoint docs & Try It: [/reference/setsubscription-api-v3](/reference/setsubscription-api-v3)
+
+## Get All Subscriptions
+
+> List all subscriptions for an app.
+
+→ Full endpoint docs & Try It: [/reference/get_partner-app-appid-subscription](/reference/get_partner-app-appid-subscription)
+
+## Update App Subscription
+
+> Update a subscription.
+
+→ Full endpoint docs & Try It: [/reference/put_partner-app-appid-subscription-subscriptionid](/reference/put_partner-app-appid-subscription-subscriptionid)

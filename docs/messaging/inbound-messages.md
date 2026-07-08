@@ -1,13 +1,31 @@
 ---
-summary: Inbound Messages
 title: Inbound Messages
-excerpt: ''
+summary: Types of inbound WhatsApp messages partners can receive.
+excerpt: Types of inbound WhatsApp messages partners can receive.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
-  title: ''
-  description: ''
   robots: index
-next:
-  description: ''
+slug: inbound-messages
 ---
+
+# Inbound Messages
+
+Overview of inbound message types delivered to your webhook.
+
+## Message types
+
+| Type | Guide |
+|------|-------|
+| All types | [Types Of Inbound Messages](/docs/types-of-inbound-messages) |
+| Text | [Text](/docs/text) |
+| Media | [Media](/docs/media) |
+| Interactive | [Interactive](/docs/interactive) |
+| Product messages | [Single/Multi Product Messages](/docs/singlemulti-product-message) |
+| Request welcome | [Request Welcome](/docs/request-welcome) |
+| Other | [Other](/docs/other) |
+
+## Related
+
+- [Understanding Webhooks](/docs/understanding-webhooks-and-callback)
+- [Message events](/docs/message-events)
