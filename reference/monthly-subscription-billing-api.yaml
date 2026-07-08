@@ -1,0 +1,247 @@
+openapi: 3.0.3
+info:
+  title: Monthly Subscription Billing API
+  description: API to get monthly subscription billing details for partner applications
+  version: 1.0.0
+servers:
+  - url: https://partner.gupshup.io/partner
+    description: Production server
+paths:
+  /app/{appId}/subscription/billing/monthly:
+    get:
+      summary: Get monthly subscription billing details
+      description: >-
+        Retrieve monthly subscription billing details for a specific
+        application.
+      operationId: getMonthlySubscriptionBilling
+      parameters:
+        - name: appId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: 57d9179b-7412-4621-bf86-57ee1962fd12
+          description: App ID to fetch monthly subscription billing
+        - name: year
+          in: query
+          required: true
+          schema:
+            type: integer
+            example: 2025
+          description: Calendar year for billing lookup
+        - name: month
+          in: query
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 12
+            example: 1
+          description: Calendar month for billing lookup (1-12)
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+            example: sk_xxxxxxxxxxxxxxxxxxxxxxxx
+          description: Partner App Token for authorization
+      responses:
+        '200':
+          description: Successful response with billing details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BillingResponse'
+              examples:
+                processed:
+                  summary: Processed billing record
+                  value:
+                    status: PROCESSED
+                    appId: 57d9179b-7412-4621-bf86-57ee1962fd12
+                    partnerId: '568'
+                    year: '2025'
+                    month: '1'
+                    monthlyGsFee: '4.50'
+                    currency: USD
+                    liveDaysCount: '3'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                yearMonthRequired:
+                  summary: Year and month required
+                  value:
+                    status: error
+                    message: year and month are required
+                invalidMonth:
+                  summary: Invalid month value
+                  value:
+                    status: error
+                    message: month must be between 1 and 12
+                currentMonthUnavailable:
+                  summary: Current month data not available
+                  value:
+                    status: error
+                    message: >-
+                      current month data not available , will be available after
+                      8th of next month.
+                futureMonth:
+                  summary: Cannot request billing for a future month
+                  value:
+                    status: error
+                    message: Cannot request billing for a future month
+                appNotLinked:
+                  summary: Application not linked to partner
+                  value:
+                    status: error
+                    message: Application is not linked to the partner
+                yearMissing:
+                  summary: Year parameter missing
+                  value:
+                    status: error
+                    message: >-
+                      Required request parameter 'year' for method parameter
+                      type Integer is not present
+                monthMissing:
+                  summary: Month parameter missing
+                  value:
+                    status: error
+                    message: >-
+                      Required request parameter 'month' for method parameter
+                      type Integer is not present
+                invalidParam:
+                  summary: Invalid parameter format
+                  value:
+                    status: error
+                    message: Please review the request parameters and retry
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                unauthorized:
+                  summary: Unauthorized access
+                  value:
+                    status: error
+                    message: >-
+                      Unauthorised access to the resource. Please review request
+                      parameters and headers and retry
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                forbidden:
+                  summary: Forbidden access
+                  value:
+                    status: error
+                    message: Forbidden Access
+                authFailed:
+                  summary: Authentication failed
+                  value:
+                    status: error
+                    message: Authentication Failed
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                notFound:
+                  summary: Billing record not found
+                  value:
+                    status: error
+                    message: >-
+                      No monthly subscription billing record found for this app
+                      and period.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                rateLimit:
+                  summary: Rate limit exceeded
+                  value:
+                    status: error
+                    message: Too Many Requests
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                internalError:
+                  summary: Internal server error
+                  value:
+                    status: error
+                    message: >-
+                      Internal server error. Please try again later and If Issue
+                      still persist then contact Gupshup Dev Support
+components:
+  schemas:
+    BillingResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - PENDING
+            - PROCESSED
+            - ERROR
+          description: Billing deduction state
+          example: PROCESSED
+        appId:
+          type: string
+          format: uuid
+          example: 57d9179b-7412-4621-bf86-57ee1962fd12
+        partnerId:
+          type: string
+          example: '568'
+        year:
+          type: string
+          example: '2025'
+        month:
+          type: string
+          example: '1'
+        monthlyGsFee:
+          type: string
+          example: '4.50'
+        currency:
+          type: string
+          example: USD
+        liveDaysCount:
+          type: string
+          example: '3'
+      required:
+        - status
+        - appId
+        - partnerId
+        - year
+        - month
+        - monthlyGsFee
+        - currency
+        - liveDaysCount
+    ErrorResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+        message:
+          type: string
+          example: Error description
+      required:
+        - status
+        - message

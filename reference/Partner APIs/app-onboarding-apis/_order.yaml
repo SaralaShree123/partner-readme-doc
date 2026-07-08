@@ -1,0 +1,9 @@
+- post_partner-app
+- put_partner-app-appid
+- get_partner-app-appid-details
+- get_partner-app-list
+- put_partner-app-appid-callback
+- put_partner-app-appid-onboarding-contact
+- post_partner-app-appid-onboarding-contact-email-resend
+- get_partner-app-appid-onboarding-embed-link
+- post_partner-app-appid-onboarding-phonemigration

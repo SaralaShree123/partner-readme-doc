@@ -1,0 +1,189 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Partner Portal API",
+    "description": "Partner Portal API documentation",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.gupshup.io"
+    },
+    "version": "3.0.0-SNAPSHOT"
+  },
+  "externalDocs": {
+    "description": "Gupshup Wiki Documentation",
+    "url": "https://www.gupshup.io/partner/docs"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io/partner",
+      "description": "Generated server url"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/partner/tpp/app": {
+      "post": {
+        "summary": "Link an app",
+        "operationId": "linkApp",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "sk_987654xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "description": "Your app token, please refer [**Get access token api**](https://docs.gupshup.io/reference/get_partner-app-appid-token) to get the token from partner documentation."
+          }
+        ],
+        "requestBody": {
+          "description": "Create a new app in partner portal",
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/LinkApp"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LinkAppSuccess"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - no permissions to access resource",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ErrorResponse": {
+        "required": [
+          "entity",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "Status Code",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message describing the reason "
+          },
+          "details": {
+            "type": "string",
+            "description": "Developer specific error details "
+          },
+          "entity": {
+            "type": "object",
+            "description": "Response Object"
+          }
+        },
+        "description": "Error"
+      },
+      "LinkAppSuccess": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "appId": {
+            "type": "string"
+          }
+        }
+      },
+      "LinkApp": {
+        "required": [
+          "name",
+          "wabaId",
+          "phone"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "wabaId": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "callbackUrl": {
+            "type": "string"
+          },
+          "storageRegion": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

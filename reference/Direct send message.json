@@ -1,0 +1,617 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Partner Portal - Send Direct Message (V3)",
+    "version": "3.0.0-SNAPSHOT"
+  },
+  "externalDocs": {
+    "description": "Gupshup Partner Documentation",
+    "url": "https://partner-docs.gupshup.io/"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io/partner",
+      "description": "Production server"
+    },
+    {
+      "url": "http://localhost:8080/partner",
+      "description": "Local development server"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Messaging",
+      "description": "Send direct (session) WhatsApp messages via Partner Portal"
+    }
+  ],
+  "paths": {
+    "/app/{appId}/v3/message": {
+      "post": {
+        "tags": [
+          "Messaging"
+        ],
+        "summary": "Send direct message (V3 passthrough)",
+        "operationId": "passthroughSendMessage",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "Application ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "6f414190-d45c-4671-bca1-fb6c3018cb13"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendDirectMessageRequest"
+              },
+              "examples": {
+                "textMessage": {
+                  "summary": "Send direct message — text",
+                  "description": "Plain text session message with utility category",
+                  "value": {
+                    "messaging_product": "whatsapp",
+                    "recipient_type": "individual",
+                    "to": "919428952010",
+                    "type": "text",
+                    "text": {
+                      "body": "Hello from Partner Portal"
+                    },
+                    "category": "utility"
+                  }
+                },
+                "interactiveMessage": {
+                  "summary": "Send direct message — interactive (reply buttons)",
+                  "description": "Interactive message with image header and reply button",
+                  "value": {
+                    "messaging_product": "whatsapp",
+                    "recipient_type": "individual",
+                    "to": "919428952010",
+                    "type": "interactive",
+                    "interactive": {
+                      "type": "button",
+                      "header": {
+                        "type": "image",
+                        "image": {
+                          "link": "https://picsum.photos/id/237/200/300"
+                        }
+                      },
+                      "body": {
+                        "text": "Your refund of 5USD for order 94661 has been processed.\nAmount will reflect in your account within 5 weeks.\n"
+                      },
+                      "footer": {
+                        "text": "Thank you"
+                      },
+                      "action": {
+                        "buttons": [
+                          {
+                            "type": "reply",
+                            "reply": {
+                              "id": "1",
+                              "title": "Click Me!"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "category": "utility"
+                  }
+                },
+                "textWithTtl": {
+                  "summary": "Send direct message — text with TTL",
+                  "description": "Utility text message with optional time-to-live (seconds)",
+                  "value": {
+                    "messaging_product": "whatsapp",
+                    "recipient_type": "individual",
+                    "to": "919428952010",
+                    "type": "text",
+                    "text": {
+                      "body": "Time-sensitive utility message"
+                    },
+                    "category": "utility",
+                    "ttl_seconds": 600
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Message sent successfully (response shape from WhatsApp upstream)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendDirectMessageSuccessResponse"
+                },
+                "examples": {
+                  "success": {
+                    "summary": "Success response",
+                    "value": {
+                      "messages": [
+                        {
+                          "id": "wamid.HBgLMTY0Njc4OTkwMTIzNDU2Nzg5MDEyMzQ1NgA="
+                        }
+                      ],
+                      "messaging_product": "whatsapp",
+                      "contacts": [
+                        {
+                          "input": "919428952010",
+                          "wa_id": "919428952010"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request — invalid app details or upstream validation error\n(e.g. `ttl_seconds` without `category: utility` returns error code 100)\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendDirectMessageErrorResponse"
+                },
+                "examples": {
+                  "invalidAppDetails": {
+                    "summary": "Invalid app details",
+                    "value": {
+                      "message": "Invalid App Details",
+                      "status": "error"
+                    }
+                  },
+                  "upstreamValidation": {
+                    "summary": "Upstream validation error (TTL without category)",
+                    "value": {
+                      "status": "error",
+                      "message": "ttl_seconds requires category utility",
+                      "code": "100"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication failed — invalid or missing Partner App token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendDirectMessageErrorResponse"
+                },
+                "examples": {
+                  "authenticationFailed": {
+                    "summary": "Authentication failed",
+                    "value": {
+                      "status": "error",
+                      "message": "Authentication Failed"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — caller lacks permission to access the app",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendDirectMessageErrorResponse"
+                },
+                "examples": {
+                  "forbidden": {
+                    "summary": "Forbidden",
+                    "value": {
+                      "status": "error",
+                      "message": "Forbidden"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "App not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendDirectMessageErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error — unexpected portal or upstream failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendDirectMessageErrorResponse"
+                },
+                "examples": {
+                  "serverError": {
+                    "summary": "Internal server error",
+                    "value": {
+                      "status": "error",
+                      "message": "Internal server error..."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SendDirectMessageRequest": {
+        "type": "object",
+        "required": [
+          "messaging_product",
+          "recipient_type",
+          "to",
+          "type"
+        ],
+        "properties": {
+          "messaging_product": {
+            "type": "string",
+            "description": "Messaging product identifier",
+            "enum": [
+              "whatsapp"
+            ],
+            "example": "whatsapp"
+          },
+          "recipient_type": {
+            "type": "string",
+            "description": "Recipient type for one-to-one messaging",
+            "enum": [
+              "individual"
+            ],
+            "example": "individual"
+          },
+          "to": {
+            "type": "string",
+            "description": "Destination phone number in E.164 format without leading `+`",
+            "example": "919428952010"
+          },
+          "type": {
+            "type": "string",
+            "description": "WhatsApp message type. Common values: `text`, `interactive`.\nOther upstream-supported types (e.g. `image`, `document`) are also accepted.\n",
+            "example": "text"
+          },
+          "text": {
+            "$ref": "#/components/schemas/TextMessageBody"
+          },
+          "interactive": {
+            "$ref": "#/components/schemas/InteractiveMessageBody"
+          },
+          "category": {
+            "type": "string",
+            "description": "Message category (e.g. `utility`, `marketing`, `authentication`).\nRequired when using `ttl_seconds`. TTL only works with `utility`.\n",
+            "example": "utility"
+          },
+          "ttl_seconds": {
+            "type": "integer",
+            "description": "Optional time-to-live for the message in seconds.\nMinimum 30, maximum 43200 (12 hours).\nOnly effective when `category` is `utility`.\n",
+            "minimum": 30,
+            "maximum": 43200,
+            "example": 600
+          }
+        },
+        "additionalProperties": true,
+        "description": "Passthrough request body aligned with WhatsApp Cloud API v3 messaging.\nAdditional fields not listed here are forwarded to upstream when supported.\n"
+      },
+      "TextMessageBody": {
+        "type": "object",
+        "required": [
+          "body"
+        ],
+        "properties": {
+          "body": {
+            "type": "string",
+            "description": "Text message content",
+            "example": "Hello from Partner Portal"
+          }
+        },
+        "description": "Required when `type` is `text`"
+      },
+      "InteractiveMessageBody": {
+        "type": "object",
+        "required": [
+          "type",
+          "body",
+          "action"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Interactive message subtype",
+            "enum": [
+              "button",
+              "list"
+            ],
+            "example": "button"
+          },
+          "header": {
+            "$ref": "#/components/schemas/InteractiveHeader"
+          },
+          "body": {
+            "type": "object",
+            "required": [
+              "text"
+            ],
+            "properties": {
+              "text": {
+                "type": "string",
+                "description": "Interactive message body text"
+              }
+            }
+          },
+          "footer": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string",
+                "description": "Footer text"
+              }
+            }
+          },
+          "action": {
+            "$ref": "#/components/schemas/InteractiveAction"
+          }
+        },
+        "description": "Required when `type` is `interactive`"
+      },
+      "InteractiveHeader": {
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "text",
+              "image",
+              "video",
+              "document"
+            ],
+            "example": "image"
+          },
+          "text": {
+            "type": "string",
+            "description": "Header text when type is text"
+          },
+          "image": {
+            "type": "object",
+            "properties": {
+              "link": {
+                "type": "string",
+                "format": "uri",
+                "example": "https://picsum.photos/id/237/200/300"
+              }
+            }
+          },
+          "video": {
+            "type": "object",
+            "properties": {
+              "link": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          },
+          "document": {
+            "type": "object",
+            "properties": {
+              "link": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        }
+      },
+      "InteractiveAction": {
+        "type": "object",
+        "properties": {
+          "buttons": {
+            "type": "array",
+            "description": "Reply buttons (when interactive.type is button)",
+            "items": {
+              "$ref": "#/components/schemas/InteractiveReplyButton"
+            }
+          },
+          "button": {
+            "type": "string",
+            "description": "List button label (when interactive.type is list)"
+          },
+          "sections": {
+            "type": "array",
+            "description": "List sections (when interactive.type is list)",
+            "items": {
+              "$ref": "#/components/schemas/InteractiveListSection"
+            }
+          }
+        }
+      },
+      "InteractiveListSection": {
+        "type": "object",
+        "required": [
+          "title",
+          "rows"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Section title",
+            "example": "Section 1"
+          },
+          "rows": {
+            "type": "array",
+            "description": "Rows within the section",
+            "items": {
+              "$ref": "#/components/schemas/InteractiveListRow"
+            }
+          }
+        }
+      },
+      "InteractiveListRow": {
+        "type": "object",
+        "required": [
+          "id",
+          "title"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Row payload ID returned on user selection",
+            "example": "row_1"
+          },
+          "title": {
+            "type": "string",
+            "description": "Row title shown to the user",
+            "example": "Option 1"
+          },
+          "description": {
+            "type": "string",
+            "description": "Optional row description",
+            "example": "More details about option 1"
+          }
+        }
+      },
+      "InteractiveReplyButton": {
+        "type": "object",
+        "required": [
+          "type",
+          "reply"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "reply"
+            ],
+            "example": "reply"
+          },
+          "reply": {
+            "type": "object",
+            "required": [
+              "id",
+              "title"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Button payload ID returned on user tap",
+                "example": "1"
+              },
+              "title": {
+                "type": "string",
+                "description": "Button label shown to the user",
+                "example": "Click Me!"
+              }
+            }
+          }
+        }
+      },
+      "SendDirectMessageSuccessResponse": {
+        "type": "object",
+        "properties": {
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SentMessage"
+            }
+          },
+          "messaging_product": {
+            "type": "string",
+            "example": "whatsapp"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MessageContact"
+            }
+          }
+        },
+        "description": "Success response as returned by WhatsApp upstream"
+      },
+      "SentMessage": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Gupshup / WhatsApp message ID",
+            "example": "wamid.HBgLMTY0Njc4OTkwMTIzNDU2Nzg5MDEyMzQ1NgA="
+          }
+        }
+      },
+      "MessageContact": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string",
+            "description": "Phone number as sent in the request",
+            "example": "919428952010"
+          },
+          "wa_id": {
+            "type": "string",
+            "description": "WhatsApp ID for the recipient",
+            "example": "919428952010"
+          }
+        }
+      },
+      "SendDirectMessageErrorResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "error"
+            ],
+            "example": "error"
+          },
+          "message": {
+            "type": "string",
+            "description": "Human-readable error message",
+            "example": "Authentication Failed"
+          },
+          "code": {
+            "type": "string",
+            "description": "Upstream or portal error code when present (e.g. 100 for TTL without category)",
+            "example": "100"
+          }
+        },
+        "description": "Error response from Partner Portal or upstream"
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Partner App access token with `PARTNER_APP` role.\n\n**How to obtain:**\n1. Authenticate as a partner user (login flow for your environment)\n2. Call `GET /partner/app/{appId}/token` with the user JWT\n3. Use the returned app token as `Authorization: Bearer <token>`\n\n**Example:**\n```\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\n```\n"
+      }
+    }
+  }
+}

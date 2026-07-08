@@ -1,0 +1,16 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Delete template by template ID and element name",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io"
+    }
+  ],
+  "paths": {
+    "/partner/app/{appId}/template/{elementName}/{templateId}": {},
+    "/partner/app/{appId}/template/{elementName}/{templateId}-1": {}
+  }
+}

@@ -1,0 +1,6 @@
+- payment-onboarding-api
+- createpaymentconfiguration
+- getallpaymentconfigurations
+- getspecificpaymentconfiguration
+- regeneratepaymentconfigurationlink
+- removepaymentconfiguration

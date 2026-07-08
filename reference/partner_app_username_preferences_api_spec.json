@@ -1,0 +1,601 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Partner Portal API - WhatsApp Username Preferences",
+    "description": "Manage WhatsApp Business username preferences for your apps. Check whether a username request is in progress, submit or update your preferred names, or remove existing preferences — all for the business phone number linked to your app.",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.gupshup.io"
+    },
+    "version": "3.0.0-SNAPSHOT"
+  },
+  "externalDocs": {
+    "description": "Gupshup Wiki Documentation",
+    "url": "https://www.gupshup.io/partner/docs"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/partner/app/{appId}/username/status": {
+      "get": {
+        "summary": "Get Username Status For A WhatsApp App",
+        "description": "Check the status of your WhatsApp Business username request. Returns your submitted username preference and the current review status for the business phone number linked to your app. Use this to track progress after requesting a username.",
+        "operationId": "getUsernameStatus",
+        "tags": [
+          "WhatsApp Username Preferences"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "sk_987654xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "description": "Your app token, please refer [**Get access token api**](https://partner-docs.gupshup.io/reference/get_partner-app-appid-token) to get the token from partner documentation."
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": ""
+            },
+            "example": "657c0203-0b4d-xxxx-xxxx-xxxxxxx35a16",
+            "description": "Partner application ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response - Username status retrieved for a live app with submitted preferences",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "businessPhoneNumber": {
+                          "type": "string",
+                          "example": "918588096449"
+                        },
+                        "usernamePreference1": {
+                          "type": "string",
+                          "example": "mybrand"
+                        },
+                        "usernamePreference2": {
+                          "type": "string",
+                          "example": "mybrand2"
+                        },
+                        "usernamePreference3": {
+                          "type": "string",
+                          "example": "mybrand3"
+                        },
+                        "currentAttemptPreference": {
+                          "type": "integer",
+                          "example": 0
+                        },
+                        "submissionStatus": {
+                          "type": "string",
+                          "example": "SubmittedToGupshup"
+                        },
+                        "metaApiStatus": {
+                          "type": "string",
+                          "nullable": true,
+                          "example": null
+                        },
+                        "metaWebhookStatus": {
+                          "type": "string",
+                          "nullable": true,
+                          "example": null
+                        },
+                        "approvedUsername": {
+                          "type": "string",
+                          "nullable": true,
+                          "example": null
+                        },
+                        "submittedToMetaAt": {
+                          "type": "string",
+                          "nullable": true,
+                          "example": null
+                        },
+                        "metaWebhookUpdatedAt": {
+                          "type": "string",
+                          "nullable": true,
+                          "example": null
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "submittedStatus": {
+                    "summary": "Live app with submitted username preferences",
+                    "value": {
+                      "status": "success",
+                      "data": {
+                        "businessPhoneNumber": "91858809xxxx",
+                        "usernamePreference1": "mybrand",
+                        "usernamePreference2": "mybrand2",
+                        "usernamePreference3": "mybrand3",
+                        "currentAttemptPreference": 0,
+                        "submissionStatus": "SubmittedToGupshup",
+                        "metaApiStatus": null,
+                        "metaWebhookStatus": null,
+                        "approvedUsername": null,
+                        "submittedToMetaAt": null,
+                        "metaWebhookUpdatedAt": null
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "apiKeyNotAssociated": {
+                    "summary": "App has no API key associated with the partner",
+                    "value": {
+                      "status": "error",
+                      "message": "API key is not associated with partner"
+                    }
+                  },
+                  "phoneNumberNotFound": {
+                    "summary": "Sandbox app or business phone number not found",
+                    "value": {
+                      "status": "error",
+                      "message": "Phone number not found"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Missing or invalid authentication",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "error",
+                  "message": "Unauthorised access to the resource. Please review request parameters and headers and retry"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Authenticated caller lacks PARTNER_APP role",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "error",
+                  "message": "Forbidden Access"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - No username preferences exist for the business phone number",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "preferencesNotFound": {
+                    "summary": "App has no username preferences submitted",
+                    "value": {
+                      "status": "error",
+                      "message": "Username preferences not found for this business phone number"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded (10 requests per 60 seconds)",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "error",
+                  "message": "Too Many Requests"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "error",
+                  "message": "Internal server error. Please try again later and If Issue still persist then contact Gupshup Dev Support"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/partner/app/{appId}/username/preferences": {
+      "delete": {
+        "summary": "Delete Username Preferences For A WhatsApp App",
+        "description": "Remove all previously submitted username preferences for your WhatsApp Business phone number. Use this if you want to withdraw a username request or start over with new choices.",
+        "operationId": "deleteUsernamePreferences",
+        "tags": [
+          "WhatsApp Username Preferences"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "sk_987654xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "description": "Your app token, please refer [**Get access token api**](https://partner-docs.gupshup.io/reference/get_partner-app-appid-token) to get the token from partner documentation."
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "657c0203-0b4d-xxxx-xxxx-xxxxxxx35a16",
+            "description": "Partner application ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response - Username preferences deleted for a live app",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Username preferences deleted successfully"
+                    }
+                  }
+                },
+                "examples": {
+                  "deleteSuccess": {
+                    "summary": "Live app username preferences deleted successfully",
+                    "value": {
+                      "status": "success",
+                      "message": "Username preferences deleted successfully"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "apiKeyNotAssociated": {
+                    "summary": "App has no API key associated with the partner",
+                    "value": {
+                      "status": "error",
+                      "message": "API key is not associated with partner"
+                    }
+                  },
+                  "phoneNumberNotFound": {
+                    "summary": "Sandbox app or business phone number not found",
+                    "value": {
+                      "status": "error",
+                      "message": "Phone number not found"
+                    }
+                  },
+                  "deleteFailed": {
+                    "summary": "Downstream delete failed",
+                    "value": {
+                      "status": "error",
+                      "message": "Failed to delete username preferences"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Missing or invalid authentication",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "error",
+                  "message": "Unauthorised access to the resource. Please review request parameters and headers and retry"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Authenticated caller lacks PARTNER_APP role",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "error",
+                  "message": "Forbidden Access"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - No username preferences exist for the business phone number",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "preferencesNotFound": {
+                    "summary": "App has no username preferences to delete",
+                    "value": {
+                      "status": "error",
+                      "message": "Username preferences not found for this business phone number"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded (10 requests per 60 seconds)",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "error",
+                  "message": "Too Many Requests"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "error",
+                  "message": "Internal server error. Please try again later and If Issue still persist then contact Gupshup Dev Support"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Submit Username Preferences For A WhatsApp App",
+        "description": "Submit your preferred WhatsApp Business username for the phone number linked to your app. Provide your top choice (required) and up to two alternate options. Once submitted, your preferences are sent for review and approval.",
+        "operationId": "updateUsernamePreferences",
+        "tags": [
+          "WhatsApp Username Preferences"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "sk_987654xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "description": "Your app token, please refer [**Get access token api**](https://partner-docs.gupshup.io/reference/get_partner-app-appid-token) to get the token from partner documentation."
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "657c0203-0b4d-xxxx-xxxx-xxxxxxx35a16",
+            "description": "Partner application ID"
+          },
+          {
+            "name": "usernamePreference1",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "mybrand1",
+            "description": "Primary username preference (required)"
+          },
+          {
+            "name": "usernamePreference2",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "mybrand2",
+            "description": "Secondary username preference (optional)"
+          },
+          {
+            "name": "usernamePreference3",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "mybrand3",
+            "description": "Tertiary username preference (optional)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response - Username preferences submitted for a live app",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Username preferences submitted successfully"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "businessPhoneNumber": {
+                          "type": "string",
+                          "example": "918588096449"
+                        },
+                        "usernamePreference1": {
+                          "type": "string",
+                          "example": "mybrand1"
+                        },
+                        "usernamePreference2": {
+                          "type": "string",
+                          "example": "mybrand2"
+                        },
+                        "usernamePreference3": {
+                          "type": "string",
+                          "example": "mybrand3"
+                        },
+                        "submissionStatus": {
+                          "type": "string",
+                          "example": "SubmittedToGupshup"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "submitSuccess": {
+                    "summary": "Live app username preferences submitted successfully",
+                    "value": {
+                      "status": "success",
+                      "message": "Username preferences submitted successfully",
+                      "data": {
+                        "businessPhoneNumber": "918588096449",
+                        "usernamePreference1": "mybrand1",
+                        "usernamePreference2": "mybrand2",
+                        "usernamePreference3": "mybrand3",
+                        "submissionStatus": "SubmittedToGupshup"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "apiKeyNotAssociated": {
+                    "summary": "App has no API key associated with the partner",
+                    "value": {
+                      "status": "error",
+                      "message": "API key is not associated with partner"
+                    }
+                  },
+                  "missingPreference": {
+                    "summary": "Required usernamePreference1 missing",
+                    "value": {
+                      "status": "error",
+                      "message": "Required request parameter 'usernamePreference1' for method parameter type String is not present"
+                    }
+                  },
+                  "phoneNumberNotFound": {
+                    "summary": "Sandbox app or business phone number not found",
+                    "value": {
+                      "status": "error",
+                      "message": "Phone number not found"
+                    }
+                  },
+                  "alreadySubmitted": {
+                    "summary": "Username preferences already submitted for this phone number",
+                    "value": {
+                      "status": "error",
+                      "message": "Username preferences already submitted for this business phone number"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Missing or invalid authentication",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "error",
+                  "message": "Unauthorised access to the resource. Please review request parameters and headers and retry"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Authenticated caller lacks PARTNER_APP role",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "error",
+                  "message": "Forbidden Access"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource not found (downstream pass-through)",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "error",
+                  "message": "Not Found"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded (10 requests per 60 seconds)",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "error",
+                  "message": "Too Many Requests"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "error",
+                  "message": "Internal server error. Please try again later and If Issue still persist then contact Gupshup Dev Support"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Partner Portal API",
+    "description": "Partner Portal API documentation",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://partner.gupshup.io/partner"
+    },
+    "version": "3.0.0-SNAPSHOT"
+  },
+  "externalDocs": {
+    "description": "Gupshup Wiki Documentation",
+    "url": "https://partner.gupshup.io/partner/docs"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io/partner",
+      "description": "Generated server url"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Partner's Linked Application",
+      "description": "API's for partners linked applications"
+    }
+  ],
+  "paths": {
+    "/app/{appId}/waba/info/": {}
+  },
+  "components": {
+    "responses": {
+      "200": {
+        "description": "Successful Response",
+        "content": {
+          "application/json": {
+            "example": {
+              "status": "success",
+              "wabaInfo": {
+                "accountStatus": "ACTIVE | BANNED",
+                "dockerStatus": "CONNECTED | DISCONNECTED | FLAGGED | PENDING | RESTRICTED | UNKNOWN",
+                "messagingLimit": "TIER_50 | TIER_250 | TIER_1K | TIER_10K | TIER_100K | TIER_NOT_SET | TIER_UNLIMITED",
+                "mmLiteStatus": "INELIGIBLE | ELIGIBLE | ONBOARDED",
+                "ownershipType": "CLIENT_OWNED | ON_BEHALF_OF | SELF",
+                "phone": "{phone}",
+                "phoneQuality": "GREEN | YELLOW | RED | UNKNOWN",
+                "throughput": "HIGH | STANDARD | NOT_APPLICABLE",
+                "verifiedName": "{display name}",
+                "wabaId": "{waba_id}",
+                "canSendMessage": "AVAILABLE | LIMITED | BLOCKED",
+                "errors": [
+                  {
+                    "error_code": "141014",
+                    "error_description": "<error description>",
+                    "possible_solution": "<posible solution>"
+                  }
+                ],
+                "additionalInfo": [
+                  "Your display name has not been approved yet. Your message limit will increase after the display name is approved."
+                ]
+              }
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Bad Request",
+        "content": {
+          "application/json": {
+            "examples": {
+              "App is not live": {
+                "value": {
+                  "message": "App is not live.",
+                  "status": "error"
+                }
+              },
+              "Waba id is not present": {
+                "value": {
+                  "message": "Waba id not found for the given App",
+                  "status": "error"
+                }
+              },
+              "Invalid waba id": {
+                "value": {
+                  "message": "WABA id is invalid or given phone is not associated with WABA",
+                  "status": "error"
+                }
+              },
+              "Error while getting waba info": {
+                "value": {
+                  "message": "Error while getting waba info for given app",
+                  "status": "error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "ErrorResponse": {
+        "required": [
+          "entity",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Status Code"
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message describing the reason "
+          }
+        },
+        "description": "Error"
+      },
+      "Errors": {
+        "type": "object",
+        "properties": {
+          "error_code": {
+            "type": "string"
+          },
+          "error_description": {
+            "type": "string"
+          },
+          "possible_solution": {
+            "type": "string"
+          }
+        }
+      },
+      "WabaHealthDetails": {
+        "type": "object",
+        "properties": {
+          "accountStatus": {
+            "type": "string"
+          },
+          "dockerStatus": {
+            "type": "string"
+          },
+          "messagingLimit": {
+            "type": "string"
+          },
+          "mmLiteStatus": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "phoneQuality": {
+            "type": "string"
+          },
+          "verifiedName": {
+            "type": "string"
+          },
+          "wabaId": {
+            "type": "string"
+          },
+          "canSendMessage": {
+            "type": "string"
+          },
+          "additionalInfo": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Errors"
+            }
+          }
+        }
+      },
+      "WabaHealthResponseDetails": {
+        "type": "object",
+        "properties": {
+          "wabaInfo": {
+            "$ref": "#/components/schemas/WabaHealthDetails"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Create WhatsApp Template",
+    "version": "1.0.0",
+    "description": "API to create a WhatsApp message template for a partner app."
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io"
+    }
+  ],
+  "paths": {
+    "/partner/app/{appId}/templates": {
+      "post": {
+        "tags": [
+          "Template Management"
+        ],
+        "summary": "Create WhatsApp Template",
+        "description": "Creates a WhatsApp message template using form-urlencoded parameters.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Partner App Access Token",
+            "example": "sk_0b3a6cf96e8axxxxb2"
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Unique identifier of the partner app",
+            "example": "926470c5-d617-43b3-aea4-2c2a389dc9d4"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "elementName": {
+                    "type": "string",
+                    "example": "test_copypix_temp_vini"
+                  },
+                  "languageCode": {
+                    "type": "string",
+                    "example": "en"
+                  },
+                  "content": {
+                    "type": "string",
+                    "example": "Please Pay to continue subscription"
+                  },
+                  "category": {
+                    "type": "string",
+                    "example": "MARKETING"
+                  },
+                  "vertical": {
+                    "type": "string",
+                    "example": "Test01"
+                  },
+                  "templateType": {
+                    "type": "string",
+                    "example": "TEXT"
+                  },
+                  "example": {
+                    "type": "string",
+                    "example": "Please Pay to continue subscription"
+                  },
+                  "exampleHeader": {
+                    "type": "string",
+                    "example": "Order"
+                  },
+                  "enableSample": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "parameterFormat": {
+                    "type": "string",
+                    "example": "POSITIONAL"
+                  },
+                  "checkerApprovalRequired": {
+                    "type": "boolean",
+                    "example": false
+                  },
+                  "footer": {
+                    "type": "string",
+                    "example": "Thankyou"
+                  },
+                  "header": {
+                    "type": "string",
+                    "example": "Order"
+                  },
+                  "buttons": {
+                    "type": "string",
+                    "description": "JSON string representing buttons configuration",
+                    "example": "[{\"type\":\"ORDER_DETAILS\",\"text\":\"Copy Pix code\"}]"
+                  },
+                  "sendAsPixTemplate": {
+                    "type": "boolean",
+                    "example": true
+                  }
+                },
+                "required": [
+                  "elementName",
+                  "languageCode",
+                  "content",
+                  "category",
+                  "templateType"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Template created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "templateId": {
+                      "type": "string",
+                      "example": "1234567890"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Invalid request parameters"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Authentication Failed"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,322 @@
+openapi: 3.0.3
+info:
+  title: Partner Portal GIF Template API
+  description: >
+    API for creating GIF templates in the Partner Portal application.
+
+    This API allows partners to create WhatsApp Business API (WABA) GIF
+    templates for marketing, utility, and authentication purposes.
+  version: 1.0.0
+  contact:
+    name: Gupshup Dev Support
+    url: https://www.gupshup.io/support
+servers:
+  - url: https://partner.gupshup.io
+    description: Production server
+security:
+  - PartnerAppToken: []
+tags:
+  - name: Templates
+    description: Template management operations
+paths:
+  /partner/app/{APP_ID}/templates:
+    post:
+      tags:
+        - Templates
+      summary: Create GIF Template
+      description: >
+        Creates a new GIF template for WhatsApp Business API messaging.
+
+
+        **Rate Limit:** 10 requests per minute
+
+
+        **Important Notes:**
+
+        - The template will be created with status "PENDING" and requires
+        approval
+
+        - elementName must be unique for the WABA's namespace
+
+        - For "Authentication" category, the first line of content should be:
+        {{1}} is your verification code
+
+        - exampleMedia requires a valid handleId (generate handleId separately)
+      operationId: createGifTemplate
+      parameters:
+        - name: APP_ID
+          in: path
+          required: true
+          description: >
+            App ID to fetch the access token.
+
+            The Id should be a valid app Id of Gupshup. The App must be
+            associated with the account that owns the PARTNER_APP_TOKEN being
+            used.
+          schema:
+            type: string
+            format: uuid
+          example: f637be2c-4d8e-42a8-84b3-1ce682a9c2dc
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+                - elementName
+                - content
+                - category
+                - templateType
+                - vertical
+                - example
+                - exampleMedia
+              properties:
+                elementName:
+                  type: string
+                  description: >
+                    The name of a template. Element name is unique for a WABA's
+                    namespace.
+                  maxLength: 180
+                  example: test_gif_bata
+                languageCode:
+                  type: string
+                  description: >
+                    Language code for the template. Refer to all the language
+                    codes in the documentation.
+                  default: en_US
+                  example: en
+                content:
+                  type: string
+                  description: >
+                    The body of the template. Character limit: 1028.
+
+                    For "Authentication" category the first line should be:
+                    {{1}} is your verification code.
+                  maxLength: 1024
+                  example: Bata New Collection Shop now
+                footer:
+                  type: string
+                  description: Footer of the template.
+                  example: Visit our store today
+                category:
+                  type: string
+                  description: The category of your template.
+                  enum:
+                    - MARKETING
+                    - UTILITY
+                    - AUTHENTICATION
+                  example: MARKETING
+                templateType:
+                  type: string
+                  description: Type of template. Must be set to "GIF" for GIF templates.
+                  enum:
+                    - GIF
+                  example: GIF
+                vertical:
+                  type: string
+                  description: Industry vertical or use case for the template.
+                  maxLength: 180
+                  example: shipping_update
+                example:
+                  type: string
+                  description: Template Example with placeholder values filled.
+                  example: Bata New Collection Shop now
+                exampleMedia:
+                  type: string
+                  description: >
+                    Handle Id required to generate media templates.
+
+                    This is handleId. Generate handleId separately before using
+                    this API.
+                  example: 8fa96b2c-744e-4acf-bc98-9d4cd66bdd34
+                enableSample:
+                  type: boolean
+                  description: |
+                    Required for creating all types of templates.
+                    If enableSample is true then exampleMedia is required.
+                  example: true
+      responses:
+        '200':
+          description: Template created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+              example:
+                status: success
+                template:
+                  appId: f637be2c-4d8e-42a8-84b3-1ce682a9c2dc
+                  category: MARKETING
+                  containerMeta: >-
+                    {"appId":"f637be2c-4d8e-42a8-84b3-1ce682a9c2dc","data":"Bata
+                    New Collection Shop now","sampleText":"Bata New Collection
+                    Shop
+                    now","enableSample":true,"mediaId":"8fa96b2c-744e-4acf-bc98-9d4cd66bdd34","mediaUrl":"https://d2kq6t3nveviav.cloudfront.net/0/public/0/0/gupshup/918097424541/8fa96b2c-744e-4acf-bc98-9d4cd66bdd34/1767777627749_sample01.mp4","editTemplate":false,"allowTemplateCategoryChange":false,"addSecurityRecommendation":false,"isCPR":false,"cpr":false}
+                  createdOn: 1767779369059
+                  data: Bata New Collection Shop now
+                  elementName: test_gif_bata
+                  id: a552fb57-7ec3-4aa9-bdae-4a801585537f
+                  languageCode: en
+                  languagePolicy: deterministic
+                  meta: >-
+                    {"example":"Bata New Collection Shop
+                    now","mediaId":"8fa96b2c-744e-4acf-bc98-9d4cd66bdd34","mediaUrl":"https://d2kq6t3nveviav.cloudfront.net/0/public/0/0/gupshup/918097424541/8fa96b2c-744e-4acf-bc98-9d4cd66bdd34/1767777627749_sample01.mp4"}
+                  modifiedOn: 1767779369059
+                  namespace: 9e09b6eb_9133_4a65_bd1d_ed7ae3e797c7
+                  parameterFormat: POSITIONAL
+                  priority: 1
+                  quality: UNKNOWN
+                  retry: 0
+                  stage: NONE
+                  state: ACTIVE
+                  status: PENDING
+                  templateType: GIF
+                  vertical: shipping_update
+                  wabaId: '1810326966280519'
+        '429':
+          description: Too Many Requests - Rate limit exceeded (10 requests per minute)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                status: error
+                message: Too Many Requests
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                status: error
+                message: >-
+                  Internal server error. Please try again later and If Issue
+                  still persist than contact Gupshup Dev Support
+components:
+  securitySchemes:
+    PartnerAppToken:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: |
+        Access Token for the application.
+        Should be a valid Partner App Access Token.
+        Format: Bearer {token} or just {token}
+  schemas:
+    SuccessResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - success
+          description: Status of the API request
+        template:
+          $ref: '#/components/schemas/Template'
+    Template:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier for the template
+        appId:
+          type: string
+          format: uuid
+          description: Application ID associated with the template
+        elementName:
+          type: string
+          description: Name of the template
+        languageCode:
+          type: string
+          description: Language code of the template
+        category:
+          type: string
+          enum:
+            - MARKETING
+            - UTILITY
+            - AUTHENTICATION
+          description: Category of the template
+        templateType:
+          type: string
+          enum:
+            - GIF
+          description: Type of template
+        vertical:
+          type: string
+          description: Industry vertical or use case
+        status:
+          type: string
+          enum:
+            - PENDING
+            - APPROVED
+            - REJECTED
+          description: Approval status of the template
+        state:
+          type: string
+          enum:
+            - ACTIVE
+            - INACTIVE
+          description: Current state of the template
+        quality:
+          type: string
+          enum:
+            - UNKNOWN
+            - HIGH
+            - MEDIUM
+            - LOW
+          description: Quality rating of the template
+        data:
+          type: string
+          description: Content/body of the template
+        namespace:
+          type: string
+          description: WABA namespace
+        wabaId:
+          type: string
+          description: WhatsApp Business Account ID
+        languagePolicy:
+          type: string
+          description: Language policy setting
+        parameterFormat:
+          type: string
+          description: Format for parameters in the template
+        priority:
+          type: integer
+          description: Priority level of the template
+        retry:
+          type: integer
+          description: Retry count
+        stage:
+          type: string
+          description: Current stage of the template
+        meta:
+          type: string
+          description: Additional metadata in JSON string format
+        containerMeta:
+          type: string
+          description: Container metadata in JSON string format
+        createdOn:
+          type: integer
+          format: int64
+          description: Creation timestamp in milliseconds
+        modifiedOn:
+          type: integer
+          format: int64
+          description: Last modification timestamp in milliseconds
+    ErrorResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - error
+          description: Status of the API request
+        message:
+          type: string
+          description: Error message describing what went wrong
+      required:
+        - status
+        - message

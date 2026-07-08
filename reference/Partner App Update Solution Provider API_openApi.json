@@ -1,0 +1,280 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Partner App Update Solution Provider API",
+    "description": "API for updating the solution provider for partner applications. Handles three scenarios: approved solution found, no solution found, and unapproved solution found.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Partner Platform Team",
+      "email": "support@gupshup.io"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/app/{appId}/update/solution/provider": {
+      "put": {
+        "summary": "Update app solution provider",
+        "description": "Updates the solution provider for a partner application. This operation removes the existing solution and either associates a new approved solution or updates the provider without a solution.",
+        "operationId": "updateAppSolutionProvider",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "sk_009e8e205a984499a307b351be99d40f",
+            "description": "Your app token, please refer [**Get access token api**](https://partner-docs.gupshup.io/reference/get_partner-app-appid-token) to get the token from partner documentation."
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "f6e7dec2-593b-49f7-9f38-5d542fe9bcc3",
+            "description": "The unique identifier of the partner application"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "provider"
+                ],
+                "properties": {
+                  "provider": {
+                    "type": "string",
+                    "enum": [
+                      "PELOCAL",
+                      "GUPSHUP",
+                      "ONEDIRECT"
+                    ],
+                    "description": "The provider name to update",
+                    "example": "PELOCAL"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success - Provider updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse"
+                },
+                "examples": {
+                  "approvedSolutionFound": {
+                    "summary": "Approved Solution Found",
+                    "description": "When the requested provider has an approved solution",
+                    "value": {
+                      "status": "success",
+                      "message": "Solution associated successfully and provider updated to 'PELOCAL'."
+                    }
+                  },
+                  "noSolutionFound": {
+                    "summary": "No Solution Found",
+                    "description": "When the requested provider does not exist in partner's solution list",
+                    "value": {
+                      "status": "success",
+                      "message": "Existing app solution removed as the requested provider 'PELOCAL' was not found. Provider updated to 'PELOCAL'."
+                    }
+                  },
+                  "unapprovedSolution": {
+                    "summary": "Unapproved Solution Found",
+                    "description": "When the solution exists but is not approved",
+                    "value": {
+                      "status": "success",
+                      "message": "Existing app solution removed as the solution for provider 'PELOCAL' is not approved. Provider updated to 'PELOCAL'."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid provider",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Invalid provider: INVALID_PROVIDER. Valid providers are: PELOCAL, GUPSHUP, ONEDIRECT"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Invalid or missing access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Unauthorized access. Please provide a valid access token."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - No permissions to access resource",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Forbidden - no permissions to access resource"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Application not linked or API key not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "appNotLinked": {
+                    "summary": "Application Not Linked",
+                    "value": {
+                      "status": "error",
+                      "message": "Application not linked to partner"
+                    }
+                  },
+                  "apiKeyNotFound": {
+                    "summary": "API Key Not Found",
+                    "value": {
+                      "status": "error",
+                      "message": "API key not associated with partner"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Rate limit exceeded. Maximum 3 requests per 60 seconds."
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Internal server error. Please try again later and If Issue still persist than contact Gupshup Dev Support"
+                }
+              }
+            }
+          }
+        },
+        "x-rate-limit": {
+          "limit": 3,
+          "period": 60,
+          "unit": "seconds"
+        },
+        "tags": [
+          "Partner's Linked Application"
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SuccessResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "success"
+            ],
+            "description": "Status of the operation",
+            "example": "success"
+          },
+          "message": {
+            "type": "string",
+            "description": "Detailed message about the operation result",
+            "example": "Solution associated successfully and provider updated to 'PELOCAL'."
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "error"
+            ],
+            "description": "Status of the operation",
+            "example": "error"
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message describing what went wrong",
+            "example": "Invalid provider: INVALID_PROVIDER. Valid providers are: PELOCAL, GUPSHUP, ONEDIRECT"
+          }
+        }
+      },
+      "Provider": {
+        "type": "string",
+        "enum": [
+          "PELOCAL",
+          "GUPSHUP",
+          "ONEDIRECT"
+        ],
+        "description": "Available provider types",
+        "example": "PELOCAL"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Partner's Linked Application",
+      "description": "APIs for managing partner's linked applications"
+    }
+  ]
+}

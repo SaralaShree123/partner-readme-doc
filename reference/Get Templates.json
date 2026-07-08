@@ -1,0 +1,330 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Get Templates 1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io/"
+    }
+  ],
+  "paths": {
+    "/partner/app/{appId}/templates": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Get Templates",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Your app token, please refer [**Get access token api**](https://partner-docs.gupshup.io/reference/get_partner-app-appid-token) to get the token from partner documentation.",
+            "example": "sk_61b3021c97214370b341f8baaae0xxxx"
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Unique identifier of the app.",
+            "example": "9e97650d-xxxx-xxxx-xxxx-4cdf47c3fa68"
+          },
+          {
+            "name": "templateType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "description": "Filter templates by template type (e.g., TEXT, CAROUSEL, etc.)."
+          },
+          {
+            "name": "useable",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            },
+            "required": false,
+            "description": "Filter templates by usable flag."
+          },
+          {
+            "name": "stages",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "description": "List of stages to filter by, separated by commas."
+          },
+          {
+            "name": "elementName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "description": "Filter templates by element name."
+          },
+          {
+            "name": "startTime",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "required": false,
+            "description": "Start time filter (epoch millis)."
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "required": false,
+            "description": "End time filter (epoch millis)."
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "description": "Filter templates by status (e.g., PENDING,APPROVED, REJECTED, SUBMITTED, DEACTIVATED, etc.)."
+          },
+          {
+            "name": "data",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "description": "Filter templates by data/content."
+          },
+          {
+            "name": "pageNo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "required": false,
+            "description": "Page number for pagination."
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "required": false,
+            "description": "Page size for pagination."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "templates": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "appId": {
+                            "type": "string",
+                            "example": "bf9ee64c-3d4d-4ac4-8668-732e577007c4"
+                          },
+                          "category": {
+                            "type": "string",
+                            "example": "UTILITY"
+                          },
+                          "containerMeta": {
+                            "type": "string",
+                            "example": null
+                          },
+                          "createdOn": {
+                            "type": "integer",
+                            "format": "int64",
+                            "example": "1707743909374"
+                          },
+                          "data": {
+                            "type": "string",
+                            "example": "This is to remind you that {{1}} is due by {{2}}. This is footer"
+                          },
+                          "elementName": {
+                            "type": "string",
+                            "example": "automation_template_2131081"
+                          },
+                          "externalId": {
+                            "type": "string",
+                            "example": "1508119726419684"
+                          },
+                          "id": {
+                            "type": "string",
+                            "example": "00b8d1ed-7af6-4734-a7a1-e3062f21d7df"
+                          },
+                          "languageCode": {
+                            "type": "string",
+                            "example": "en"
+                          },
+                          "languagePolicy": {
+                            "type": "string",
+                            "example": "deterministic"
+                          },
+                          "meta": {
+                            "type": "string",
+                            "example": null
+                          },
+                          "modifiedOn": {
+                            "type": "integer",
+                            "format": "int64",
+                            "example": "1707743915378"
+                          },
+                          "namespace": {
+                            "type": "string",
+                            "example": "18cfa544_9c62_4dcd_b8f3_b3785d8c917c"
+                          },
+                          "priority": {
+                            "type": "integer",
+                            "format": "int32",
+                            "example": "2"
+                          },
+                          "quality": {
+                            "type": "string",
+                            "example": "UNKNOWN"
+                          },
+                          "reason": {
+                            "type": "string",
+                            "example": "Invalid Format"
+                          },
+                          "retry": {
+                            "type": "integer",
+                            "format": "int32",
+                            "example": "0"
+                          },
+                          "stage": {
+                            "type": "string",
+                            "example": "NONE"
+                          },
+                          "status": {
+                            "type": "string",
+                            "example": "REJECTED"
+                          },
+                          "templateType": {
+                            "type": "string",
+                            "example": "TEXT"
+                          },
+                          "vertical": {
+                            "type": "string",
+                            "example": "Internal_vertical"
+                          },
+                          "wabaId": {
+                            "type": "string",
+                            "example": "216141188246170"
+                          },
+                          "internalCategory": {
+                            "type": "integer",
+                            "format": "int32",
+                            "example": "0"
+                          },
+                          "internalType": {
+                            "type": "integer",
+                            "format": "int32",
+                            "example": "0"
+                          },
+                          "oldCategory": {
+                            "type": "string",
+                            "example": "UTILITY"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Invalid app id provided"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "You do not have the required permissions to access this API"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Internal error occured"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

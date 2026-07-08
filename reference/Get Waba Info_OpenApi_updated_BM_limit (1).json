@@ -1,0 +1,391 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Partner Portal API",
+    "description": "Partner Portal API documentation",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.gupshup.io"
+    },
+    "version": "3.0.0-SNAPSHOT"
+  },
+  "externalDocs": {
+    "description": "Gupshup Wiki Documentation",
+    "url": "https://www.gupshup.io/partner/docs"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/partner/app/{appId}/waba/info": {
+      "get": {
+        "summary": "Get Waba Info",
+        "description": "Use this API to retrieve comprehensive WhatsApp Business Account (WABA) information and health status for your application. This endpoint provides critical details about account status, messaging capabilities, phone number quality, ownership, and any errors or limitations.\n\n**Important Requirements:**\n- Valid app ID required\n- App must be WhatsApp Business API enabled\n- Rate limit: **10 requests per 60 seconds**\n- PARTNER_APP role mandatory\n\n**Common Use Cases:**\n- Monitor WABA account health and status\n- Check messaging availability before sending\n- Verify phone number and quality status\n- Diagnose account issues and errors\n- Validate account configuration\n- Track ownership and account type\n\n**Note**: This endpoint provides real-time status information directly from WhatsApp Business API, including any active restrictions or limitations on the account.",
+        "operationId": "getWabaHealth",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer sk_987654xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "description": "Your app token, please refer [**Get access token api**](https://partner-docs.gupshup.io/reference/get_partner-app-appid-token) to get the token from partner documentation."
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "657c0203-0b4d-xxxx-xxxx-xxxxxxx35a16",
+            "description": "The unique identifier of the partner application. Should be a valid appId."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response - WABA information retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success",
+                      "description": "Response status indicator"
+                    },
+                    "wabaInfo": {
+                      "type": "object",
+                      "description": "WhatsApp Business Account information",
+                      "properties": {
+                        "accountStatus": {
+                          "type": "string",
+                          "example": "ACTIVE",
+                          "description": "Current status of the WhatsApp Business Account. Possible values: ACTIVE, BANNED",
+                          "nullable": true
+                        },
+                        "dockerStatus": {
+                          "type": "string",
+                          "example": "CONNECTED",
+                          "description": "Status of the underlying docker/container infrastructure. Possible values: CONNECTED, DISCONNECTED, FLAGGED, PENDING, RESTRICTED, UNKNOWN",
+                          "nullable": true
+                        },
+                        "messagingLimit": {
+                          "type": "string",
+                          "example": "TIER_1K",
+                          "description": "Current messaging tier limit. Values: TIER_50, TIER_250, TIER_1K, TIER_10K, TIER_100K, TIER_UNLIMITED",
+                          "nullable": true
+                        },
+                        "mmLiteStatus": {
+                          "type": "string",
+                          "example": "ELIGIBLE",
+                          "description": "Status of MMLite (Messaging Manager Lite) service. Possible values: INELIGIBLE, ELIGIBLE, ONBOARDED",
+                          "nullable": true
+                        },
+                        "ownershipType": {
+                          "type": "string",
+                          "example": "CLIENT_OWNED",
+                          "description": "Type of account ownership. Possible values: CLIENT_OWNED, ON_BEHALF_OF, SELF",
+                          "nullable": true
+                        },
+                        "phone": {
+                          "type": "string",
+                          "example": "919876543210",
+                          "description": "WhatsApp Business phone number (with country code, no + prefix)",
+                          "nullable": true
+                        },
+                        "phoneQuality": {
+                          "type": "string",
+                          "example": "GREEN",
+                          "description": "Phone number quality rating. Values: GREEN (high), YELLOW (medium), RED (low), UNKNOWN",
+                          "nullable": true
+                        },
+                        "wabaId": {
+                          "type": "string",
+                          "example": "123456789012345",
+                          "description": "WhatsApp Business Account ID",
+                          "nullable": true
+                        },
+                        "canSendMessage": {
+                          "type": "string",
+                          "example": "AVAILABLE",
+                          "description": "Indicates whether the account can currently send messages. Possible values: AVAILABLE, LIMITED, BLOCKED",
+                          "nullable": true
+                        },
+                        "additionalInfo": {
+                          "type": "array",
+                          "description": "Additional information or warnings about the account",
+                          "items": {
+                            "type": "string"
+                          },
+                          "nullable": true,
+                          "example": [
+                            "Account is healthy",
+                            "All services operational"
+                          ]
+                        },
+                        "errors": {
+                          "type": "array",
+                          "description": "List of errors or issues with the account",
+                          "nullable": true,
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "error_code": {
+                                "type": "string",
+                                "example": "1001",
+                                "description": "Error code identifier"
+                              },
+                              "error_description": {
+                                "type": "string",
+                                "example": "Account temporarily restricted",
+                                "description": "Human-readable error description"
+                              },
+                              "possible_solution": {
+                                "type": "string",
+                                "example": "Contact support to resolve restriction",
+                                "description": "Suggested solution or action to resolve the error"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "healthyAccount": {
+                    "summary": "Healthy WABA account - canSendMessage is AVAILABLE",
+                    "value": {
+                      "status": "success",
+                      "wabaInfo": {
+                        "accountStatus": "ACTIVE",
+                        "dockerStatus": "CONNECTED",
+                        "messagingLimit": "TIER_2K",
+                        "mmLiteStatus": "ELIGIBLE",
+                        "ownershipType": "CLIENT_OWNED",
+                        "phone": "918375031069",
+                        "phoneQuality": "GREEN",
+                        "wabaId": "216141188246170",
+                        "canSendMessage": "AVAILABLE",
+                        "additionalInfo": [],
+                        "errors": []
+                      }
+                    }
+                  },
+                  "blockedAccount": {
+                    "summary": "WABA account with BLOCKED status - canSendMessage is BLOCKED",
+                    "value": {
+                      "status": "success",
+                      "wabaInfo": {
+                        "accountStatus": "ACTIVE",
+                        "dockerStatus": "PENDING",
+                        "messagingLimit": null,
+                        "mmLiteStatus": "INELIGIBLE",
+                        "ownershipType": "ON_BEHALF_OF",
+                        "phone": "918657864833",
+                        "phoneQuality": "UNKNOWN",
+                        "wabaId": "101256882767341",
+                        "canSendMessage": "BLOCKED",
+                        "additionalInfo": [],
+                        "errors": [
+                          {
+                            "error_code": "141001",
+                            "error_description": "The phone number you are trying to send messages with is not verified.",
+                            "possible_solution": "Register and finish the OTP authentication process for your phone number."
+                          },
+                          {
+                            "error_code": "141000",
+                            "error_description": "The phone number you are trying to send messages from is not linked to your WhatsApp account.",
+                            "possible_solution": "Register and finish the OTP authentication process for your phone number."
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "limitedAccount": {
+                    "summary": "Account with LIMITED status - display name not approved",
+                    "value": {
+                      "status": "success",
+                      "wabaInfo": {
+                        "accountStatus": "ACTIVE | BANNED",
+                        "dockerStatus": "CONNECTED | DISCONNECTED |FLAGGED | PENDING | RESTRICTED| UNKNOWN",
+                        "messagingLimit": "TIER_250 | TIER_2K | TIER_10K | TIER_100K |TIER_NOT_SET | TIER_UNLIMITED",
+                        "mmLiteStatus": "INELIGIBLE | ELIGIBLE |ONBOARDED",
+                        "ownershipType": "CLIENT_OWNED |ON_BEHALF_OF | SELF",
+                        "phone": "{phone}",
+                        "phoneQuality": "GREEN| YELLOW | RED | UNKNOWN",
+                        "throughput": "HIGH |STANDARD | NOT_APPLICABLE",
+                        "verifiedName": "{display name}",
+                        "wabaId": "{waba_id}",
+                        "canSendMessage": "AVAILABLE | LIMITED | BLOCKED",
+                        "errors": [
+                          {
+                            "error_code": "141014",
+                            "error_description": "<error description>",
+                            "possible_solution": "<posiblesolution>"
+                          }
+                        ],
+                        "additionalInfo": [
+                          "Your display name has not been approved yet. Your message limit will increase after the display name is approved."
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "App is not live."
+                    }
+                  }
+                },
+                "examples": {
+                  "appNotLive": {
+                    "summary": "App is not live",
+                    "value": {
+                      "status": "error",
+                      "message": "App is not live."
+                    }
+                  },
+                  "wabaNotFound": {
+                    "summary": "WABA ID not found",
+                    "value": {
+                      "status": "error",
+                      "message": "Waba id not found for the given App"
+                    }
+                  },
+                  "invalidWaba": {
+                    "summary": "Invalid WABA ID",
+                    "value": {
+                      "status": "error",
+                      "message": "WABA id is invalid or given phone is not associated with WABA"
+                    }
+                  },
+                  "wabaInfoError": {
+                    "summary": "Error getting WABA info",
+                    "value": {
+                      "status": "error",
+                      "message": "Error while getting waba info for given app"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Unauthorised access to the resource. Please review request parameters and headers and retry"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - no permissions to access resource",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Forbidden - no permissions to access resource"
+                    }
+                  }
+                },
+                "examples": {
+                  "notOwner": {
+                    "summary": "App belongs to different user",
+                    "value": {
+                      "status": "error",
+                      "message": "Forbidden - no permissions to access resource"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests - Rate limit exceeded (10 requests per minute)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Too Many Requests"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Internal server error. Please try again later and If Issue still persist than contact Gupshup Dev Support"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "WABA Management"
+        ]
+      }
+    }
+  }
+}

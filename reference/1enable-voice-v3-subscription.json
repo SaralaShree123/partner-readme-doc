@@ -1,0 +1,215 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Partner Portal API",
+    "description": "Partner Portal API documentation",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.gupshup.io"
+    },
+    "version": "3.0.0-SNAPSHOT"
+  },
+  "externalDocs": {
+    "description": "Gupshup Wiki Documentation",
+    "url": "https://www.gupshup.io/partner/docs"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io/partner",
+      "description": "Generated server url"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Partner's Linked Application",
+      "description": "API's for partners linked applications"
+    }
+  ],
+  "paths": {
+    "/app/{appId}/subscription": {
+      "post": {
+        "tags": [
+          "Partner's Linked Application"
+        ],
+        "summary": "Subscribe Event",
+        "operationId": "subscribeIncomingEvent",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "modes",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "VOICE"
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "showOnUI",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse"
+                },
+                "example": {
+                  "status": "success",
+                  "subscription": {
+                    "active": true,
+                    "appId": "b6016edd-12fb-4da1-8e96-e5bb634e271f",
+                    "createdOn": 1737976367905,
+                    "id": "30199",
+                    "mode": 18015,
+                    "modifiedOn": 1737976367905,
+                    "showOnUI": false,
+                    "tag": "Deep V3 Subscriptions",
+                    "url": "https://01j9932b7k88t2mw1rjy7nhkhs00-dd7c42d9129f9ee826d7.requestinspector.com",
+                    "version": 3
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - no permissions to access resource",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ErrorResponse": {
+        "required": [
+          "entity",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "Status Code",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message describing the reason "
+          },
+          "details": {
+            "type": "string",
+            "description": "Developer specific error details "
+          },
+          "code": {
+            "type": "string",
+            "description": "Internal Error Code",
+            "default": "PP-ERR-XXX"
+          },
+          "entity": {
+            "type": "object",
+            "description": "Response Object"
+          }
+        },
+        "description": "Error"
+      },
+      "SuccessResponse": {
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

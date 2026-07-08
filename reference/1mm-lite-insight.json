@@ -1,0 +1,281 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Partner App MM-Lite Template Insights API",
+    "description": "API documentation for Partner App MM-Lite Template Insights",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io/partner"
+    }
+  ],
+  "paths": {
+    "/app/{appId}/template/{templateId}/ads": {
+      "get": {
+        "summary": "Get template Ad details",
+        "operationId": "getTemplateAdDetails",
+        "tags": [
+          "Template"
+        ],
+        "security": [
+          {
+            "partnerAppToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID of the app"
+          },
+          {
+            "name": "templateId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID of the template"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemplateAdDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - no permissions to access resource",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/app/{appId}/template/{templateId}/insights": {
+      "get": {
+        "summary": "Get template Ad Insight",
+        "operationId": "getTemplateInsights",
+        "tags": [
+          "Template"
+        ],
+        "security": [
+          {
+            "partnerAppToken": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID of the app"
+          },
+          {
+            "name": "templateId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID of the template"
+          },
+          {
+            "name": "requestParams",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "description": "Additional request parameters"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TemplateInsights"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - no permissions to access resource",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "partnerAppToken": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header",
+        "description": "PARTNER APP TOKEN"
+      }
+    },
+    "schemas": {
+      "TemplateAdDetails": {
+        "type": "object",
+        "properties": {
+          "adId": {
+            "type": "string",
+            "description": "Unique identifier for the ad"
+          },
+          "adName": {
+            "type": "string",
+            "description": "Name of the ad"
+          },
+          "adStatus": {
+            "type": "string",
+            "description": "Current status of the ad"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Date when the ad was created"
+          },
+          "impressions": {
+            "type": "integer",
+            "description": "Number of times the ad was viewed"
+          },
+          "clicks": {
+            "type": "integer",
+            "description": "Number of times the ad was clicked"
+          }
+        }
+      },
+      "TemplateInsights": {
+        "type": "object",
+        "properties": {
+          "templateId": {
+            "type": "string",
+            "description": "Unique identifier for the template"
+          },
+          "views": {
+            "type": "integer",
+            "description": "Number of views for the template"
+          },
+          "interactions": {
+            "type": "integer",
+            "description": "Number of interactions with the template"
+          },
+          "conversionRate": {
+            "type": "number",
+            "format": "float",
+            "description": "Conversion rate of the template"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Last updated timestamp for the insights"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          }
+        }
+      }
+    }
+  }
+}

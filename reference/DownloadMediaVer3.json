@@ -1,0 +1,195 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Partner Portal API",
+        "description": "Partner Portal API documentation",
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://partner.gupshup.io/partner"
+        },
+        "version": "3.0.0-SNAPSHOT"
+    },
+    "externalDocs": {
+        "description": "Gupshup Wiki Documentation",
+        "url": "https://partner.gupshup.io/partner/docs"
+    },
+    "servers": [
+        {
+            "url": "https://partner.gupshup.io/partner",
+            "description": "Generated server url"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Partner's Linked Application",
+            "description": "API's for partners linked applications"
+        }
+    ],
+    "paths": {
+        "/app/{appId}/media/{mediaId}/": {
+            "get": {
+                "tags": [
+                    "Partner's Linked Application"
+                ],
+                "summary": "Download Media",
+                "operationId": "downloadMedia",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Your app token, please refer [**Get access token api**](https://partner-docs.gupshup.io/reference/get_partner-app-appid-token#/) to get the token from partner documentation.",
+                        "example": "sk_345095d735c64a8ab2f97a92e953xxxx"
+                    },
+                    {
+                        "name": "appId",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "description": "Unique identifier of the app.",
+                        "example": "a41b30f4-d202-4fdb-911e-3a8fbfbfxxxx"
+                    },
+                    {
+                        "name": "mediaId",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "description": "Unique identifier of the media.",
+                        "example": "76534618xxxx"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/components/responses/200"
+                    },
+                    "400": {
+                        "$ref": "#/components/responses/400"
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Authentication Failed"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "Too Many Requests",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Too Many Requests"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Internal Server Error"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "responses": {
+            "200": {
+                "description": "Successful Media Response"
+            },
+            "400": {
+                "description": "Bad Request",
+                "content": {
+                    "application/json": {
+                        "examples": {
+                            "App not found": {
+                                "value": {
+                                    "message": "App not found",
+                                    "status": "error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "schemas": {
+            "ErrorResponse": {
+                "required": [
+                    "entity",
+                    "status"
+                ],
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "description": "Status Code"
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "Error message describing the reason"
+                    }
+                },
+                "description": "Error"
+            },
+            "Errors": {
+                "type": "object",
+                "properties": {
+                    "error_code": {
+                        "type": "string"
+                    },
+                    "error_description": {
+                        "type": "string"
+                    },
+                    "possible_solution": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

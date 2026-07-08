@@ -1,0 +1,172 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Partner Portal Voice API",
+    "description": "API to enable/disable WhatsApp Voice call features",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io"
+    }
+  ],
+  "paths": {
+    "/partner/app/{appId}/voice": {
+      "post": {
+        "summary": "WhatsApp Voice call enable disable API",
+        "description": "This API is used to enable/disable voice functionality at app level.",
+        "tags": [
+          "Voice Call Management"
+        ],
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "description": "The unique identifier of the WhatsApp application",
+            "schema": {
+              "type": "string"
+            },
+            "example": "4005ef9e-581e-41f4-9b04-e0797e0463d2"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "enable",
+                  "iconVisibility",
+                  "mode",
+                  "metaData"
+                ],
+                "properties": {
+                  "enable": {
+                    "type": "boolean",
+                    "description": "Flag to enable or disable voice call feature",
+                    "example": true
+                  },
+                  "iconVisibility": {
+                    "type": "string",
+                    "description": "Controls the visibility of voice call icon",
+                    "example": "DEFAULT"
+                  },
+                  "mode": {
+                    "type": "string",
+                    "description": "Voice call mode configuration",
+                    "example": "GS_SIP"
+                  },
+                  "metaData": {
+                    "type": "string",
+                    "description": "Additional metadata for voice call configuration in JSON string format",
+                    "example": "[{\"isregister\": false, \"user\": \"911141258312\", \"username\": \"911141258312\", \"host\": \"ip-10-232-3-155.ap-south-1.compute.internal\", \"port\": \"5071\", \"secret_key\": \"057d0443018fc94ac1488b86c0b7b0f2\", \"force_tcp\": false}]"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoiceCallActionResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - no permissions to access resource",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "VoiceCallActionResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Status of the voice call action"
+          },
+          "message": {
+            "type": "string",
+            "description": "Response message"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Error code"
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "details": {
+            "type": "object",
+            "description": "Additional error details"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

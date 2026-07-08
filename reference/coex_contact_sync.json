@@ -1,0 +1,26 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Partner COEX Sync API",
+    "version": "1.0.0",
+    "description": "API to initiate WhatsApp contacts/history synchronization for an app."
+  },
+  "servers": [
+    {
+      "url": "https://partner.hupshup.io/partner"
+    }
+  ],
+  "paths": {
+    "/app/{appId}/coex/sync": {}
+  },
+  "components": {
+    "securitySchemes": {
+      "appApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization",
+        "description": "App API key in Authorization header. Example: `sk_xxx`"
+      }
+    }
+  }
+}

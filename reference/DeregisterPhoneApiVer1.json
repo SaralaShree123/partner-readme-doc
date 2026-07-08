@@ -1,0 +1,155 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Partner Portal API",
+        "description": "Partner Portal API documentation",
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.gupshup.io"
+        },
+        "version": "3.0.0-SNAPSHOT"
+    },
+    "externalDocs": {
+        "description": "Gupshup Wiki Documentation",
+        "url": "https://www.gupshup.io/partner/docs"
+    },
+    "servers": [
+        {
+            "url": "https://partner.gupshup.io",
+            "description": "Generated server url"
+        }
+    ],
+    "paths": {
+        "/partner/app/{appId}/onboarding/deregister": {
+            "post": {
+                "summary": "Deregister phone for an app",
+                "operationId": "deregisterPhoneApp",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "sk_987654xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "description": "Your app token, please refer [**Get access token api**](https://docs.gupshup.io/reference/get_partner-app-appid-token) to get the token from partner documentation."
+                    },
+                    {
+                        "name": "appId",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "example": "657c0203-0b4d-xxxx-xxxx-xxxxxxx35a16"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Success"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden - no permissions to access resource",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "429": {
+                        "description": "Too Many Requests",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Too Many Requests"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "error"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorResponse": {
+                "required": [
+                    "entity",
+                    "status"
+                ],
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "integer",
+                        "description": "Status Code",
+                        "format": "int32"
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "Error message describing the reason "
+                    },
+                    "details": {
+                        "type": "string",
+                        "description": "Developer specific error details "
+                    },
+                    "entity": {
+                        "type": "object",
+                        "description": "Response Object"
+                    }
+                },
+                "description": "Error"
+            },
+            "Success": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    },
+                    "success": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        }
+    }
+}

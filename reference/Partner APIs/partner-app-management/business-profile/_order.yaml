@@ -1,0 +1,7 @@
+- get_partner-app-appid-business-profile
+- get_partner-app-appid-business-profile-about
+- put_partner-app-appid-business-profile
+- put_partner-app-appid-business-profile-about
+- get_partner-app-appid-business-profile-photo
+- put_partner-app-appid-business-profile-photo
+- delete_partner-app-appid-business-profile-photo

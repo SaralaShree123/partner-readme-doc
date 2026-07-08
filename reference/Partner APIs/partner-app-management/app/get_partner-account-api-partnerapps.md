@@ -1,0 +1,115 @@
+---
+title: Get Partner Apps
+excerpt: >-
+  Retrieves the list of partner applications linked to the authenticated
+  partner's account, including health status from DockerDetails and capping
+  information from CappingDetails
+api:
+  file: partner-portal-public-apis.json
+  operationId: get_partner-account-api-partnerapps
+deprecated: false
+hidden: false
+metadata:
+  title: ''
+  description: ''
+  robots: index
+next:
+  description: ''
+---
+### Parameters
+
+| Parameters    | Value               | Description                          |
+| :------------ | :------------------ | :----------------------------------- |
+| Authorization | \{\{PARTNER_TOKEN}} | JWT Token issued post Partner login. |
+
+### Sample Request
+
+```curl
+curl --location --request GET 'https://partner.gupshup.io/partner/account/api/partnerApps' \
+--header 'Authorization: {{PARTNER_TOKEN}}'
+```
+
+### Sample Response
+
+```json
+{
+    "status": "success",
+    "partnerAppsList": [
+        {
+            "id": "00065097-93ff-4c22-bfa4-845f01b7de3b",
+            "name": "BotTch20",
+            "customerId": "4000001311",
+            "live": false,
+            "partnerId": 6,
+            "createdOn": 1624339843605,
+            "modifiedOn": 1651130376253,
+            "partnerCreated": false,
+            "cxpEnabled": false,
+            "partnerUsage": true, 
+            "stopped": false,
+            "healthy": true,
+            "cap": 0.0
+        },
+        {
+            "id": "018358b5-5ac1-44af-bbfe-36ac4e9f01cc",
+            "name": "automation030542",
+            "customerId": "NA",
+            "live": false,
+            "partnerId": 6,
+            "createdOn": 1703857396150,
+            "modifiedOn": 1703857396150,
+            "partnerCreated": false,
+            "cxpEnabled": false,
+            "partnerUsage": true,
+            "stopped": false,
+            "healthy": true,
+            "cap": 0.0
+        },
+        {
+            "id": "02f9e530-f7dd-4a04-ad33-4406d29c9e56",
+            "name": "TestAPI70",
+            "customerId": "4000001585",
+            "live": false,
+            "partnerId": 6,
+            "createdOn": 1651738868991,
+            "modifiedOn": 1651738868991,
+            "partnerCreated": false,
+            "cxpEnabled": false,
+            "partnerUsage": true, 
+            "stopped": false,
+            "healthy": true,
+            "cap": 0.0
+        },
+        {
+            "id": "04e6c66b-bb95-4bfc-b75e-4e7391ddc680",
+            "name": "GupShupQAHSM",
+            "phone": "919324927406",
+            "customerId": "4000001343",
+            "live": false,
+            "partnerId": 6,
+            "createdOn": 1690874640468,
+            "modifiedOn": 1698409662019,
+            "partnerCreated": false,
+            "cxpEnabled": false,
+            "partnerUsage": true, 
+            "stopped": false,
+            "healthy": true,
+            "cap": 0.0
+        },
+        {
+            "id": "0adef57e-b1fe-41eb-94e7-c47e29fbc50f",
+            "name": "automation9525531",
+            "customerId": "NA",
+            "live": false,
+            "partnerId": 6,
+            "createdOn": 1703856050646,
+            "modifiedOn": 1703856050646,
+            "partnerCreated": false,
+            "cxpEnabled": false,
+            "partnerUsage": true, 
+            "stopped": false,
+            "healthy": true,
+            "cap": 0.0
+        }]
+}
+```

@@ -1,0 +1,600 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Partner Portal - Business Username Management",
+    "version": "3.0.0-SNAPSHOT"
+  },
+  "externalDocs": {
+    "description": "Gupshup Partner Documentation",
+    "url": "https://partner-docs.gupshup.io/"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io/partner",
+      "description": "Production server"
+    },
+    {
+      "url": "http://localhost:8080/partner",
+      "description": "Local development server"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Business Username Management",
+      "description": "Adopt, view, fetch suggestions for, and delete the business username of a WhatsApp Business phone number"
+    }
+  ],
+  "paths": {
+    "/app/{appId}/username": {
+      "post": {
+        "tags": [
+          "Business Username Management"
+        ],
+        "summary": "Set / adopt business username",
+        "description": "Adopts or changes the business username for the app's WhatsApp phone number.",
+        "operationId": "setBusinessUsername",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "Application ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "04e6c66b-bb95-4bfc-b75e-4e7391ddc680"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/SetBusinessUsernameRequest"
+              },
+              "examples": {
+                "setUsername": {
+                  "summary": "Set business username",
+                  "value": {
+                    "username": "mybusiness",
+                    "transfer_action": "none"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success - Meta passthrough (approved: username approved; reserved: reserved until feature GA)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessUsernameStatusResponse"
+                },
+                "examples": {
+                  "success": {
+                    "summary": "Success",
+                    "value": {
+                      "status": "reserved"
+                    }
+                  },
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "status": "approved"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - validation error or Meta error body",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessUsernameErrorResponse"
+                },
+                "examples": {
+                  "usernameEmpty": {
+                    "summary": "Username form param missing",
+                    "value": {
+                      "message": "Username cannot be empty",
+                      "status": "error"
+                    }
+                  },
+                  "invalidAppDetails": {
+                    "summary": "Unknown / invalid appId",
+                    "value": {
+                      "message": "Invalid App Details",
+                      "status": "error"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication failed - invalid or missing Partner App token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessUsernameErrorResponse"
+                },
+                "examples": {
+                  "authenticationFailed": {
+                    "summary": "Authentication failed",
+                    "value": {
+                      "status": "error",
+                      "message": "Authentication Failed"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error - unexpected portal failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessUsernameErrorResponse"
+                },
+                "examples": {
+                  "serverError": {
+                    "summary": "Internal server error",
+                    "value": {
+                      "status": "error",
+                      "message": "Unable to set business username for app id: {appId}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Business Username Management"
+        ],
+        "summary": "Get current business username",
+        "description": "Returns the business username and status for the app's phone number.",
+        "operationId": "getBusinessUsername",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "Application ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "04e6c66b-bb95-4bfc-b75e-4e7391ddc680"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success - Meta passthrough (status is approved or reserved)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessUsernameStatusResponse"
+                },
+                "examples": {
+                  "success": {
+                    "summary": "Success",
+                    "value": {
+                      "status": "approved",
+                      "username": "mybusiness"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - validation error or Meta error body",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessUsernameErrorResponse"
+                },
+                "examples": {
+                  "invalidAppDetails": {
+                    "summary": "Unknown / invalid appId",
+                    "value": {
+                      "message": "Invalid App Details",
+                      "status": "error"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication failed - invalid or missing Partner App token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessUsernameErrorResponse"
+                },
+                "examples": {
+                  "authenticationFailed": {
+                    "summary": "Authentication failed",
+                    "value": {
+                      "status": "error",
+                      "message": "Unauthorised access to the resource. Please review request parameters and headers and retry"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error - unexpected portal failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessUsernameErrorResponse"
+                },
+                "examples": {
+                  "serverError": {
+                    "summary": "Internal server error",
+                    "value": {
+                      "status": "error",
+                      "message": "Unable to get business username for app id: {appId}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Business Username Management"
+        ],
+        "summary": "Delete business username",
+        "description": "Deletes the business username associated with the app's phone number.",
+        "operationId": "deleteBusinessUsername",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "Application ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "04e6c66b-bb95-4bfc-b75e-4e7391ddc680"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success - Meta passthrough (success is boolean)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteBusinessUsernameResponse"
+                },
+                "examples": {
+                  "success": {
+                    "summary": "Success",
+                    "value": {
+                      "status": "success"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - validation error or Meta error body",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessUsernameErrorResponse"
+                },
+                "examples": {
+                  "invalidAppDetails": {
+                    "summary": "Unknown / invalid appId",
+                    "value": {
+                      "message": "Invalid App Details",
+                      "status": "error"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication failed - invalid or missing Partner App token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessUsernameErrorResponse"
+                },
+                "examples": {
+                  "authenticationFailed": {
+                    "summary": "Authentication failed",
+                    "value": {
+                      "status": "error",
+                      "message": "Unauthorised access to the resource. Please review request parameters and headers and retry"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error - unexpected portal failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessUsernameErrorResponse"
+                },
+                "examples": {
+                  "serverError": {
+                    "summary": "Internal server error",
+                    "value": {
+                      "status": "error",
+                      "message": "Unable to delete business username for app id: {appId}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/app/{appId}/username/suggestions": {
+      "get": {
+        "tags": [
+          "Business Username Management"
+        ],
+        "summary": "Get reserved username suggestions",
+        "description": "Returns reserved username suggestions for the business portfolio (higher chance of approval). A suggestion can be claimed via Set / Adopt Business Username.",
+        "operationId": "getBusinessUsernameSuggestions",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "Application ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "example": "04e6c66b-bb95-4bfc-b75e-4e7391ddc680"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success - Meta passthrough with username_suggestions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsernameSuggestionsResponse"
+                },
+                "examples": {
+                  "success": {
+                    "summary": "Success",
+                    "value": {
+                      "username_suggestions": [
+                        "gupshup",
+                        "journeybuilderflowsp",
+                        "k8sautomation",
+                        "newapril05",
+                        "convomatetestqa",
+                        "qa_cdp_gg",
+                        "gupshupctm",
+                        "shashwatgupshuptest"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - validation error or Meta error body",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessUsernameErrorResponse"
+                },
+                "examples": {
+                  "invalidAppDetails": {
+                    "summary": "Unknown / invalid appId",
+                    "value": {
+                      "message": "Invalid App Details",
+                      "status": "error"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Authentication failed - invalid or missing Partner App token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessUsernameErrorResponse"
+                },
+                "examples": {
+                  "authenticationFailed": {
+                    "summary": "Authentication failed",
+                    "value": {
+                      "status": "error",
+                      "message": "Unauthorised access to the resource. Please review request parameters and headers and retry"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error - unexpected portal failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessUsernameErrorResponse"
+                },
+                "examples": {
+                  "serverError": {
+                    "summary": "Internal server error",
+                    "value": {
+                      "status": "error",
+                      "message": "Unable to get business username suggestions for app id: {appId}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SetBusinessUsernameRequest": {
+        "type": "object",
+        "required": [
+          "username"
+        ],
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "Desired business username. Letters (a-z), digits (0-9), period (.), underscore (_); see Meta docs for full rules.",
+            "example": "mybusiness"
+          },
+          "transfer_action": {
+            "type": "string",
+            "description": "Username transfer action. Defaults to none. Use force_transfer on Meta error 147005.",
+            "enum": [
+              "none",
+              "force_transfer"
+            ],
+            "example": "none"
+          }
+        },
+        "description": "Form-urlencoded request body for setting / adopting the business username"
+      },
+      "BusinessUsernameStatusResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Upstream status (e.g. success, approved, reserved)",
+            "example": "success"
+          },
+          "username": {
+            "type": "string",
+            "description": "Current business username (returned by Get current business username)",
+            "example": "mybusiness"
+          }
+        },
+        "additionalProperties": true,
+        "description": "Meta passthrough success response"
+      },
+      "UsernameSuggestionsResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "success"
+          },
+          "username_suggestions": {
+            "type": "array",
+            "description": "Reserved username suggestions",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "gupshup",
+              "journeybuilderflowsp",
+              "k8sautomation"
+            ]
+          }
+        },
+        "additionalProperties": true,
+        "description": "Meta passthrough success response with username suggestions"
+      },
+      "DeleteBusinessUsernameResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "success"
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        },
+        "additionalProperties": true,
+        "description": "Meta passthrough success response for delete"
+      },
+      "BusinessUsernameErrorResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "error"
+            ],
+            "example": "error"
+          },
+          "message": {
+            "type": "string",
+            "description": "Human-readable error message",
+            "example": "Invalid App Details"
+          }
+        },
+        "description": "Error response from Partner Portal or upstream"
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Partner App access token with `PARTNER_APP` role.\n\n**How to obtain:**\n1. Authenticate as a partner user (login flow for your environment)\n2. Call `GET /partner/app/{appId}/token` with the user JWT\n3. Use the returned app token as `Authorization: Bearer <token>`\n\n**Example:**\n```\nAuthorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\n```\n"
+      }
+    }
+  }
+}

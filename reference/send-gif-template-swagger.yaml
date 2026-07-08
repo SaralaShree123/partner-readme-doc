@@ -1,0 +1,113 @@
+openapi: 3.0.3
+info:
+  title: Gupshup Partner API – Send Message with GIF Template
+  description: |
+    This API is used to send messages using a WhatsApp GIF template
+    via Gupshup Partner APIs.
+  version: 1.0.0
+servers:
+  - url: https://partner.gupshup.io
+    description: Gupshup Partner Production Server
+paths:
+  /partner/app/{APP_ID}/template/msg:
+    post:
+      summary: Send message with GIF template
+      description: Sends a GIF-based template message to a destination number.
+      operationId: sendGifTemplateMessage
+      parameters:
+        - name: APP_ID
+          in: path
+          required: true
+          description: App ID associated with the Partner account
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+                - source
+                - destination
+                - template
+                - message
+                - src.name
+              properties:
+                source:
+                  type: integer
+                  description: Source phone number
+                  example: 919999999999
+                sandbox:
+                  type: boolean
+                  description: Enable sandbox mode
+                  example: false
+                destination:
+                  type: integer
+                  description: Destination phone number
+                  example: 918888888888
+                template:
+                  type: string
+                  description: JSON string containing template details
+                  example: |
+                    {"id":"template_id_123","params":["John","Order #1234"]}
+                message:
+                  type: string
+                  description: JSON string defining the GIF message
+                  example: >
+                    {"type":"gif","gif":{"link":"https://example.com/sample.gif"}}
+                src.name:
+                  type: string
+                  description: Application name
+                  example: MyAppName
+      security:
+        - PartnerAuth: []
+      responses:
+        '200':
+          description: Message submitted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: submitted
+                  messageId:
+                    type: string
+                    example: db4*****-8ccc-3a438288e72f
+        '429':
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: Too Many Requests
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: >
+                      Internal server error. Please try again later and If Issue
+                      still persist then contact Gupshup Dev Support
+components:
+  securitySchemes:
+    PartnerAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Partner App Access Token

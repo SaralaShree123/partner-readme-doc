@@ -1,0 +1,514 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Profile Name Managament APIs",
+    "description": "APIs for retrieving and updating WhatsApp app display name.\nThese APIs allow partners to manage their WhatsApp business profile display name.\n",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Gupshup Partner Portal Team"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io/partner/app",
+      "description": "Partner Portal API Base URL"
+    }
+  ],
+  "tags": [
+    {
+      "name": "WhatsApp Profile",
+      "description": "WhatsApp Profile Management APIs"
+    }
+  ],
+  "paths": {
+    "/{appId}/profile/displayName": {
+      "get": {
+        "tags": [
+          "WhatsApp Profile"
+        ],
+        "summary": "Get WhatsApp Profile Display Name",
+        "description": "This API retrieves the current display name for a WhatsApp application. \nThe display name is an important identifier for the business on WhatsApp. \nPartner App privileges are required to access this endpoint, and the API key \nmust be associated with the specified app ID.\n",
+        "operationId": "getProfileName",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "The unique identifier of the WhatsApp application",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "57d9179b-7412-4621-bf86-57ee1962fd12"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Partner App token for authentication",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "sk_JhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+            }
+          }
+        ],
+        "security": [
+          {
+            "PartnerAppAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetProfileNameResponse"
+                },
+                "example": {
+                  "displayNameInfo": {
+                    "verifiedNameStatus": "",
+                    "requestedName": "",
+                    "requestedNameStatus": "",
+                    "verifiedName": ""
+                  },
+                  "status": "success"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Invalid request parameters"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Invalid or missing authentication token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Unauthorized"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - No permissions to access resource",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Forbidden - no permissions to access resource"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Internal server error. Please try again later and If Issue still persist than contact Gupshup Dev Support"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "WhatsApp Profile"
+        ],
+        "summary": "Update WhatsApp Profile Display Name",
+        "description": "This API updates the display name for a WhatsApp application. \nThe display name is an important identifier for the business on WhatsApp. \nPartner App privileges are required to access this endpoint, and the API key \nmust be associated with the specified app ID.\n",
+        "operationId": "updateProfileName",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "description": "The unique identifier of the WhatsApp application",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "57d9179b-7412-4621-bf86-57ee1962fd12"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Partner App token for authentication",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "newDisplayName"
+                ],
+                "properties": {
+                  "newDisplayName": {
+                    "type": "string",
+                    "description": "The new display name for the WhatsApp application",
+                    "example": "Updated Business Name"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "PartnerAppAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully updated display name",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateProfileNameResponse"
+                },
+                "example": {
+                  "status": "success"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Display name validation errors. Possible validation errors include:\n* Display name cannot be empty\n* Display name must be at least 3 characters long\n* Display name must be less than 250 characters\n* Display name can only contain letters, numbers, spaces, hyphens, underscores, and parentheses\n* Display name cannot be all uppercase. It must contain at least one lowercase letter or number\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/DisplayNameEmptyError"
+                    },
+                    {
+                      "$ref": "#/components/schemas/DisplayNameTooShortError"
+                    },
+                    {
+                      "$ref": "#/components/schemas/DisplayNameTooLongError"
+                    },
+                    {
+                      "$ref": "#/components/schemas/DisplayNameInvalidCharsError"
+                    },
+                    {
+                      "$ref": "#/components/schemas/DisplayNameAllUppercaseError"
+                    }
+                  ]
+                },
+                "examples": {
+                  "empty": {
+                    "summary": "Empty display name",
+                    "value": {
+                      "status": "error",
+                      "error": "Display name cannot be empty"
+                    }
+                  },
+                  "tooShort": {
+                    "summary": "Display name too short",
+                    "value": {
+                      "status": "error",
+                      "error": "Display name must be at least 3 characters long"
+                    }
+                  },
+                  "tooLong": {
+                    "summary": "Display name too long",
+                    "value": {
+                      "status": "error",
+                      "error": "Display name must be less than 250 characters"
+                    }
+                  },
+                  "invalidChars": {
+                    "summary": "Invalid characters in display name",
+                    "value": {
+                      "status": "error",
+                      "error": "Display name can only contain letters, numbers, spaces, hyphens, underscores, and parentheses"
+                    }
+                  },
+                  "allUppercase": {
+                    "summary": "All uppercase display name",
+                    "value": {
+                      "status": "error",
+                      "error": "Display name cannot be all uppercase. It must contain at least one lowercase letter or number"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Invalid or missing authentication token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Unauthorized"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - No permissions to access resource",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Forbidden - no permissions to access resource"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "code": "INTERNAL_SERVER_ERROR",
+                  "message": "An unexpected error occurred"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "GetProfileNameResponse": {
+        "type": "object",
+        "properties": {
+          "displayNameInfo": {
+            "type": "object",
+            "properties": {
+              "verifiedNameStatus": {
+                "type": "string",
+                "description": "Status of the verified name"
+              },
+              "requestedName": {
+                "type": "string",
+                "description": "Name that was requested for verification"
+              },
+              "requestedNameStatus": {
+                "type": "string",
+                "description": "Status of the requested name"
+              },
+              "verifiedName": {
+                "type": "string",
+                "description": "The verified name if available (current name if verifiedNameStatus is APPROVED)"
+              }
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "success"
+            ],
+            "description": "Status of the API call"
+          }
+        },
+        "required": [
+          "displayNameInfo",
+          "status"
+        ]
+      },
+      "UpdateProfileNameResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "success"
+            ],
+            "description": "Status of the API call"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "error"
+            ],
+            "description": "Error status"
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          }
+        },
+        "required": [
+          "status",
+          "message"
+        ]
+      },
+      "DisplayNameEmptyError": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "error"
+            ],
+            "description": "Error status"
+          },
+          "error": {
+            "type": "string",
+            "enum": [
+              "Display name cannot be empty"
+            ],
+            "description": "Error message for empty display name"
+          }
+        },
+        "required": [
+          "status",
+          "error"
+        ]
+      },
+      "DisplayNameTooShortError": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "error"
+            ],
+            "description": "Error status"
+          },
+          "error": {
+            "type": "string",
+            "enum": [
+              "Display name must be at least 3 characters long"
+            ],
+            "description": "Error message for display name that is too short"
+          }
+        },
+        "required": [
+          "status",
+          "error"
+        ]
+      },
+      "DisplayNameTooLongError": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "error"
+            ],
+            "description": "Error status"
+          },
+          "error": {
+            "type": "string",
+            "enum": [
+              "Display name must be less than 250 characters"
+            ],
+            "description": "Error message for display name that is too long"
+          }
+        },
+        "required": [
+          "status",
+          "error"
+        ]
+      },
+      "DisplayNameInvalidCharsError": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "error"
+            ],
+            "description": "Error status"
+          },
+          "error": {
+            "type": "string",
+            "enum": [
+              "Display name can only contain letters, numbers, spaces, hyphens, underscores, and parentheses"
+            ],
+            "description": "Error message for display name with invalid characters"
+          }
+        },
+        "required": [
+          "status",
+          "error"
+        ]
+      },
+      "DisplayNameAllUppercaseError": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "error"
+            ],
+            "description": "Error status"
+          },
+          "error": {
+            "type": "string",
+            "enum": [
+              "Display name cannot be all uppercase. It must contain at least one lowercase letter or number"
+            ],
+            "description": "Error message for display name that is all uppercase"
+          }
+        },
+        "required": [
+          "status",
+          "error"
+        ]
+      }
+    },
+    "securitySchemes": {
+      "PartnerAppAuth": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header",
+        "description": "Partner App token for authentication (JWT token with PARTNER_APP role)"
+      }
+    }
+  }
+}

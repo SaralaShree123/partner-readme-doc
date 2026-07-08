@@ -1,0 +1,170 @@
+openapi: 3.0.3
+info:
+  title: Gupshup Partner API – Send MM Lite Message with GIF Template
+  description: |
+    This API is used to send marketing (MM Lite) messages
+    using a WhatsApp GIF template via Gupshup Partner APIs.
+  version: 1.0.0
+servers:
+  - url: https://partner.gupshup.io
+    description: Gupshup Partner Production Server
+paths:
+  /partner/app/{APP_ID}/onboarding/marketing/msg:
+    post:
+      summary: Send MM Lite message with GIF template
+      description: Sends a marketing WhatsApp message using a GIF-based template.
+      operationId: sendMMLiteGifTemplateMessage
+      parameters:
+        - name: APP_ID
+          in: path
+          required: true
+          description: App ID associated with the Partner account
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - recipient_type
+                - messaging_product
+                - to
+                - type
+                - template
+              properties:
+                recipient_type:
+                  type: string
+                  example: individual
+                  enum:
+                    - individual
+                messaging_product:
+                  type: string
+                  example: whatsapp
+                  enum:
+                    - whatsapp
+                to:
+                  type: string
+                  example: '919999999999'
+                type:
+                  type: string
+                  example: template
+                  enum:
+                    - template
+                template:
+                  type: object
+                  required:
+                    - name
+                    - language
+                    - namespace
+                    - components
+                  properties:
+                    name:
+                      type: string
+                      example: promo_gif_template
+                    language:
+                      type: object
+                      required:
+                        - policy
+                        - code
+                      properties:
+                        policy:
+                          type: string
+                          example: deterministic
+                        code:
+                          type: string
+                          example: en
+                    namespace:
+                      type: string
+                      example: abcdef12_3456_7890_abcd_ef1234567890
+                    components:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                            example: header
+                          parameters:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                type:
+                                  type: string
+                                  example: GIF
+                                gif:
+                                  type: object
+                                  properties:
+                                    link:
+                                      type: string
+                                      format: uri
+                                      example: https://example.com/sample.gif
+      security:
+        - PartnerAuth: []
+      responses:
+        '200':
+          description: Message sent successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  messaging_product:
+                    type: string
+                    example: whatsapp
+                  messages:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: 1ceeb739-06cd-4434-a1e0-8afac154ede4
+                  contacts:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        input:
+                          type: string
+                          example: '9188889945'
+                        wa_id:
+                          type: string
+                          example: '9188898545'
+        '429':
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: Too Many Requests
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: >
+                      Internal server error. Please try again later and If Issue
+                      still persist then contact Gupshup Dev Support
+components:
+  securitySchemes:
+    PartnerAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Partner App Access Token

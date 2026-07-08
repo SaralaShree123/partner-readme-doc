@@ -1,0 +1,264 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Gupshup Partner API",
+    "description": "API for managing WhatsApp templates",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io"
+    }
+  ],
+  "paths": {
+    "/partner/app/{appId}/templates": {
+      "post": {
+        "summary": "Create a new WhatsApp template",
+        "description": "Creates a new template for WhatsApp messaging",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "appId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The application ID",
+            "example": "07c7c72d-20e3-****a5a1-14d1186eeec8"
+          },
+          {
+            "in": "header",
+            "name": "token",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Authentication token",
+            "example": "sk_8eb35b1f81c24***3a405164a392f30"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "elementName",
+                  "content",
+                  "category",
+                  "vertical",
+                  "templateType",
+                  "example",
+                  "languageCode",
+                  "buttons"
+                ],
+                "properties": {
+                  "elementName": {
+                    "type": "string",
+                    "description": "Name of the template element",
+                    "example": "texlement3july1"
+                  },
+                  "content": {
+                    "type": "string",
+                    "description": "Template content",
+                    "example": "your otp is welcome"
+                  },
+                  "category": {
+                    "type": "string",
+                    "description": "Template category",
+                    "example": "AUTHENTICATION"
+                  },
+                  "vertical": {
+                    "type": "string",
+                    "description": "Business vertical",
+                    "example": "Internal_vertical"
+                  },
+                  "templateType": {
+                    "type": "string",
+                    "description": "Type of template",
+                    "example": "TEXT"
+                  },
+                  "example": {
+                    "type": "string",
+                    "description": "Example message",
+                    "example": "your otp is 1234"
+                  },
+                  "footer": {
+                    "type": "string",
+                    "description": "Footer text",
+                    "example": "This is footer"
+                  },
+                  "allowTemplateCategoryChange": {
+                    "type": "boolean",
+                    "description": "Whether template category can be changed",
+                    "example": false
+                  },
+                  "buttons": {
+                    "type": "string",
+                    "description": "JSON string containing button configurations",
+                    "example": "[{\"type\":\"OTP\",\"otp_type\":\"COPY_CODE\",\"text\":\"Copy Code\"}]"
+                  },
+                  "languageCode": {
+                    "type": "string",
+                    "description": "Language code for the template",
+                    "example": "en"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Template created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "template": {
+                      "type": "object",
+                      "properties": {
+                        "appId": {
+                          "type": "string",
+                          "example": "a41b30f4-d202-4fdb-911e-3a8fbfbfb797"
+                        },
+                        "buttonSupported": {
+                          "type": "string",
+                          "example": "OTP"
+                        },
+                        "category": {
+                          "type": "string",
+                          "example": "AUTHENTICATION"
+                        },
+                        "containerMeta": {
+                          "type": "string",
+                          "example": "{\"appId\":\"a41b30f4-d202-4fdb-911e-3a8fbfbfb797\",\"data\":\"your otp is welcome\",\"buttons\":[{\"type\":\"OTP\",\"text\":\"Copy Code\",\"otp_type\":\"COPY_CODE\"}],\"footer\":\"This is footer\",\"sampleText\":\"your otp is 1234\",\"enableSample\":true,\"editTemplate\":false,\"allowTemplateCategoryChange\":false,\"addSecurityRecommendation\":false}"
+                        },
+                        "createdOn": {
+                          "type": "integer",
+                          "format": "int64",
+                          "example": 1742534170417
+                        },
+                        "data": {
+                          "type": "string",
+                          "example": "your otp is welcome\nThis is footer | [Copy Code]"
+                        },
+                        "elementName": {
+                          "type": "string",
+                          "example": "march21template"
+                        },
+                        "id": {
+                          "type": "string",
+                          "example": "8f86c262-2700-4013-a595-250ae0724abb"
+                        },
+                        "languageCode": {
+                          "type": "string",
+                          "example": "en"
+                        },
+                        "languagePolicy": {
+                          "type": "string",
+                          "example": "deterministic"
+                        },
+                        "meta": {
+                          "type": "string",
+                          "example": "{\"example\":\"your otp is 1234\",\"newAuthTemplate\":true}"
+                        },
+                        "modifiedOn": {
+                          "type": "integer",
+                          "format": "int64",
+                          "example": 1742534170417
+                        },
+                        "namespace": {
+                          "type": "string",
+                          "example": "9c7fe92f_2a48_40ec_83d0_69c62a772433"
+                        },
+                        "priority": {
+                          "type": "integer",
+                          "example": 3
+                        },
+                        "quality": {
+                          "type": "string",
+                          "example": "UNKNOWN"
+                        },
+                        "retry": {
+                          "type": "integer",
+                          "example": 0
+                        },
+                        "stage": {
+                          "type": "string",
+                          "example": "NONE"
+                        },
+                        "status": {
+                          "type": "string",
+                          "example": "PENDING"
+                        },
+                        "templateType": {
+                          "type": "string",
+                          "example": "TEXT"
+                        },
+                        "vertical": {
+                          "type": "string",
+                          "example": "Internal_vertical"
+                        },
+                        "wabaId": {
+                          "type": "string",
+                          "example": "104505526065633"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Too Many Requests"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Internal server error"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Partner Portal PIX Send Message Apis",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io"
+    }
+  ],
+  "paths": {
+    "/partner/app/{appId}/v3/message": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "PIX Template Message",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "messaging_product": "whatsapp",
+                  "recipient_type": "individual",
+                  "to": "551197293xxxx",
+                  "type": "template",
+                  "template": {
+                    "name": "pix_test_template",
+                    "language": {
+                      "policy": "deterministic",
+                      "code": "en"
+                    },
+                    "components": [
+                      {
+                        "type": "button",
+                        "sub_type": "order_details",
+                        "index": 0,
+                        "parameters": [
+                          {
+                            "type": "action",
+                            "action": {
+                              "order_details": {
+                                "reference_id": "001517",
+                                "type": "digital-goods",
+                                "payment_type": "br",
+                                "payment_settings": [
+                                  {
+                                    "type": "pix_dynamic_code",
+                                    "pix_dynamic_code": {
+                                      "code": "00020101021226900014br.gov.bcb.pix2568pix.sicoob.com.br/qr/payload/v2/085e4c08-dede-404f-b312-6566c55d4b105204000053039865802BR5925VINICIUS SOARES DA SILVEI6013Nao_informado62070503***63041235",
+                                      "merchant_name": "Account holder name",
+                                      "key": "2461684000xxxx",
+                                      "key_type": "CNPJ"
+                                    }
+                                  }
+                                ],
+                                "currency": "BRL",
+                                "total_amount": {
+                                  "value": 100,
+                                  "offset": 100
+                                },
+                                "order": {
+                                  "status": "pending",
+                                  "tax": {
+                                    "value": 0,
+                                    "offset": 100,
+                                    "description": "optional text"
+                                  },
+                                  "items": [
+                                    {
+                                      "retailer_id": "1234567",
+                                      "name": "Cake",
+                                      "amount": {
+                                        "value": 100,
+                                        "offset": 100
+                                      },
+                                      "quantity": 1
+                                    }
+                                  ],
+                                  "subtotal": {
+                                    "value": 100,
+                                    "offset": 100
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Your app token, please refer [**Get access token api**](https://partner-docs.gupshup.io/reference/get_partner-app-appid-token#/) to get the token from partner documentation.",
+            "example": "sk_61b3021c97214370b341f8baaae0xxxx",
+            "required": true
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Unique identifier of the app.",
+            "example": "9e97650d-xxxx-xxxx-xxxx-4cdf47c3fa68"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "messages": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "GUPSHUP_MESSAGE_ID"
+                          }
+                        }
+                      },
+                      "example": [
+                        {
+                          "id": "GUPSHUP_MESSAGE_ID"
+                        }
+                      ]
+                    },
+                    "messaging_product": {
+                      "type": "string",
+                      "example": "whatsapp"
+                    },
+                    "contacts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "input": {
+                            "type": "string",
+                            "example": "DESTINATION_PHONE_NO"
+                          },
+                          "wa_id": {
+                            "type": "string",
+                            "example": "DESTINATION_PHONE_NO"
+                          }
+                        }
+                      },
+                      "example": [
+                        {
+                          "input": "DESTINATION_PHONE_NO",
+                          "wa_id": "DESTINATION_PHONE_NO"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Callback Billing must be enabled for this API"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Authentication Failed"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

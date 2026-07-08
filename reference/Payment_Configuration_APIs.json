@@ -1,0 +1,581 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Payment Configuration API",
+    "description": "APIs for managing payment configurations",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io"
+    }
+  ],
+  "paths": {
+    "/{appId}/payment/configurations": {
+      "get": {
+        "summary": "Fetch all payment configurations",
+        "operationId": "getAllPaymentConfigurations",
+        "tags": [
+          "Payment Configuration"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "sk_3454991ea7724926b8ce6fbfe5e5xxxx",
+            "description": "Your app token, please refer [**Get access token api**](https://docs.gupshup.io/reference/get_partner-app-appid-token) to get the token from partner documentation."
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "description": "Unique identifier of the app",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved payment configurations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentConfigurationResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/{appId}/payment/configurations/{configurationName}": {
+      "get": {
+        "summary": "Fetch specific payment configuration",
+        "operationId": "getSpecificPaymentConfiguration",
+        "tags": [
+          "Payment Configuration"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "sk_3454991ea7724926b8ce6fbfe5e5xxxx",
+            "description": "Your app token, please refer [**Get access token api**](https://docs.gupshup.io/reference/get_partner-app-appid-token) to get the token from partner documentation."
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "description": "Unique identifier of the app",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "configurationName",
+            "in": "path",
+            "required": true,
+            "description": "Name of the payment configuration",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved specific payment configuration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpecificPaymentConfigurationResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/{appId}/payment/configuration": {
+      "post": {
+        "summary": "Create payment configuration",
+        "operationId": "createPaymentConfiguration",
+        "tags": [
+          "Payment Configuration"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "sk_3454991ea7724926b8ce6fbfe5e5xxxx",
+            "description": "Your app token, please refer [**Get access token api**](https://docs.gupshup.io/reference/get_partner-app-appid-token) to get the token from partner documentation."
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "description": "Unique identifier of the app",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentConfigurationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully created payment configuration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentGatewayResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "429": {
+            "$ref": "#/components/responses/TooManyRequests"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/{appId}/payment/configuration/regenerate": {
+      "post": {
+        "summary": "Regenerate payment link",
+        "operationId": "regeneratePaymentConfigurationLink",
+        "tags": [
+          "Payment Configuration"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "sk_3454991ea7724926b8ce6fbfe5e5xxxx",
+            "description": "Your app token, please refer [**Get access token api**](https://docs.gupshup.io/reference/get_partner-app-appid-token) to get the token from partner documentation."
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "description": "Unique identifier of the app",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestBodyParams"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully regenerated payment link",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegeneratePaymentLinkResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/{appId}/payment/configuration/remove": {
+      "post": {
+        "summary": "Remove payment configuration",
+        "operationId": "removePaymentConfiguration",
+        "tags": [
+          "Payment Configuration"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "sk_3454991ea7724926b8ce6fbfe5e5xxxx",
+            "description": "Your app token, please refer [**Get access token api**](https://docs.gupshup.io/reference/get_partner-app-appid-token) to get the token from partner documentation."
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "description": "Unique identifier of the app",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequestBodyParameters"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully removed payment configuration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RemovePaymentConfigurationResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/UnauthorizedError"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PaymentConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "payment_configurations": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PaymentConfiguration"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "SpecificPaymentConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentConfiguration"
+            }
+          }
+        }
+      },
+      "PaymentConfiguration": {
+        "type": "object",
+        "properties": {
+          "configuration_name": {
+            "type": "string",
+            "example": "payment_config_1"
+          },
+          "merchant_category_code": {
+            "$ref": "#/components/schemas/MerchantCategoryCode"
+          },
+          "purpose_code": {
+            "$ref": "#/components/schemas/PurposeCode"
+          },
+          "status": {
+            "type": "string",
+            "example": "ACTIVE"
+          },
+          "provider_mid": {
+            "type": "string",
+            "example": "MERCHANT123"
+          },
+          "provider_name": {
+            "type": "string",
+            "example": "RazorPay"
+          },
+          "created_timestamp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1647259800000
+          },
+          "updated_timestamp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1647259800000
+          }
+        }
+      },
+      "MerchantCategoryCode": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "example": "5411"
+          },
+          "description": {
+            "type": "string",
+            "example": "Grocery Stores, Supermarkets"
+          }
+        }
+      },
+      "PurposeCode": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "example": "00"
+          },
+          "description": {
+            "type": "string",
+            "example": "Purchase of goods and services"
+          }
+        }
+      },
+      "PaymentGatewayResponse": {
+        "type": "object",
+        "properties": {
+          "oauth_url": {
+            "type": "string",
+            "example": "https://oauth.provider.com/auth"
+          },
+          "expiration": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1647259800000
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "RegeneratePaymentLinkResponse": {
+        "type": "object",
+        "properties": {
+          "oauth_url": {
+            "type": "string",
+            "example": "https://oauth.provider.com/auth"
+          },
+          "expiration": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1647259800000
+          }
+        }
+      },
+      "RemovePaymentConfigurationResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "PaymentConfigurationRequest": {
+        "type": "object",
+        "required": [
+          "configuration_name",
+          "provider_name"
+        ],
+        "properties": {
+          "configuration_name": {
+            "type": "string",
+            "example": "payment_config_1"
+          },
+          "purpose_code": {
+            "type": "string",
+            "example": "PURCHASE"
+          },
+          "merchant_category_code": {
+            "type": "string",
+            "example": "5411"
+          },
+          "provider_name": {
+            "type": "string",
+            "example": "UPI"
+          },
+          "redirect_url": {
+            "type": "string",
+            "example": "https://merchant.com/callback"
+          },
+          "merchant_vpa": {
+            "type": "string",
+            "example": "merchant@upi"
+          }
+        }
+      },
+      "RequestBodyParams": {
+        "type": "object",
+        "required": [
+          "configuration_name",
+          "redirect_url"
+        ],
+        "properties": {
+          "configuration_name": {
+            "type": "string",
+            "example": "payment_config_1"
+          },
+          "redirect_url": {
+            "type": "string",
+            "example": "https://merchant.com/callback"
+          }
+        }
+      },
+      "RequestBodyParameters": {
+        "type": "object",
+        "required": [
+          "configuration_name"
+        ],
+        "properties": {
+          "configuration_name": {
+            "type": "string",
+            "example": "payment_config_2"
+          }
+        }
+      },
+      "InternalServerError": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "message": {
+            "type": "string",
+            "example": "Internal Server Error"
+          }
+        }
+      },
+      "UnauthorizedAccess": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "message": {
+            "type": "string",
+            "example": "Authentication Failed"
+          }
+        }
+      },
+      "TooManyRequests": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "Too Many Requests"
+          },
+          "status": {
+            "type": "string",
+            "example": "error"
+          }
+        }
+      }
+    },
+    "responses": {
+      "UnauthorizedError": {
+        "description": "Authentication information is missing or invalid",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/UnauthorizedAccess"
+            }
+          }
+        }
+      },
+      "InternalServerError": {
+        "description": "Internal Server Error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/InternalServerError"
+            }
+          }
+        }
+      },
+      "TooManyRequests": {
+        "description": "Too many requests",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/TooManyRequests"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

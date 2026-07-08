@@ -1,0 +1,295 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Bulk Update App Configuration For All Partner Apps",
+    "version": "1.0.0",
+    "description": "Apply the same configuration change to every WhatsApp app linked to your partner account in a single request — instead of updating apps one by one.\n\nYou receive an immediate confirmation that the update has been queued. Partner Portal processes all apps in the background and emails the partner admin when finished, including a success/failure summary. If any apps could not be updated, a CSV report is attached to the email listing the affected app IDs and reasons.\n\n**Who can use this:** Partner Admin or Partner User for the account.\n\n**Who receives the result:** Partner admin email on file."
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io"
+    }
+  ],
+  "paths": {
+    "/partner/account/apps/config": {
+      "put": {
+        "tags": [
+          "Partner"
+        ],
+        "summary": "Apply a configuration change to all partner apps at once",
+        "description": "Use this API when you need to roll out the **same setting across all WhatsApp apps** under your partner account — for example, enabling a feature flag for every linked app.\n\n**How it works**\n1. Submit the configuration you want applied, along with your Partner ID.\n2. You receive instant confirmation and the total number of apps queued.\n3. Updates run in the background — you do not need to wait on the API call.\n4. The partner admin receives an email when processing completes.\n\n**Important:** There is no job tracking ID. The completion email is how you know the update has finished.\n\n**Email outcomes**\n- All apps succeed → success email with summary counts; no attachment.\n- Some apps fail → email with summary plus a CSV listing failed app IDs and error reasons.\n\n**Access:** Partner Admin or Partner User. Partner ID must match your logged-in account. Rate limit: 1 requests per 60 seconds.",
+        "operationId": "updatePartnerAppConfig",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "<PARTNER_TOKEN>",
+            "description": "Your partner token, please refer [**partner token api**](https://partner-docs.gupshup.io/reference/post_partner-account-login) to get the token from partner documentation.",
+            "required": true
+          },
+          {
+            "name": "partnerId",
+            "in": "query",
+            "required": true,
+            "description": "Your Partner ID. Must match the partner account you are logged in as.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "The configuration you want applied to every linked app. Use the same JSON you would send for a single-app config update — it will be applied to all apps under the partner.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppConfigUpdateRequest"
+              },
+              "example": {
+                "enableBSUIDV3": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "$ref": "#/components/responses/202"
+          },
+          "400": {
+            "description": "The request could not be accepted — Partner ID is missing, the partner account was not found, or no configuration was provided in the request body.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "partnerIdRequired": {
+                    "summary": "Missing partnerId",
+                    "value": {
+                      "status": "error",
+                      "message": "partnerId is required"
+                    }
+                  },
+                  "partnerNotFound": {
+                    "summary": "Partner not found",
+                    "value": {
+                      "status": "error",
+                      "message": "Partner does not exist"
+                    }
+                  },
+                  "emptyBody": {
+                    "summary": "Empty request body",
+                    "value": {
+                      "status": "error",
+                      "message": "Request body is required"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "You are not signed in or your partner token is invalid. Please log in and try again.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Unauthorised access to the resource. Please review request parameters and headers and retry"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "You do not have permission to run this update — either the Partner ID does not match your account, or your user role is not allowed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "examples": {
+                  "partnerMismatch": {
+                    "summary": "Partner mismatch",
+                    "value": {
+                      "status": "error",
+                      "message": "Partner mismatch"
+                    }
+                  },
+                  "accessDenied": {
+                    "summary": "Insufficient role",
+                    "value": {
+                      "status": "error",
+                      "message": "Forbidden - no permissions to access resource"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No WhatsApp apps are linked to this partner account. Link apps before running a bulk config update.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "No apps found for partner: 4826"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many bulk update requests in a short time. Please wait and try again (limit: 10 requests per 60 seconds).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Too Many Requests"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Something went wrong on our side. Please try again later or contact Gupshup support if the issue continues.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Internal server error. Please try again later and If Issue still persist than contact Gupshup Dev Support"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AppConfigUpdateRequest": {
+        "type": "object",
+        "description": "Configuration settings to apply to each linked app (for example, enabling or disabling a feature). The exact fields depend on the setting you are updating.",
+        "additionalProperties": true,
+        "example": {
+          "enableBSUIDV3": true
+        }
+      },
+      "PartnerAppConfigUpdateAcceptedResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "message",
+          "partnerId",
+          "totalApps"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Indicates the bulk update was successfully queued",
+            "example": "success"
+          },
+          "message": {
+            "type": "string",
+            "description": "Confirmation message — processing continues in the background and the partner admin will be emailed when complete",
+            "example": "App config update queued for partner 48xx A summary will be emailed to the partner admin when processing completes."
+          },
+          "partnerId": {
+            "type": "string",
+            "description": "The partner account this bulk update applies to",
+            "example": "48xx"
+          },
+          "totalApps": {
+            "type": "string",
+            "description": "How many apps were queued for update — check the partner admin email for final success/failure counts",
+            "example": "221"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "error"
+            ],
+            "description": "Error status",
+            "example": "error"
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message describing what went wrong",
+            "example": "Partner does not exist"
+          },
+          "details": {
+            "type": "object",
+            "description": "Additional error details (optional)",
+            "additionalProperties": true,
+            "nullable": true
+          }
+        }
+      }
+    },
+    "responses": {
+      "202": {
+        "description": "Your bulk update has been queued successfully. You can continue other work — the partner admin will receive an email with the final results when all apps have been processed.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/PartnerAppConfigUpdateAcceptedResponse"
+            },
+            "example": {
+              "status": "success",
+              "message": "App config update queued for partner 48xx. A summary will be emailed to the partner admin when processing completes.",
+              "partnerId": "48xx",
+              "totalApps": "221"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-api-metadata": {
+    "implementation": {
+      "controller": "io.gupshup.partner.api.controller.PartnerDetailsRoute",
+      "implementation": "io.gupshup.partner.api.controller.impl.PartnerDetailsRouteImpl",
+      "service": "io.gupshup.partner.common.services.impl.PartnerDetailsServiceImpl",
+      "method": "queuePartnerAppConfigUpdate"
+    },
+    "features": {
+      "authentication": "JWT Bearer Token",
+      "authorization": "Role-based (PARTNER_ADMIN, PARTNER_USER)",
+      "rateLimit": {
+        "enabled": true,
+        "limit": 10,
+        "window": "60 seconds"
+      },
+      "monitoring": {
+        "enabled": true,
+        "annotation": "@MonitorAPIMetrics"
+      },
+      "async": {
+        "responseCode": 202,
+        "completionNotification": "Email to partner admin with optional failure CSV"
+      }
+    }
+  }
+}

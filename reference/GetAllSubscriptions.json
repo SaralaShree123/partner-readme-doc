@@ -1,0 +1,259 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Get subscription API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io"
+    }
+  ],
+  "paths": {
+    "/partner/app/{appId}/subscription": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Get All Subscriptions",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "sk_343sk******"
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "57d9179b-7412-4621-bf86-57ee1962fd12"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "subscriptions": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "active": {
+                            "type": "boolean"
+                          },
+                          "appId": {
+                            "type": "string",
+                            "example": "57d9179b-7412-4621-bf86-57ee1962fd12"
+                          },
+                          "createdOn": {
+                            "type": "integer",
+                            "format": "int64",
+                            "example": "1735818105594"
+                          },
+                          "id": {
+                            "type": "string",
+                            "example": "29040"
+                          },
+                          "mode": {
+                            "type": "integer",
+                            "format": "int32",
+                            "example": "16383"
+                          },
+                          "modes": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "0": {
+                                  "type": "string",
+                                  "example": "S"
+                                },
+                                "1": {
+                                  "type": "string",
+                                  "example": "E"
+                                },
+                                "2": {
+                                  "type": "string",
+                                  "example": "N"
+                                },
+                                "3": {
+                                  "type": "string",
+                                  "example": "T"
+                                },
+                                "4": {
+                                  "type": "string",
+                                  "example": "V"
+                                },
+                                "5": {
+                                  "type": "string",
+                                  "example": "E"
+                                },
+                                "6": {
+                                  "type": "string",
+                                  "example": "R"
+                                },
+                                "7": {
+                                  "type": "string",
+                                  "example": "E"
+                                },
+                                "8": {
+                                  "type": "string",
+                                  "example": "D"
+                                },
+                                "9": {
+                                  "type": "string",
+                                  "example": "S"
+                                },
+                                "10": {
+                                  "type": "string",
+                                  "example": "A"
+                                },
+                                "11": {
+                                  "type": "string",
+                                  "example": "G"
+                                },
+                                "12": {
+                                  "type": "string",
+                                  "example": "E"
+                                }
+                              }
+                            },
+                            "example": [
+                              "SENT",
+                              "DELIVERED",
+                              "FLOWS_MESSAGE"
+                            ]
+                          },
+                          "modifiedOn": {
+                            "type": "integer",
+                            "format": "int64",
+                            "example": "1735818105594"
+                          },
+                          "showOnUI": {
+                            "type": "boolean"
+                          },
+                          "tag": {
+                            "type": "string",
+                            "example": "mm"
+                          },
+                          "url": {
+                            "type": "string",
+                            "example": "https://webhook.site/e1d58c71-2c14-4e82-90ce-4fd4c0caaf96"
+                          },
+                          "version": {
+                            "type": "integer",
+                            "format": "int32",
+                            "example": "3"
+                          }
+                        }
+                      },
+                      "example": [
+                        {
+                          "active": true,
+                          "appId": "57d9179b-7412-4621-bf86-57ee1962fd12",
+                          "createdOn": 1735818105594,
+                          "id": "29040",
+                          "mode": 16383,
+                          "modes": [
+                            "SENT",
+                            "DELIVERED",
+                            "READ",
+                            "DELETED",
+                            "OTHERS",
+                            "FAILED",
+                            "MESSAGE",
+                            "TEMPLATE",
+                            "ACCOUNT",
+                            "BILLING",
+                            "ENQUEUED",
+                            "FLOWS_MESSAGE",
+                            "PAYMENTS",
+                            "ALL"
+                          ],
+                          "modifiedOn": 1735818105594,
+                          "showOnUI": false,
+                          "tag": "mm",
+                          "url": "https://webhook.site/e1d58c71-2c14-4e82-90ce-4fd4c0caaf96",
+                          "version": 3
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "property1": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Too Many Requests"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Internal error occured"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

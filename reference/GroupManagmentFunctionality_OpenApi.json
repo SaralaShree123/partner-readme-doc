@@ -1,0 +1,779 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Partner Portal API - Group Management",
+    "description": "WhatsApp Group Management APIs for Partner Portal",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.gupshup.io"
+    },
+    "version": "3.0.0-SNAPSHOT"
+  },
+  "externalDocs": {
+    "description": "Gupshup Wiki Documentation",
+    "url": "https://www.gupshup.io/partner/docs"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/partner/app/{appId}/group": {
+      "post": {
+        "summary": "Create WhatsApp Group",
+        "description": "Creates a new WhatsApp group with specified participants and settings",
+        "operationId": "createGroup",
+        "tags": [
+          "Group Management"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Authorization"
+          },
+          {
+            "$ref": "#/components/parameters/AppId"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateGroupRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CreateGroupSuccess"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get All Active WhatsApp Groups",
+        "description": "Retrieves a paginated list of all active WhatsApp groups",
+        "operationId": "getAllGroups",
+        "tags": [
+          "Group Management"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Authorization"
+          },
+          {
+            "$ref": "#/components/parameters/AppId"
+          },
+          {
+            "$ref": "#/components/parameters/Limit"
+          },
+          {
+            "$ref": "#/components/parameters/After"
+          },
+          {
+            "$ref": "#/components/parameters/Before"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/GetAllGroupsSuccess"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/partner/app/{appId}/group/{groupId}": {
+      "get": {
+        "summary": "Get WhatsApp Group Details by Group ID",
+        "description": "Retrieves detailed information about a specific WhatsApp group",
+        "operationId": "getGroupById",
+        "tags": [
+          "Group Management"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Authorization"
+          },
+          {
+            "$ref": "#/components/parameters/AppId"
+          },
+          {
+            "$ref": "#/components/parameters/GroupId"
+          },
+          {
+            "$ref": "#/components/parameters/Fields"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/GetGroupByIdSuccess"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update WhatsApp Group Profile",
+        "description": "Updates WhatsApp group profile information",
+        "operationId": "updateGroupProfile",
+        "tags": [
+          "Group Management"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Authorization"
+          },
+          {
+            "$ref": "#/components/parameters/AppId"
+          },
+          {
+            "$ref": "#/components/parameters/GroupId"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateGroupProfileRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/UpdateGroupProfileSuccess"
+          },
+          "400": {
+            "$ref": "#/components/responses/UpdateGroupProfileBadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete WhatsApp Group",
+        "description": "Deletes a WhatsApp group permanently",
+        "operationId": "deleteGroup",
+        "tags": [
+          "Group Management"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Authorization"
+          },
+          {
+            "$ref": "#/components/parameters/AppId"
+          },
+          {
+            "$ref": "#/components/parameters/GroupId"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteGroupRequest"
+              },
+              "example": {
+                "messaging_product": "whatsapp"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DeleteGroupSuccess"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/partner/app/{appId}/group/{groupId}/invite_link": {
+      "post": {
+        "summary": "Create WhatsApp Group Invite Link",
+        "description": "Creates a new invite link for a WhatsApp group",
+        "operationId": "createGroupInviteLink",
+        "tags": [
+          "Group Management"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Authorization"
+          },
+          {
+            "$ref": "#/components/parameters/AppId"
+          },
+          {
+            "$ref": "#/components/parameters/GroupId"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateInviteLinkRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CreateInviteLinkSuccess"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/partner/app/{appId}/group/{groupId}/participants": {
+      "delete": {
+        "summary": "Remove WhatsApp Group Participants",
+        "description": "Removes one or more participants from a WhatsApp group",
+        "operationId": "removeGroupParticipants",
+        "tags": [
+          "Group Management"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Authorization"
+          },
+          {
+            "$ref": "#/components/parameters/AppId"
+          },
+          {
+            "$ref": "#/components/parameters/GroupId"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveParticipantsRequest"
+              },
+              "example": {
+                "messaging_product": "whatsapp",
+                "participants": [
+                  {
+                    "user": "91738518xxxx"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/RemoveParticipantsSuccess"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "Authorization": {
+        "name": "Authorization",
+        "in": "header",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "sk_987654xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "description": "Your app token, please refer [**Get access token api**](https://partner-docs.gupshup.io/reference/get_partner-app-appid-token) to get the token from partner documentation."
+      },
+      "AppId": {
+        "name": "appId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "657c0203-0b4d-xxxx-xxxx-xxxxxxx35a16",
+        "description": "The unique identifier of the partner application"
+      },
+      "GroupId": {
+        "name": "groupId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "Y2FwaV9ncm91cDo5MTg5Mjk4NzQyNzg6MTIwMzYzNDxxxxxxxxxxxx",
+        "description": "The WhatsApp group ID"
+      },
+      "Limit": {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100,
+          "default": 10
+        },
+        "example": 20,
+        "description": "Maximum number of items to return per page"
+      },
+      "After": {
+        "name": "after",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "description": "Cursor for pagination - retrieve items after this cursor"
+      },
+      "Before": {
+        "name": "before",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "description": "Cursor for pagination - retrieve items before this cursor"
+      },
+      "Fields": {
+        "name": "fields",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "example": "participants,admins,subject,description",
+        "description": "Comma-separated list of fields to include in response"
+      }
+    },
+    "schemas": {
+      "CreateGroupRequest": {
+        "type": "object",
+        "required": [
+          "messaging_product",
+          "subject"
+        ],
+        "properties": {
+          "messaging_product": {
+            "type": "string",
+            "example": "whatsapp"
+          },
+          "subject": {
+            "type": "string",
+            "example": "My WhatsApp Group"
+          },
+          "description": {
+            "type": "string",
+            "example": "Group description"
+          }
+        }
+      },
+      "UpdateGroupProfileRequest": {
+        "type": "object",
+        "properties": {
+          "messaging_product": {
+            "type": "string",
+            "example": "whatsapp"
+          },
+          "subject": {
+            "type": "string",
+            "example": "Updated Group Name"
+          },
+          "description": {
+            "type": "string",
+            "example": "Updated description"
+          },
+          "file_type": {
+            "type": "string",
+            "example": "image/jpeg"
+          },
+          "file": {
+            "type": "string",
+            "format": "binary"
+          }
+        }
+      },
+      "DeleteGroupRequest": {
+        "type": "object",
+        "required": [
+          "messaging_product"
+        ],
+        "properties": {
+          "messaging_product": {
+            "type": "string",
+            "example": "whatsapp"
+          }
+        }
+      },
+      "CreateInviteLinkRequest": {
+        "type": "object",
+        "required": [
+          "messaging_product"
+        ],
+        "properties": {
+          "messaging_product": {
+            "type": "string",
+            "example": "whatsapp"
+          }
+        }
+      },
+      "DeleteInviteLinkRequest": {
+        "type": "object",
+        "required": [
+          "messaging_product"
+        ],
+        "properties": {
+          "messaging_product": {
+            "type": "string",
+            "example": "whatsapp"
+          }
+        }
+      },
+      "RemoveParticipantsRequest": {
+        "type": "object",
+        "required": [
+          "messaging_product",
+          "participants"
+        ],
+        "properties": {
+          "messaging_product": {
+            "type": "string",
+            "example": "whatsapp"
+          },
+          "participants": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "user": {
+                  "type": "string"
+                }
+              }
+            },
+            "example": [
+              {
+                "user": "91738518xxxx"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "responses": {
+      "CreateGroupSuccess": {
+        "description": "Group created successfully",
+        "content": {
+          "application/json": {
+            "example": {
+              "messaging_product": "whatsapp",
+              "request_id": "0D4B30CD472BE1A554C75072A5311AB4",
+              "status": "success"
+            }
+          }
+        }
+      },
+      "GetAllGroupsSuccess": {
+        "description": "Groups retrieved successfully",
+        "content": {
+          "application/json": {
+            "example": {
+              "data": [
+                {
+                  "creation_timestamp": 1761899043,
+                  "id": "Y2FwaV9ncm91cDo5MTg5Mjk4NzQyNzg6MTIwMzYzNDIwMTAzNxxxxxx",
+                  "subject": "Test PP Grup 2"
+                },
+                {
+                  "creation_timestamp": 1761886978,
+                  "id": "Y2FwaV9ncm91cDo5MTg5Mjk4NzQyNzg6MTIwMzYzNDIxxxxxxxxxxx",
+                  "subject": "New Partner Group"
+                }
+              ],
+              "paging": {
+                "cursors": {
+                  "after": "eyJvZAmZAzZAXQiOjEsInZAlcnNpb25JZACI6IjE3NjE5MDMzMDM2NTE5NDM5Mjcixxxxzz",
+                  "before": "eyJvZAmZAzZAXQiOjAsInZAlcnNpb25JZACI6IjE3NjE5MDMzMDM2NTExxxxxxx"
+                }
+              },
+              "status": "success"
+            }
+          }
+        }
+      },
+      "GetGroupByIdSuccess": {
+        "description": "Group details retrieved successfully",
+        "content": {
+          "application/json": {
+            "example": {
+              "description": "This Group is only for testing",
+              "id": "Y2FwaV9ncm91cDo5MTg5Mjk4NzQyNzg6MTIwMzYzNDxxxxxxxxxxxx",
+              "messaging_product": "whatsapp",
+              "participants": [
+                {
+                  "wa_id": "91738518xxxx"
+                }
+              ],
+              "status": "success",
+              "subject": "New Partner Group",
+              "total_participant_count": 1
+            }
+          }
+        }
+      },
+      "UpdateGroupProfileSuccess": {
+        "description": "Group profile updated successfully",
+        "content": {
+          "application/json": {
+            "example": {
+              "messaging_product": "whatsapp",
+              "request_id": "A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6",
+              "status": "success"
+            }
+          }
+        }
+      },
+      "DeleteGroupSuccess": {
+        "description": "Group deleted successfully",
+        "content": {
+          "application/json": {
+            "example": {
+              "messaging_product": "whatsapp",
+              "request_id": "F5434BE744A44B937DCE88BC99A62C9F",
+              "status": "success"
+            }
+          }
+        }
+      },
+      "CreateInviteLinkSuccess": {
+        "description": "Invite link created successfully",
+        "content": {
+          "application/json": {
+            "example": {
+              "invite_link": "https://chat.whatsapp.com/AbCdEfGh",
+              "messaging_product": "whatsapp",
+              "status": "success"
+            }
+          }
+        }
+      },
+      "DeleteInviteLinkSuccess": {
+        "description": "Invite link deleted successfully",
+        "content": {
+          "application/json": {
+            "example": {
+              "messaging_product": "whatsapp",
+              "request_id": "B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7",
+              "status": "success"
+            }
+          }
+        }
+      },
+      "RemoveParticipantsSuccess": {
+        "description": "Participants removed successfully",
+        "content": {
+          "application/json": {
+            "example": {
+              "messaging_product": "whatsapp",
+              "request_id": "C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8",
+              "status": "success"
+            }
+          }
+        }
+      },
+      "BadRequest": {
+        "description": "Bad Request",
+        "content": {
+          "application/json": {
+            "examples": {
+              "invalidParameters": {
+                "summary": "Invalid Parameters",
+                "value": {
+                  "status": "error",
+                  "message": "Invalid request parameters"
+                }
+              },
+              "groupNotEnabled": {
+                "summary": "Group Not Enabled",
+                "value": {
+                  "status": "error",
+                  "message": "Group is not enabled for this app"
+                }
+              },
+              "capiOnly": {
+                "summary": "CAPI Only Feature",
+                "value": {
+                  "status": "error",
+                  "message": "Feature available only for CAPI apps"
+                }
+              }
+            }
+          }
+        }
+      },
+      "UpdateGroupProfileBadRequest": {
+        "description": "Bad Request",
+        "content": {
+          "application/json": {
+            "examples": {
+              "invalidParameters": {
+                "summary": "Invalid Parameters",
+                "value": {
+                  "status": "error",
+                  "message": "Invalid request parameters"
+                }
+              },
+              "photoSizeTooLarge": {
+                "summary": "Photo Size Too Large",
+                "value": {
+                  "status": "error",
+                  "message": "Group profile photo size is greater than permitted size"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Unauthorized": {
+        "description": "Unauthorized",
+        "content": {
+          "application/json": {
+            "example": {
+              "status": "error",
+              "message": "Unauthorised access to the resource. Please review request parameters and headers and retry"
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "Forbidden",
+        "content": {
+          "application/json": {
+            "example": {
+              "status": "error",
+              "message": "Forbidden - no permissions to access resource"
+            }
+          }
+        }
+      },
+      "NotFound": {
+        "description": "Not Found",
+        "content": {
+          "application/json": {
+            "example": {
+              "status": "error",
+              "message": "Resource not found"
+            }
+          }
+        }
+      },
+      "InternalServerError": {
+        "description": "Internal Server Error",
+        "content": {
+          "application/json": {
+            "example": {
+              "status": "error",
+              "message": "Internal server error. Please try again later and If Issue still persist than contact Gupshup Dev Support"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Update Specific App Subscription",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io"
+    }
+  ],
+  "paths": {
+    "/partner/app/{appId}/subscription/{subscriptionId}": {
+      "put": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Update App Subscription",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "Optional",
+                    "example": "<callback_url>"
+                  },
+                  "tag": {
+                    "type": "string",
+                    "description": "Optional",
+                    "example": "<name_tag_for_url>"
+                  },
+                  "version": {
+                    "type": "integer",
+                    "description": "Optional",
+                    "example": "<Version>"
+                  },
+                  "modes": {
+                    "type": "string",
+                    "description": "Optional",
+                    "example": "<MODES>"
+                  },
+                  "doCheck": {
+                    "type": "boolean",
+                    "description": "Optional",
+                    "example": "<for_bypassing_url_check>"
+                  },
+                  "active": {
+                    "type": "boolean",
+                    "description": "Optional",
+                    "example": "<true/false>"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "sk_3454991ea7724926b8ce6fbfe5e5xxxx"
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "657c0203-xxxx-xxxx-bbf5-a679cfa35a16"
+          },
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "example": "3xx95"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "403": {
+            "$ref": "#/components/responses/403"
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Too Many Requests"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Internal error occured"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "This API endpoint enables partners to update configuration of a specific webhook subscription by its unique subscription ID. This allows for granular modifications to individual subscriptions without affecting other webhooks or recreating the subscription. Common use cases include updating webhook URLs, changing event modes, modifying metadata, or toggling subscription status."
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "example": {
+              "status": "success",
+              "subscription": {
+                "active": true,
+                "appId": "657c0203-xxxx-xxxx-bbf5-a679cfa35a16",
+                "createdOn": 1739862125507,
+                "id": "3xx95",
+                "latencyBucket": "lt_1_s",
+                "mode": 1025,
+                "modes": [
+                  "SENT",
+                  "ENQUEUED"
+                ],
+                "modifiedOn": 1739870558358,
+                "showOnUI": false,
+                "tag": "V33i4",
+                "url": "https://01hqjda5pbywgv7xw5e9ckd5e800-51132d4cc32709e9078d.requestinspector.com",
+                "version": 2
+              }
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Bad Request",
+        "content": {
+          "application/json": {
+            "example": {
+              "status": "error",
+              "message": "Subscription Does Not Exist"
+            }
+          }
+        }
+      },
+      "403": {
+        "description": "Forbidden",
+        "content": {
+          "application/json": {
+            "example": {
+              "status": "error",
+              "message": "Not Subscription Owner"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Contacts",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io"
+    }
+  ],
+  "paths": {
+    "/partner/app/{appId}/v3/message": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Contact Message",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "messaging_product": "whatsapp",
+                  "to": "9173861902xx",
+                  "type": "contacts",
+                  "contacts": [
+                    {
+                      "addresses": [
+                        {
+                          "street": "1 Lucky Shrub Way",
+                          "city": "Menlo Park",
+                          "state": "CA",
+                          "zip": "94025",
+                          "country": "United States",
+                          "country_code": "US",
+                          "type": "Office"
+                        },
+                        {
+                          "street": "1 Hacker Way",
+                          "city": "Menlo Park",
+                          "state": "CA",
+                          "zip": "94025",
+                          "country": "United States",
+                          "country_code": "US",
+                          "type": "Pop-Up"
+                        }
+                      ],
+                      "birthday": "1999-01-23",
+                      "emails": [
+                        {
+                          "email": "bjohnson@luckyshrub.com",
+                          "type": "Work"
+                        },
+                        {
+                          "email": "bjohnson@luckyshrubplants.com",
+                          "type": "Work (old)"
+                        }
+                      ],
+                      "name": {
+                        "formatted_name": "Barbara J. Johnson",
+                        "first_name": "Barbara",
+                        "last_name": "Johnson",
+                        "middle_name": "Joana",
+                        "suffix": "Esq.",
+                        "prefix": "Dr."
+                      },
+                      "org": {
+                        "company": "Lucky Shrub",
+                        "department": "Legal",
+                        "title": "Lead Counsel"
+                      },
+                      "phones": [
+                        {
+                          "phone": "+16505559999",
+                          "type": "Landline"
+                        },
+                        {
+                          "phone": "+19175559999",
+                          "type": "Mobile",
+                          "wa_id": "19175559999"
+                        }
+                      ],
+                      "urls": [
+                        {
+                          "url": "https://www.luckyshrub.com",
+                          "type": "Company"
+                        },
+                        {
+                          "url": "https://www.facebook.com/luckyshrubplants",
+                          "type": "Company (FB)"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Your app token, please refer [**Get access token api**](https://partner-docs.gupshup.io/reference/get_partner-app-appid-token#/) to get the token from partner documentation.",
+            "example": "sk_61b3021c97214370b341f8baaae0xxxx",
+            "required": true
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Unique identifier of the app.",
+            "example": "9e97650d-xxxx-xxxx-xxxx-4cdf47c3fa68"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "messages": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "GUPSHUP_MESSAGE_ID"
+                          }
+                        }
+                      },
+                      "example": [
+                        {
+                          "id": "GUPSHUP_MESSAGE_ID"
+                        }
+                      ]
+                    },
+                    "messaging_product": {
+                      "type": "string",
+                      "example": "whatsapp"
+                    },
+                    "contacts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "input": {
+                            "type": "string",
+                            "example": "DESTINATION_PHONE_NO"
+                          },
+                          "wa_id": {
+                            "type": "string",
+                            "example": "DESTINATION_PHONE_NO"
+                          }
+                        }
+                      },
+                      "example": [
+                        {
+                          "input": "DESTINATION_PHONE_NO",
+                          "wa_id": "DESTINATION_PHONE_NO"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Callback Billing must be enabled for this API"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Authentication Failed"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Use this API to send Contact messages"
+      }
+    }
+  }
+}

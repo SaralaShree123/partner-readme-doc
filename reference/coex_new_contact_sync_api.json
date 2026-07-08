@@ -1,0 +1,274 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Partner COEX Sync API",
+    "version": "1.0.0",
+    "description": "API to initiate WhatsApp contacts/history synchronization for an app."
+  },
+  "servers": [
+    {
+      "url": "https://partner.hupshup.io/partner"
+    }
+  ],
+  "paths": {
+    "/app/{appId}/coex/sync": {
+      "post": {
+        "tags": [
+          "Partner Linked Application"
+        ],
+        "summary": "Initiate Contacts/History Synchronization",
+        "description": "Initiates one-time synchronization for the app.\n\n- Use `syncType=smb_app_state_sync` to initiate contacts synchronization. On success, `smb_app_state_sync` webhooks are triggered for current contacts and future contact updates.\n- Use `syncType=history` to initiate message history synchronization. If the business has shared history, `history` webhooks are triggered.\n\nImportant:\n- This step can be performed only once.\n- To perform again, customer must offboard and complete Embedded Signup again.",
+        "operationId": "initiateCoexSync",
+        "parameters": [
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "description": "App identifier",
+            "schema": {
+              "type": "string"
+            },
+            "example": "6eb95af8b6f34f6f9f85f340f18f0f17"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "syncType"
+                ],
+                "properties": {
+                  "syncType": {
+                    "type": "string",
+                    "description": "Synchronization mode",
+                    "enum": [
+                      "smb_app_state_sync",
+                      "history"
+                    ],
+                    "example": "smb_app_state_sync"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "appApiKeyAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sync request accepted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "messaging_product": {
+                          "type": "string",
+                          "example": "whatsapp"
+                        },
+                        "request_id": {
+                          "type": "string",
+                          "description": "Identifier for the sync request",
+                          "example": "<REQUEST_ID>"
+                        }
+                      },
+                      "required": [
+                        "messaging_product",
+                        "request_id"
+                      ]
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "status"
+                  ]
+                },
+                "examples": {
+                  "success": {
+                    "value": {
+                      "data": {
+                        "messaging_product": "whatsapp",
+                        "request_id": "<REQUEST_ID>"
+                      },
+                      "status": "success"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request (invalid/missing syncType, invalid app)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Outcome of the request",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Human-readable error detail (e.g. missing or invalid syncType, invalid app)"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "message"
+                  ],
+                  "additionalProperties": true
+                },
+                "examples": {
+                  "syncTypeRequired": {
+                    "summary": "Missing or empty syncType",
+                    "value": {
+                      "status": "error",
+                      "message": "syncType is required"
+                    }
+                  },
+                  "invalidSyncType": {
+                    "summary": "syncType not one of the allowed values",
+                    "value": {
+                      "status": "error",
+                      "message": "syncType must be smb_app_state_sync or history"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized (missing/invalid Authorization header)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Outcome of the request",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Human-readable error detail when the Authorization header is missing or invalid"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "message"
+                  ],
+                  "additionalProperties": true
+                },
+                "examples": {
+                  "unauthorised": {
+                    "summary": "Missing or invalid Authorization",
+                    "value": {
+                      "status": "error",
+                      "message": "Unauthorised access to the resource. Please review request parameters and headers and retry"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden (no permission for app)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Outcome of the request",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Human-readable error detail when access to the app is forbidden"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "message"
+                  ],
+                  "additionalProperties": true
+                },
+                "examples": {
+                  "forbidden": {
+                    "summary": "No permission for app",
+                    "value": {
+                      "status": "error",
+                      "message": "Forbidden Access"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Outcome of the request",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Human-readable error detail for unexpected server failures"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "message"
+                  ],
+                  "additionalProperties": true
+                },
+                "examples": {
+                  "internalServerError": {
+                    "summary": "Generic server failure",
+                    "value": {
+                      "status": "error",
+                      "message": "Internal server error. Please try again later and If Issue still persist then contact Gupshup Dev Support"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "appApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization",
+        "description": "App API key in Authorization header. Example: `sk_xxx`"
+      }
+    }
+  }
+}

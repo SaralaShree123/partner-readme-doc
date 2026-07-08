@@ -1,0 +1,6 @@
+- post_api-v2-services-serviceid-goals
+- get_api-v2-services-serviceid-goals
+- post_api-v2-services-serviceid-goals-goalid-actions
+- get_api-v2-services-serviceid-goals-goalid
+- get_api-v2-services-serviceid-goals-goalid-versions
+- get_api-v2-services-serviceid-goals-goalid-versions-goalversionid

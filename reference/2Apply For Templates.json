@@ -1,0 +1,323 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "TemplateApis",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io"
+    }
+  ],
+  "tags": [
+    {
+      "name": "App"
+    }
+  ],
+  "paths": {
+    "/partner/app/{appId}/templates": {
+      "post": {
+        "tags": [
+          "App"
+        ],
+        "summary": "Apply For Templates",
+        "description": "Using this API, you can Create a template for a particular app",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "elementName",
+                  "category",
+                  "templateType",
+                  "content",
+                  "example",
+                  "vertical"
+                ],
+                "properties": {
+                  "elementName": {
+                    "type": "string",
+                    "description": "The name of a template. Element name is unique for a WABAs namespace.",
+                    "example": "ticket_check_url_4245343"
+                  },
+                  "languageCode": {
+                    "type": "string",
+                    "description": "Language code for the template. Refer to all the language codes [*here*](https://support.gupshup.io/hc/en-us/articles/360013321939).",
+                    "example": "en_US"
+                  },
+                  "category": {
+                    "type": "string",
+                    "description": "The category of your template. Possible Values: AUTHENTICATION, MARKETING and UTILITY.\nIf you submit the templates with the any other categories, you will receive an error Invalid category provided, kindly use category from these option AUTHENTICATION, MARKETING, UTILITY.",
+                    "enum": [
+                      "AUTHENTICATION",
+                      "MARKETING",
+                      "UTILITY"
+                    ],
+                    "example": "MARKETING"
+                  },
+                  "templateType": {
+                    "type": "string",
+                    "description": "The type of template: TEXT, IMAGE, LOCATION, VIDEO, DOCUMENT, PRODUCT and CATALOG",
+                    "enum": [
+                      "TEXT",
+                      "IMAGE",
+                      "LOCATION",
+                      "VIDEO",
+                      "DOCUMENT",
+                      "PRODUCT",
+                      "CATALOG"
+                    ],
+                    "example": "TEXT"
+                  },
+                  "vertical": {
+                    "type": "string",
+                    "description": "Character limit: 180",
+                    "example": "TEXT"
+                  },
+                  "content": {
+                    "type": "string",
+                    "description": "The body of the template. Character limit: 1028. For “Authentication” category the first line should be - {{1}} is your verification code.",
+                    "example": "your ticket has been confirmed for {{1}} persons on date {{2}}."
+                  },
+                  "header": {
+                    "type": "string",
+                    "description": "Header of the template. \n 1. Applicable for templateType = Text Character limit: 60. \n2. Not applicable for “Authentication” category and template type “CATALOG”",
+                    "example": "This is the header"
+                  },
+                  "footer": {
+                    "type": "string",
+                    "description": "Footer of the template. Character limit: 60. Not applicable for “Authentication” category, only set based on code_expiration_minutes value",
+                    "example": "This is the footer"
+                  },
+                  "buttons": {
+                    "type": "string",
+                    "description": "* Used only if your template has a CTA. An example is also submitted if a URL button has variable parameter. For “Authentication” category OTP button type is supported with two otp_type:\n\t1. COPY_CODE\n\t2. ONE_TAP\nIf otp_type is set to ONE_TAP. \n\n* Three additional parameters are required:\n\n\t1. autofill_text\n\t2. package_name\n\t3. signature_hash",
+                    "example": "[{\"type\":\"PHONE_NUMBER\",\"text\":\"Call Us\",\"phone_number\":\"+919872329959\"},{\"type\":\"URL\",\"text\":\"Book A Demo\",\"url\":\"https://bookins.gupshup.io/{{1}}\",\"example\":[\"https://bookins.gupshup.io/abc\"]}] or for “Authentication” category: [{\"type\":\"OTP\",\"otp_type\":\"COPY_CODE\",\"text\":\"Copy OTP\"},{\"type\":\"OTP\", “otp-type”: “ONE_TAP”, \"text\":\"Book A Demo\", \"autofill_text\": \"Autofill\", #One-tap buttons only \"package_name\": \"com.example.myapplication\" #One-tap buttons only , \"signature_hash\": \"K8a%2FAINcGX7\", #One-tap buttons only }]"
+                  },
+                  "example": {
+                    "type": "string",
+                    "description": "An example of the template.",
+                    "example": "your ticket has been confirmed for 4 persons on date 2020-05-04."
+                  },
+                  "enableSample": {
+                    "type": "boolean",
+                    "description": "Required for creating all types of templates.",
+                    "example": "true"
+                  },
+                  "allowTemplateCategoryChange": {
+                    "type": "boolean",
+                    "description": "Boolean value. If True, Meta will automatically update the category of the template as per the template content. Default value is False. If the category gets updated, you can view the oldCategory from the Get Templates API.",
+                    "example": "false"
+                  },
+                  "exampleHeader": {
+                    "type": "string",
+                    "description": "Not applicable for template type: CATALOG",
+                    "example": "This is the header"
+                  },
+                  "addSecurityRecommendation": {
+                    "type": "boolean",
+                    "description": "Optionally for \"Authentication\" category a security disclaimer is added to content - For your security, do not share this code.",
+                    "example": "true"
+                  },
+                  "codeExpirationMinutes": {
+                    "type": "integer",
+                    "description": "Optionally for “Authentication” category the following text is added to footer - This code expires in <NUM_MINUTES> minutes. Code expiry time should be between 1 and 90 minutes.",
+                    "example": "2"
+                  },
+                  "message_send_ttl_seconds": {
+                    "type": "integer",
+                    "description": "If we are unable to deliver a message to a WhatsApp user, we will retry the delivery for a period of time known as a time-to-live, TTL, or the message validity period. Valid message_send_ttl_seconds property values\nAuthentication templates: 30 to 900 seconds (30 secs to 15 mins)\nUtility templates: 30 to 43200 seconds (30 secs to 12 hours)\nMarketing templates: 43200 to 2592000 (12 hours to 30 days)",
+                    "example": "43200"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Your app token, please refer [**Get access token api**](https://www.gupshup.io/docs/partner/#collapse-TokenApis-App_7CGetAccessToken) to get the token from partner documentation.",
+            "example": "sk_61b3021c97214370b341f8baaae0xxxx"
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Unique identifier of the app.",
+            "example": "9e97650d-xxxx-xxxx-xxxx-4cdf47c3fa68"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "title": "Template success response schema",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "template": {
+                      "type": "object",
+                      "properties": {
+                        "appId": {
+                          "type": "string",
+                          "example": "a41b30f4-d202-4fdb-911e-3a8fbfbfb756"
+                        },
+                        "category": {
+                          "type": "string",
+                          "example": "MARKETING"
+                        },
+                        "containerMeta": {
+                          "type": "string",
+                          "example": "{\"appId\":\"a41b30f4-d202-4fdb-911e-3a8fbfbfb756\",\"data\":\"Your verification code is {{1}}.\",\"footer\":\"This is the footer\",\"sampleText\":\"Your verification code is 213.\",\"sampleMedia\":\"4::aW1hZ2UvcadG5n:ARYaMMMA2QvIXuQZdPjWVXTOqfoBU3n0L1Ftyg4w57yxi9nD105yQDvW2nu3-HNo9HGefxZ-Ig-HAi3YSsckwIsOEUwxSPatsxT0Niob30E63A:e:1634884682:2281283925530161:100033655335566:ARaBAxW-1L-ZRu6SMSg\",\"enableSample\":true,\"editTemplate\":false,\"allowTemplateCategoryChange\":false,\"addSecurityRecommendation\":false}"
+                        },
+                        "createdOn": {
+                          "type": "number",
+                          "example": 1695796030611
+                        },
+                        "data": {
+                          "type": "string",
+                          "example": "Your verification code is {{1}}.\\nThis is the footer"
+                        },
+                        "elementName": {
+                          "type": "string",
+                          "example": "ticket_check_url_3454562"
+                        },
+                        "id": {
+                          "type": "string",
+                          "example": "2dd50ba7-a9ab-4c9c-9cb3-3ad6c86c2acbe"
+                        },
+                        "languageCode": {
+                          "type": "string",
+                          "example": "en_us"
+                        },
+                        "languagePolicy": {
+                          "type": "string",
+                          "example": "deterministic"
+                        },
+                        "meta": {
+                          "type": "string",
+                          "example": "{\"example\":\"Your verification code is 213.\"}"
+                        },
+                        "modifiedOn": {
+                          "type": "number",
+                          "example": 1695796030611
+                        },
+                        "namespace": {
+                          "type": "string",
+                          "example": "9c7fe92f_2a48_40ec_83d0_69c62a772433"
+                        },
+                        "priority": {
+                          "type": "integer",
+                          "example": 1
+                        },
+                        "retry": {
+                          "type": "integer",
+                          "example": 0
+                        },
+                        "stage": {
+                          "type": "string",
+                          "example": "NONE"
+                        },
+                        "status": {
+                          "type": "string",
+                          "example": "PENDING"
+                        },
+                        "templateType": {
+                          "type": "string",
+                          "example": "TEXT"
+                        },
+                        "vertical": {
+                          "type": "string",
+                          "example": "Header"
+                        },
+                        "wabaId": {
+                          "type": "string",
+                          "example": "10450552656776"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Invalid app id provided"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "example": 400
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "You do not have the required permissions to access this API"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "example": 403
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Internal error occured"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "example": 500
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

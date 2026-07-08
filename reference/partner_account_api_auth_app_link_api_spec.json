@@ -1,0 +1,374 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Partner Portal API",
+    "description": "OpenAPI fragment for POST /partner/account/api/auth/appLink — link an app to the authenticated partner using app id and token (Partner Details).",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.gupshup.io"
+    },
+    "version": "3.0.0-SNAPSHOT"
+  },
+  "externalDocs": {
+    "description": "Gupshup Wiki Documentation",
+    "url": "https://www.gupshup.io/partner/docs"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io",
+      "description": "Generated server url"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Partner Details",
+      "description": "Partner account and profile APIs"
+    }
+  ],
+  "paths": {
+    "/partner/account/api/auth/appLink": {
+      "post": {
+        "tags": [
+          "Partner Details"
+        ],
+        "summary": "Link an app to Partner",
+        "description": "Links a WhatsApp (or partner) application to the authenticated partner account using the target `appId` and a linking `token`.",
+        "operationId": "appLinkUsingAppIdAndToken",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "description": "Partner portal JWT token.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "{PARTNER_TOKEN}"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "appId",
+                  "token"
+                ],
+                "properties": {
+                  "appId": {
+                    "type": "string",
+                    "description": "Application id to link."
+                  },
+                  "token": {
+                    "type": "string",
+                    "description": "Linking token associated with the application."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "Success envelope with linked PartnerApps entity.",
+                  "required": [
+                    "status",
+                    "partnerApps"
+                  ],
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "success"
+                      ],
+                      "example": "success"
+                    },
+                    "partnerApps": {
+                      "$ref": "#/components/schemas/PartnerAppsLinked"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "success",
+                  "partnerApps": {
+                    "id": "<app-id>",
+                    "name": "<app-name>",
+                    "phone": "<phone>",
+                    "walletId": null,
+                    "customerId": "<customer-id>",
+                    "email": null,
+                    "live": false,
+                    "preferredTimezone": null,
+                    "partnerId": 12345,
+                    "solutionId": null,
+                    "createdOn": 1712659200000,
+                    "modifiedOn": 1712659200000,
+                    "storageRegion": null,
+                    "partnerCreated": false,
+                    "currency": null,
+                    "cxpEnabled": false,
+                    "partnerUsage": false,
+                    "customerOrgId": null,
+                    "source": "SS",
+                    "stopped": false,
+                    "healthy": false,
+                    "nameSpace": null,
+                    "cap": 0
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request — e.g. MFA not enabled for the partner user, invalid parameters, or validation failure from linking logic.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "mfaNotEnabled": {
+                    "summary": "MFA not enabled",
+                    "value": {
+                      "status": "error",
+                      "message": "MFA is not enabled for this account"
+                    }
+                  },
+                  "invalidParameter": {
+                    "summary": "Invalid parameter",
+                    "value": {
+                      "status": "error",
+                      "message": "Invalid request parameter"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Unauthorised access to the resource. Please review request parameters and headers and retry"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden — caller lacks PARTNER_ADMIN or PARTNER_USER (or partner bypass policy blocks the operation).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found — resource or app could not be found for linking.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Internal server error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PartnerAppsLinked": {
+        "type": "object",
+        "description": "Partner application record after successful link.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Application id",
+            "example": "<app-id>"
+          },
+          "name": {
+            "type": "string",
+            "example": "<app-name>"
+          },
+          "phone": {
+            "type": "string",
+            "example": "<phone>"
+          },
+          "walletId": {
+            "type": "string",
+            "nullable": true,
+            "example": null
+          },
+          "customerId": {
+            "type": "string",
+            "example": "<customer-id>"
+          },
+          "email": {
+            "type": "string",
+            "nullable": true,
+            "example": null
+          },
+          "live": {
+            "type": "boolean",
+            "example": false
+          },
+          "preferredTimezone": {
+            "type": "string",
+            "nullable": true,
+            "example": null
+          },
+          "partnerId": {
+            "type": "integer",
+            "format": "int64",
+            "example": 12345
+          },
+          "solutionId": {
+            "type": "string",
+            "nullable": true,
+            "example": null
+          },
+          "createdOn": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Epoch milliseconds",
+            "example": 1712659200000
+          },
+          "modifiedOn": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Epoch milliseconds",
+            "example": 1712659200000
+          },
+          "storageRegion": {
+            "type": "string",
+            "nullable": true,
+            "example": null
+          },
+          "partnerCreated": {
+            "type": "boolean",
+            "example": false
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true,
+            "example": null
+          },
+          "cxpEnabled": {
+            "type": "boolean",
+            "example": false
+          },
+          "partnerUsage": {
+            "type": "boolean",
+            "example": false
+          },
+          "customerOrgId": {
+            "type": "string",
+            "nullable": true,
+            "example": null
+          },
+          "source": {
+            "type": "string",
+            "example": "SS"
+          },
+          "stopped": {
+            "type": "boolean",
+            "example": false
+          },
+          "healthy": {
+            "type": "boolean",
+            "example": false
+          },
+          "nameSpace": {
+            "type": "string",
+            "nullable": true,
+            "example": null
+          },
+          "cap": {
+            "type": "number",
+            "format": "double",
+            "example": 0
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Partner Portal API",
+    "description": "Partner Portal API documentation",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.gupshup.io"
+    },
+    "version": "3.0.0-SNAPSHOT"
+  },
+  "externalDocs": {
+    "description": "Gupshup Wiki Documentation",
+    "url": "https://www.gupshup.io/partner/docs"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/partner/app/{appId}/subscription/{subscriptionId}/analytics": {
+      "get": {
+        "summary": "Get analytics for a specific webhook subscription of an app",
+        "description": "Fetch callback health analytics such as latency, success and failure rates for a specific webhook subscription.",
+        "operationId": "getSubscriptionAnalytics",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "sk_987654xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "description": "Partner App Access Token"
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "657c0203-0b4d-4ba1-xxxx-a679cfa35a16",
+            "description": "App ID associated with the Partner App Token"
+          },
+          {
+            "name": "subscriptionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "2xxxx",
+            "description": "Subscription ID for which analytics are required"
+          },
+          {
+            "name": "aggBy",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "15m",
+                "1hr",
+                "6hr",
+                "12hr",
+                "1d",
+                "3d"
+              ],
+              "default": "1hr"
+            },
+            "example": "15m",
+            "description": "Aggregation interval for analytics timeline"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubscriptionAnalyticsSuccess"
+                },
+                "example": {
+                  "analytics": {
+                    "series": [
+                      {
+                        "averageLatency": 355,
+                        "failureCount": 0,
+                        "failureRate": 0,
+                        "maxLatency": 580,
+                        "successCount": 6,
+                        "timestamp": 1765434000000
+                      }
+                    ],
+                    "summary": {
+                      "averageLatency": 355,
+                      "failureCount": 0,
+                      "failureRate": 0,
+                      "maxLatency": 580,
+                      "successCount": 6,
+                      "timestamp": 1765436101084
+                    }
+                  },
+                  "status": "success"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "<Subscription specific error message>"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Too Many Requests"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "status": "error",
+                  "message": "Error while getting analytics"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SubscriptionAnalyticsSuccess": {
+        "type": "object",
+        "properties": {
+          "analytics": {
+            "$ref": "#/components/schemas/AnalyticsData"
+          },
+          "status": {
+            "type": "string",
+            "example": "success"
+          }
+        }
+      },
+      "AnalyticsData": {
+        "type": "object",
+        "properties": {
+          "series": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnalyticsSeries"
+            }
+          },
+          "summary": {
+            "$ref": "#/components/schemas/AnalyticsSeries"
+          }
+        }
+      },
+      "AnalyticsSeries": {
+        "type": "object",
+        "properties": {
+          "averageLatency": {
+            "type": "integer",
+            "example": 355
+          },
+          "failureCount": {
+            "type": "integer",
+            "example": 0
+          },
+          "failureRate": {
+            "type": "number",
+            "format": "double",
+            "example": 0
+          },
+          "maxLatency": {
+            "type": "integer",
+            "example": 580
+          },
+          "successCount": {
+            "type": "integer",
+            "example": 6
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1765434000000
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "message": {
+            "type": "string",
+            "example": "Error message"
+          }
+        }
+      }
+    }
+  }
+}

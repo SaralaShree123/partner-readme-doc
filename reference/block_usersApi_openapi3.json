@@ -1,0 +1,342 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Block user",
+    "description": "The Block Users API enables your business to block bad actors from contacting you.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io"
+    }
+  ],
+  "paths": {
+    "/partner/app/{appId}/user/blocklist": {
+      "get": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Get Blocked Users list",
+        "description": "Get a list of users that have been blocked for the specified app",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "sk_bec22f0257a344b09645401c8967xxxx"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Optional, default value is 100 if not specified"
+          },
+          {
+            "name": "after",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Optional, Specifies the starting point for the next set of results."
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "57d9179b-xxxx-xxxx-bf86-57ee1962fd12"
+          }
+        ],
+        "x-rate-limit": {
+          "rate": 10,
+          "period": "1 second"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_Get_blocked_users_list"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_Invalid_app_ID"
+          }
+        }
+      }
+    },
+    "/partner/app/{appId}/user/block": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Block Users",
+        "description": "Block one or more users for the specified app",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "messaging_product": "whatsapp",
+                  "block_users": [
+                    {
+                      "user": "919163805873"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "sk_bec22f0257a344b09645401c8967xxxx"
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "57d9179b-xxxx-xxxx-bf86-57ee1962fd12"
+          }
+        ],
+        "x-rate-limit": {
+          "rate": 10,
+          "period": "1 second"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_Block_users",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "New Example": {
+                    "summary": "New Example",
+                    "value": "{}"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/400_block_unblock_users"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "property1": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/partner/app/{appId}/user/unblock": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "Unblock Users",
+        "description": "Unblock one or more users for the specified app",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "messaging_product": "whatsapp",
+                  "block_users": [
+                    {
+                      "user": "919163805873"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "sk_bec22f0257a344b09645401c8967xxxx"
+          },
+          {
+            "name": "appId",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "example": "57d9179b-xxxx-xxxx-bf86-57ee1962fd12"
+          }
+        ],
+        "x-rate-limit": {
+          "rate": 10,
+          "period": "1 second"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_unblock_users"
+          },
+          "400": {
+            "$ref": "#/components/responses/400_block_unblock_users"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200_Get_blocked_users_list": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "example": {
+              "data": [
+                {
+                  "messaging_product": "whatsapp",
+                  "wa_id": "919163805873"
+                },
+                {
+                  "messaging_product": "whatsapp",
+                  "wa_id": "918910864371"
+                }
+              ],
+              "paging": {
+                "cursors": {
+                  "after": "eyJvZAmZAzZAXQiOjEsInZAlcnNpb25JZACI6IjE3NDEyNTc3OTI1NjY1MDAifQZDZD",
+                  "before": "eyJvZAmZAzZAXQiOjAsInZAlcnNpb25JZACI6IjE3NDEyNTc3OTI1NjY1MDAifQZDZD"
+                }
+              },
+              "status": "success"
+            }
+          }
+        }
+      },
+      "200_Block_users": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "example": {
+              "block_users": {
+                "added_users": [
+                  {
+                    "input": "919163805873",
+                    "wa_id": "919163805873"
+                  }
+                ]
+              },
+              "messaging_product": "whatsapp",
+              "status": "success"
+            }
+          }
+        }
+      },
+      "200_unblock_users": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "example": {
+              "block_users": {
+                "removed_users": [
+                  {
+                    "input": "919163805873",
+                    "wa_id": "919163805873"
+                  }
+                ]
+              },
+              "messaging_product": "whatsapp",
+              "status": "success"
+            }
+          }
+        }
+      },
+      "400_block_unblock_users": {
+        "description": "Bad Request",
+        "content": {
+          "application/json": {
+            "example": {
+              "messaging_product": "whatsapp",
+              "block_users": {
+                "added_users": [
+                  {
+                    "input": "<PHONE_NUMBER> or <WA_ID>",
+                    "wa_id": "<WA_ID>"
+                  },
+                  {
+                    "input": "<PHONE_NUMBER> or <WA_ID>",
+                    "wa_id": "<WA_ID>"
+                  }
+                ],
+                "failed_users": [
+                  {
+                    "input": "<PHONE_NUMBER> or <WA_ID>",
+                    "wa_id": "<WA_ID>"
+                  },
+                  {
+                    "input": "<PHONE_NUMBER> or <WA_ID>",
+                    "wa_id": "<WA_ID>"
+                  },
+                  {
+                    "errors": [
+                      {
+                        "message": "<MESSAGE>",
+                        "code": "<CODE>",
+                        "error_data": {
+                          "details": "<DETAILS>"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "error": {
+                "message": "(#139100) Failed to block/unblock users",
+                "type": "OAuthException",
+                "code": 139100,
+                "error_data": {
+                  "details": "Failed to block some users, see the block_users response list for details"
+                },
+                "fbtrace_id": "<FBTRACE_ID>"
+              }
+            }
+          }
+        }
+      },
+      "400_Invalid_app_ID": {
+        "description": "Bad Request",
+        "content": {
+          "application/json": {
+            "example": {
+              "status": "error",
+              "message": "Invalid APP ID"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Partner wallet balance transfer",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io"
+    }
+  ],
+  "paths": {
+    "/partner/account/api/wallet/balance/transfer": {
+      "post": {
+        "tags": [
+          "default"
+        ],
+        "summary": "wallet balance transfer",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "amount",
+                  "walletName",
+                  "customerId"
+                ],
+                "properties": {
+                  "walletName": {
+                    "type": "string",
+                    "example": "testRahulUSD1"
+                  },
+                  "customerId": {
+                    "type": "integer",
+                    "example": "4000009055"
+                  },
+                  "amount": {
+                    "type": "integer",
+                    "example": "1"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "{{PARTNER_TOKEN}}",
+            "required": true,
+            "description": "Your partner token, please refer [**Get partner token api**](https://partner-docs.gupshup.io/reference/post_partner-account-login#/) to get the token from partner documentation."
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200"
+          },
+          "400": {
+            "$ref": "#/components/responses/400"
+          },
+          "500": {
+            "$ref": "#/components/responses/500"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200": {
+        "description": "Successful Response",
+        "content": {
+          "application/json": {
+            "example": {
+              "message": "Amount has been transferred successfully"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Bad Request",
+        "content": {
+          "application/json": {
+            "examples": {
+              "Low balance": {
+                "value": {
+                  "status": "error",
+                  "message": "Balance is low for Wallet id: balance: "
+                }
+              },
+              "Wallet not associated with partner": {
+                "value": {
+                  "status": "error",
+                  "message": "Wallet {} is not associated with partner {}"
+                }
+              },
+              "Invalid customerId": {
+                "value": {
+                  "status": "error",
+                  "message": "Customer id is invalid or customer does not have any live app linked to the partner"
+                }
+              },
+              "Partner and customer wallet are different": {
+                "value": {
+                  "status": "error",
+                  "message": "The customer's account currency does not match with wallet currency"
+                }
+              }
+            }
+          }
+        }
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "content": {
+          "application/json": {
+            "examples": {
+              "Amount debited from partner account but not credited into customer's account": {
+                "value": {
+                  "status": "error",
+                  "message": "Amount debited from partner account but not credited into customer's account"
+                }
+              },
+              "Failed to transfer amount": {
+                "value": {
+                  "status": "error",
+                  "message": "Failed to transfer amount"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

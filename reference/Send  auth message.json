@@ -1,0 +1,189 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Gupshup Partner API",
+    "description": "API for sending template messages",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://partner.gupshup.io"
+    }
+  ],
+  "paths": {
+    "/partner/app/{appId}/template/msg": {
+      "post": {
+        "summary": "Send template message",
+        "description": "Sends a template message to a specified destination",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "appId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The application ID",
+            "example": "a41b30f4-d20***fdb-911e-3a8fbfbfb797"
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Authentication token",
+            "example": "sk_4087b15819a34606be15483456dcf636"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "source",
+                  "destination",
+                  "template",
+                  "sandbox",
+                  "src.name"
+                ],
+                "properties": {
+                  "source": {
+                    "type": "string",
+                    "description": "Source phone number with country code",
+                    "example": "918929874278"
+                  },
+                  "destination": {
+                    "type": "string",
+                    "description": "Destination phone number with country code",
+                    "example": "919422032010"
+                  },
+                  "template": {
+                    "type": "string",
+                    "description": "JSON string containing template ID and parameters",
+                    "example": "{\"id\": \"8f86c262-2700-4013-a595-250ae0724abb\",\"params\": [\"123\"]}"
+                  },
+                  "sandbox": {
+                    "type": "boolean",
+                    "description": "Whether to use sandbox environment",
+                    "example": false
+                  },
+                  "src.name": {
+                    "type": "string",
+                    "description": "App name identifier",
+                    "example": "august18"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Message submitted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "submitted"
+                    },
+                    "messageId": {
+                      "type": "string",
+                      "example": "21061dcc-185d-40ee-bb0e-a37643735044"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Bad Request"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Unauthorized"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Too Many Requests"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "error"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Internal server error. Please try again later and If Issue still persist than contact Gupshup Dev Support"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
