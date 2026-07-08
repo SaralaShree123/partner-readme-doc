@@ -9,7 +9,7 @@ excerpt: >-
 api:
   file: GetAllSubscriptions.json
   operationId: get_partner-app-appid-subscription
-hidden: false
+hidden: true
 ---
 ### Request Parameters
 

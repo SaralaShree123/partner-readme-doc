@@ -2,7 +2,7 @@
 api:
   file: updateAppSubscriptionOpneApi.json
   operationId: put_partner-app-appid-subscription-subscriptionid
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 
@@ -352,7 +352,20 @@ curl --location --request PUT 'https://partner.gupshup.io/partner/app/{{APP_ID}}
       <td>
         \{
 
-        "status" : "success","subscription" :\{"active" : true,         "appId" : "657c0203-0b4d-4ba1-bbf5-a679cfa35a16",         "createdOn" : 1739862125507,         "id" : "32595",         "latencyBucket" : "lt_1_s",         "mode" : 1025,         "modes" : ["SENT", "ENQUEUED"],         "modifiedOn" : 1739870558358,         "showOnUI" : false,         "tag" : "V33i4",         "url" : "[https://01hqjda5pbywgv7xw5e9ckd5e800-51132d4cc32709e9078d.requestinspector.com](https://01hqjda5pbywgv7xw5e9ckd5e800-51132d4cc32709e9078d.requestinspector.com)",         "version" : 2         }         }
+        "status" : "success","subscription" :\{"active" : true,
+         "appId" : "657c0203-0b4d-4ba1-bbf5-a679cfa35a16",
+         "createdOn" : 1739862125507,
+         "id" : "32595",
+         "latencyBucket" : "lt_1_s",
+         "mode" : 1025,
+         "modes" : ["SENT", "ENQUEUED"],
+         "modifiedOn" : 1739870558358,
+         "showOnUI" : false,
+         "tag" : "V33i4",
+         "url" : "[https://01hqjda5pbywgv7xw5e9ckd5e800-51132d4cc32709e9078d.requestinspector.com](https://01hqjda5pbywgv7xw5e9ckd5e800-51132d4cc32709e9078d.requestinspector.com)",
+         "version" : 2
+         }
+         }
       </td>
 
       <td>

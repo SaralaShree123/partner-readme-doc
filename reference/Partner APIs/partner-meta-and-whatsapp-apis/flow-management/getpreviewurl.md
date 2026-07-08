@@ -4,7 +4,7 @@ excerpt: Use this API to get a preview URL of the flow.
 api:
   file: flowAPIs-a.json
   operationId: getpreviewurl
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 

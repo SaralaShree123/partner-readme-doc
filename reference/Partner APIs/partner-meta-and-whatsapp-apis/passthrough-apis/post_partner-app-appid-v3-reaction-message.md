@@ -2,7 +2,7 @@
 api:
   file: reaction.json
   operationId: post_partner-app-appid-v3-message
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''
@@ -246,7 +246,10 @@ Reaction messages are emoji-reactions that you can apply to a previous WhatsApp 
 
       <td style={{ textAlign: "left" }}>
         "reaction":  
-        \{        "message_id": "wamid.HBgLMTY0NjcwNDM1OTUVAgASGBQzQUZCMTY0MDc2MUYwNzBDNTY5MAA=",        "emoji": "\uD83D\uDE00"        }
+        \{
+        "message_id": "wamid.HBgLMTY0NjcwNDM1OTUVAgASGBQzQUZCMTY0MDc2MUYwNzBDNTY5MAA=",
+        "emoji": "\uD83D\uDE00"
+        }
       </td>
 
       <td style={{ textAlign: "left" }}>

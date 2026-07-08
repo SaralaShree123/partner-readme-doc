@@ -2,7 +2,7 @@
 api:
   file: call_permission_request_api.json
   operationId: post_partner-app-appid-v3-message
-hidden: false
+hidden: true
 ---
 <Callout icon="📘" theme="info">
   1. The call permission request interactive object cannot be edited by the business. Only the message body can be customized.

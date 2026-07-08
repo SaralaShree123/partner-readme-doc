@@ -4,7 +4,7 @@ excerpt: Sends a marketing WhatsApp message using a GIF-based template.
 api:
   file: send-mm-lite-gif-template-swagger.yaml
   operationId: sendMMLiteGifTemplateMessage
-hidden: false
+hidden: true
 ---
 # API Request
 

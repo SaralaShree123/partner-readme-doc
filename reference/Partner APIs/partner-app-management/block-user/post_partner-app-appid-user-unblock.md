@@ -9,7 +9,7 @@ excerpt: >-
 api:
   file: block_usersApi_openapi3.json
   operationId: post_partner-app-appid-user-unblock
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 

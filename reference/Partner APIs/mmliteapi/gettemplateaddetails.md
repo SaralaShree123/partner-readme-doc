@@ -4,7 +4,7 @@ excerpt: This API returns the details around the marketing template Ad account.
 api:
   file: mm-lite-insight.json
   operationId: getTemplateAdDetails
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 

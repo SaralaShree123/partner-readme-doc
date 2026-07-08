@@ -4,7 +4,7 @@ excerpt: Use this API to get flow details by flow Id.
 api:
   file: flowAPIs-a.json
   operationId: getflowbyid
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 
@@ -95,7 +95,8 @@ curl --location --request GET 'https://partner.gupshup.io/partner/app/{{APP_ID}}
       </td>
 
       <td>
-        \\\{        &#x20;&#x20;
+        \\\{
+        &#x20;&#x20;
         &#x20;   "application": \{
         &#x20;       "id": "2281283925530161",
         &#x20;       "link": "https\://www\.gupshup.io/developer/home",

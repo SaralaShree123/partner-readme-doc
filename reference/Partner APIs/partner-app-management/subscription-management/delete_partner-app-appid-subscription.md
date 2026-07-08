@@ -10,7 +10,7 @@ api:
   file: delete-all-subscriptions.json
   operationId: delete_partner-app-appid-subscription
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

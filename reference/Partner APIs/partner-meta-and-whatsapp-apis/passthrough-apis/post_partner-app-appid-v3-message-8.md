@@ -2,7 +2,7 @@
 api:
   file: Pix_send_session_msg.json
   operationId: post_partner-app-appid-v3-message
-hidden: false
+hidden: true
 ---
 <br />
 
@@ -388,7 +388,18 @@ curl --location 'https://partner.gupshup.io/partner/app/{{APP_ID}}/v3/message' \
       <td>
         \{
 
-        "messages":[\{"id": "GUPSHUP_MESSAGE_ID"        }        ],        "messaging_product": "whatsapp",        "contacts":        [        \{        "input": "DESTINATION_PHONE_NO",        "wa_id": "DESTINATION_PHONE_NO"        }        ]        }
+        "messages":[\{"id": "GUPSHUP_MESSAGE_ID"
+        }
+        ],
+        "messaging_product": "whatsapp",
+        "contacts":
+        [
+        \{
+        "input": "DESTINATION_PHONE_NO",
+        "wa_id": "DESTINATION_PHONE_NO"
+        }
+        ]
+        }
       </td>
 
       <td>

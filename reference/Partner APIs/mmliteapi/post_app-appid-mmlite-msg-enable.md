@@ -6,7 +6,7 @@ excerpt: >-
 api:
   file: enable_mmlite_messaging.json
   operationId: post_app-appid-mmlite-msg-enable
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 

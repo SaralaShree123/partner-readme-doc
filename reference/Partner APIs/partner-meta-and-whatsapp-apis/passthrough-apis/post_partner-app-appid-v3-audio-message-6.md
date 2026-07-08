@@ -2,7 +2,7 @@
 api:
   file: Passthrough_audio (1).json
   operationId: post_partner-app-appid-v3-message
-hidden: false
+hidden: true
 ---
 Audio messages display an audio icon and a link to an audio file. When the WhatsApp user taps the icon, the WhatsApp client loads and plays the audio file.
 
@@ -366,7 +366,15 @@ curl --location --request POST 'https://partner.gupshup.io/partner/app/{{APP_ID}
       <td>
         \{
 
-        "messages": [\{"id": "GUPSHUP_MESSAGE_ID"}],        "messaging_product": "whatsapp",        "contacts": [        \{        "input": "DESTINATION_PHONE_NO",        "wa_id": "DESTINATION_PHONE_NO"        }        ]        }
+        "messages": [\{"id": "GUPSHUP_MESSAGE_ID"}],
+        "messaging_product": "whatsapp",
+        "contacts": [
+        \{
+        "input": "DESTINATION_PHONE_NO",
+        "wa_id": "DESTINATION_PHONE_NO"
+        }
+        ]
+        }
       </td>
 
       <td>

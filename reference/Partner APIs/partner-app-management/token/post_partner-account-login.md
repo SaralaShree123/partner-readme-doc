@@ -2,7 +2,7 @@
 api:
   file: token-apis.json
   operationId: post_partner-account-login
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

@@ -5,7 +5,7 @@ api:
   file: mm-lite-send-message-and-get-link-for-onboarding-live-app-8.json
   operationId: mmLiteSendMessage
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

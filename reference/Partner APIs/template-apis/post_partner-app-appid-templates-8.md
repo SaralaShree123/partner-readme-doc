@@ -4,7 +4,7 @@ excerpt: 'This API creates Pix Templates '
 api:
   file: pix_template.json
   operationId: post_partner-app-appid-templates
-hidden: false
+hidden: true
 ---
 <Callout icon="📘" theme="info">
   If the waba is in Brazil then user has to use sendAsPixTemplate and button text would be Copy Pix code.

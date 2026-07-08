@@ -2,7 +2,7 @@
 api:
   file: deleteMediaId.json
   operationId: delete_partner-app-appid-media-mediaid
-hidden: false
+hidden: true
 ---
 <Callout icon="📘" theme="info">
   Rate limit: 10 requests per hour

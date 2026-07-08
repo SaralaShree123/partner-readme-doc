@@ -2,7 +2,7 @@
 api:
   file: location_request_messages_api (2).json
   operationId: post_partner-app-appid-v3-message
-hidden: false
+hidden: true
 ---
 <br />
 

@@ -4,7 +4,7 @@ excerpt: Use this API to publish the flow.
 api:
   file: flowAPIs-a.json
   operationId: publishflow
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 
@@ -71,7 +71,8 @@ curl --location --globoff --request POST 'https://partner.gupshup.io/partner/app
       </td>
 
       <td>
-        \{          
+        \{
+          
             "status": "success",
             "success": true
         }
@@ -102,7 +103,8 @@ curl --location --globoff --request POST 'https://partner.gupshup.io/partner/app
       </td>
 
       <td>
-        \{          
+        \{
+          
             "status": "error",
             "message": "Flow cannot be published as it's not in DRAFT state"
         }

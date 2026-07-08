@@ -10,7 +10,7 @@ excerpt: >-
 api:
   file: block_usersApi_openapi3.json
   operationId: post_partner-app-appid-user-block
-hidden: false
+hidden: true
 ---
 > ℹ️ [Meta documentation](https://developers.facebook.com/docs/whatsapp/cloud-api/block-users/)
 

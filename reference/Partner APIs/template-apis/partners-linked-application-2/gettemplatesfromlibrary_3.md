@@ -4,7 +4,7 @@ excerpt: API to fetch pre approved Meta Library Templates
 api:
   file: metalibrary_3_0.json
   operationId: getTemplatesFromLibrary_3
-hidden: false
+hidden: true
 ---
 # Rate Limit
 

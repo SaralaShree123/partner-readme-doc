@@ -2,7 +2,7 @@
 title: v2 Send Message
 excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

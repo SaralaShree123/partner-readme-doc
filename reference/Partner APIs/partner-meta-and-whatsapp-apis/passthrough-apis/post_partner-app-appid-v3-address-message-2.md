@@ -2,7 +2,7 @@
 api:
   file: Address_Message(1).json
   operationId: post_partnerapp{appId}v3message
-hidden: false
+hidden: true
 link:
   new_tab: false
 metadata:
@@ -247,7 +247,19 @@ Address messages are interactive messages that contain the 4 main parts: header,
       <td>
         "interactive":
 
-        \{"type": "address_message","body":\{"text": "Thanks for your order! Tell us what address you’d like this order delivered to."},        "action":        \{        "name": "address_message",        "parameters":        \{        "country": "IN",        "values":        \{        "name": "CUSTOMER_NAME",        "phone_number": "+91xxxxxxxxxx"        }        } }}
+        \{"type": "address_message","body":\{"text": "Thanks for your order! Tell us what address you’d like this order delivered to."},
+        "action":
+        \{
+        "name": "address_message",
+        "parameters":
+        \{
+        "country": "IN",
+        "values":
+        \{
+        "name": "CUSTOMER_NAME",
+        "phone_number": "+91xxxxxxxxxx"
+        }
+        } }}
       </td>
 
       <td>
@@ -356,7 +368,11 @@ curl --location --request POST 'https://partner.gupshup.io/partner/app/{{APP_ID}
       <td>
         \{
 
-        "messages": [\{"id": "GUPSHUP_MESSAGE_ID"}],"messaging_product": "whatsapp","contacts": [\{"input": "DESTINATION_PHONE_NO",        "wa_id": "DESTINATION_PHONE_NO"        }        ]        }
+        "messages": [\{"id": "GUPSHUP_MESSAGE_ID"}],"messaging_product": "whatsapp","contacts": [\{"input": "DESTINATION_PHONE_NO",
+        "wa_id": "DESTINATION_PHONE_NO"
+        }
+        ]
+        }
       </td>
 
       <td>

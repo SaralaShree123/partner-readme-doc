@@ -8,7 +8,7 @@ api:
   file: generate-media-id-1.json
   operationId: post_partner-app-appid-media
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

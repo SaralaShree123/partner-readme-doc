@@ -8,7 +8,7 @@ api:
   file: partner-portal-public-apis.json
   operationId: get_partner-account-api-partnerapps
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

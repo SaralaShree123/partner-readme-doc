@@ -1,0 +1,5 @@
+- put_partner-app-appid-capping
+- get_partner-app-appid-usage
+- get_partner-app-appid-discount
+- post_partner-account-api-wallet-balance-transfer
+- get_partner-app-appid-wallet-balance

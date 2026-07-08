@@ -5,7 +5,7 @@ api:
   file: delete-template-by-template-id-and-element-name.json
   operationId: delete_partner-app-appid-template-elementname-templateid
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

@@ -10,7 +10,7 @@ api:
   file: partner-portal-public-apis.json
   operationId: get_partner-app-appid-business-profile-photo
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

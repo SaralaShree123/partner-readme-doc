@@ -5,7 +5,7 @@ api:
   file: create-document-type-template-2.json
   operationId: post_partner-app-appid-templates
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

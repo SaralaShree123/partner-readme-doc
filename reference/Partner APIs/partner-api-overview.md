@@ -11,7 +11,7 @@ slug: partner-api-overview
 
 # Partner API
 
-Gupshup Partner APIs are grouped by business category (same model as 360dialog Partner API Reference).
+Browse the sidebar by category. Expand a category to see its endpoints (Try It available on each endpoint page).
 
 | Category | Description |
 |----------|-------------|
@@ -32,8 +32,3 @@ Gupshup Partner APIs are grouped by business category (same model as 360dialog P
 
 1. [Generate Secret and Token](/docs/generate-secret-and-token)
 2. [Get Partner Token](/reference/post_partner-account-login)
-
-## Guides
-
-- [Partner API Overview (Guides)](/docs/partner-api-overview)
-- [API Reference (Guides)](/docs/api-reference-overview)

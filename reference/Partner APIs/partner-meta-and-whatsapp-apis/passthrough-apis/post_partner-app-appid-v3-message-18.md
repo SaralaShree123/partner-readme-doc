@@ -2,7 +2,7 @@
 api:
   file: product-card-session.json
   operationId: post_partner-app-appid-v3-message
-hidden: false
+hidden: true
 ---
 <Callout icon="📘" theme="info">
   1. The product carousel message contains a card object. You must add 2 card objects to your message, and can add a maximum of 10. Each card exists in a cards[] array and must be given a "card_index" value of 0 through 9.

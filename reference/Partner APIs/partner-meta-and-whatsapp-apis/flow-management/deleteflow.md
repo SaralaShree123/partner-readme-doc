@@ -4,7 +4,7 @@ excerpt: Use this API to delete the flow.
 api:
   file: flowAPIs-a.json
   operationId: deleteflow
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 

@@ -4,7 +4,7 @@ excerpt: Use this API to get a list of all flows.
 api:
   file: flowAPIs-a.json
   operationId: getallflow
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 
@@ -95,7 +95,8 @@ curl --location --request GET 'https://partner.gupshup.io/partner/app/{{APP_ID}}
       </td>
 
       <td>
-        \[          
+        \[
+          
             \{
                 "categories": [
                     "APPOINTMENT_BOOKING"
@@ -151,7 +152,8 @@ curl --location --request GET 'https://partner.gupshup.io/partner/app/{{APP_ID}}
       </td>
 
       <td>
-        \{          
+        \{
+          
             "status": "error",
             "message": "Unauthorised access to the resource. Please review request parameters and headers and retry"
         }

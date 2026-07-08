@@ -10,7 +10,7 @@ api:
   file: token-apis.json
   operationId: get_partner-app-appid-token
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

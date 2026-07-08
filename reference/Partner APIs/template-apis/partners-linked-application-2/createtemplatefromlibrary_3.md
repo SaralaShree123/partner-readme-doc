@@ -4,7 +4,7 @@ excerpt: API to create template from pre approved Meta Library Template
 api:
   file: metalibrary_3_0.json
   operationId: createTemplateFromLibrary_3
-hidden: false
+hidden: true
 ---
 # Rate Limit
 

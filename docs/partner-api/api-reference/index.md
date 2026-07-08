@@ -6,12 +6,12 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
-slug: api-reference-overview
+slug: api-reference
 ---
 
 # API Reference
 
-Available endpoints, authentication, and category groups for the Gupshup Partner API.
+Browse Partner API endpoints by business capability (same structure as 360dialog).
 
 | Category | Description |
 |----------|-------------|
@@ -28,4 +28,4 @@ Available endpoints, authentication, and category groups for the Gupshup Partner
 | [User Management](/docs/user-management) | Block/unblock users |
 | [Marketing Messages Lite](/docs/marketing-messages-lite) | MM Lite |
 
-For interactive Try It and OpenAPI schemas, open the **API Reference** tab → [Partner API Overview](/reference/partner-api-overview).
+Open the chevron on **API Reference** in the sidebar to browse each category. For interactive Try It, use the top **API Reference** tab.

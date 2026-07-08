@@ -13,7 +13,7 @@ slug: inbound-events-v2
 
 Reference for V2 inbound webhook events sent to your callback URL.
 
-## Event guides
+## Event types
 
 | Event type | Guide |
 |------------|-------|
@@ -24,6 +24,4 @@ Reference for V2 inbound webhook events sent to your callback URL.
 | User events | [User events](/docs/user-events) |
 | PMP events | [PMP Events](/docs/pmp-events-1) |
 
-## Setup
-
-Start with [Understanding Webhooks and Callback](/docs/understanding-webhooks-and-callback) and [Webhook Key Points](/docs/webhook-key-points).
+Start with [Webhooks & Callback](/docs/webhooks-and-callback) if you have not set up a callback URL yet.

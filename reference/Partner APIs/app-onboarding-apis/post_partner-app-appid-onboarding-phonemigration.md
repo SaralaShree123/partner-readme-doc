@@ -7,7 +7,7 @@ api:
   file: mark-app-for-migration.json
   operationId: post_partner-app-appid-onboarding-phonemigration
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

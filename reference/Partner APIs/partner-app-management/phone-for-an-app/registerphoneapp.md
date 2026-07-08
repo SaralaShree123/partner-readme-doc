@@ -8,7 +8,7 @@ excerpt: >-
 api:
   file: RegisterPhoneApiVer1.json
   operationId: registerPhoneApp
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 

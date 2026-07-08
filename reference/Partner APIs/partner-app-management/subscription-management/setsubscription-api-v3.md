@@ -2,7 +2,7 @@
 api:
   file: 2SetSubscription.json
   operationId: subscriptionForApp
-hidden: false
+hidden: true
 ---
 <Callout icon="📘" theme="info">
   Subscriptions can now be set for sandbox apps as well. Once the app goes live, the current subscription will be retained.
@@ -265,7 +265,22 @@ curl --location 'https://partner.gupshup.io/partner/app/:appId/subscription' \
 
         "status": "success",
 
-        "subscription":	\{		"active": true,         "appId": "bf9ee64c-xxxxxxxx-xxxx-xxxx577007c4",         "createdOn": 1705574838954,         "id": "8166",         "mode": 2047,         "meta": "\{"headers":         \{         "Authorisation":"Bearer eyJhbGciOiJIxxxxxxxxxxxxxxxxxxxxxxxxxx6biZ7Sbhl0N0u_aI"}         }"         "modifiedOn": 1705574838954,         "showOnUI": false,         "tag": "V3 Subscription",         "url":"[https://webhook.site/0b092322-b55b-419e-9c74-eb92f2b38553](https://webhook.site/0b092322-b55b-419e-9c74-eb92f2b38553)",         "version": 3         }         }
+        "subscription":	\{		"active": true,
+         "appId": "bf9ee64c-xxxxxxxx-xxxx-xxxx577007c4",
+         "createdOn": 1705574838954,
+         "id": "8166",
+         "mode": 2047,
+         "meta": "\{"headers":
+         \{
+         "Authorisation":"Bearer eyJhbGciOiJIxxxxxxxxxxxxxxxxxxxxxxxxxx6biZ7Sbhl0N0u_aI"}
+         }"
+         "modifiedOn": 1705574838954,
+         "showOnUI": false,
+         "tag": "V3 Subscription",
+         "url":"[https://webhook.site/0b092322-b55b-419e-9c74-eb92f2b38553](https://webhook.site/0b092322-b55b-419e-9c74-eb92f2b38553)",
+         "version": 3
+         }
+         }
       </td>
 
       <td>

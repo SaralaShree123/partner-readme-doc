@@ -11,15 +11,10 @@ slug: partner-hub-overview
 
 # Partner Hub
 
-The Gupshup Partner Portal is your control center for WhatsApp partner operations.
+The Gupshup Partner Portal is your control center. Expand sections in the sidebar.
 
-## Portal guides
-
-| Topic | Guide |
-|-------|-------|
-| Get started | [Get started with Partner Portal](/docs/get-started-with-partner-portal) |
-| Walkthrough | [Partner Portal Walkthrough](/docs/partner-portal-walkthrough) |
-| Wallet | [Wallet](/docs/wallet-1) |
-| Commissions | [Commissions / Wallet Overview](/docs/commissions) |
-| Support | [Support](/docs/support) |
-| Customer portal | [Partner Customer Portal](/docs/partner-customer-portal) |
+| Section | What you'll find |
+|---------|------------------|
+| [Partner Portal](/docs/portal) | Get started, walkthrough, customer portal |
+| [Wallet & Billing](/docs/wallet) | Wallet, commissions, recharge, wire transfers |
+| [Support](/docs/support) | Help and contact |

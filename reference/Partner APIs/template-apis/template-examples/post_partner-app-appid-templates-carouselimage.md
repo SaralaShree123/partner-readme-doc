@@ -5,7 +5,7 @@ api:
   file: carousel-type-templateimage-2.json
   operationId: post_partner-app-appid-templates
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

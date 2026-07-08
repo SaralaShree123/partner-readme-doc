@@ -9,7 +9,7 @@ excerpt: >-
 api:
   file: block_usersApi_openapi3.json
   operationId: get_partner-app-appid-user-blocklist
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 

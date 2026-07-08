@@ -3,7 +3,7 @@ title: Flow
 api:
   file: Flow_Template.json
   operationId: post_partner-app-appid-templates
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 
@@ -533,7 +533,8 @@ vxYsIYonRecvTCm_jyObpUJS-BRgFNcxOQ:e:1749806891:2281283925530161:61551923013914:
       </td>
 
       <td>
-        \{        &#x20;&#x20;
+        \{
+        &#x20;&#x20;
         &#x20; "status": "success",
         &#x20; "template": \{
         &#x20;   "appId": "d79ad72e-01f0-98e0-aea4-9f3d60ea2c1e",

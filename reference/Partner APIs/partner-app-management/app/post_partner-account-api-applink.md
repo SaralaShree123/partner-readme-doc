@@ -7,7 +7,7 @@ api:
   file: partner-portal-public-apis.json
   operationId: post_partner-account-api-applink
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

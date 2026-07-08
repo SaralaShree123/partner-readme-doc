@@ -9,7 +9,7 @@ api:
   file: partner-portal-public-apis.json
   operationId: put_partner-app-appid-business-profile
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

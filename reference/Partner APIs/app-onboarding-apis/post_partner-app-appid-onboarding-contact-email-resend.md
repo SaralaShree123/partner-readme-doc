@@ -5,7 +5,7 @@ api:
   file: partner-portal-public-apis.json
   operationId: post_partner-app-appid-onboarding-contact-email-resend
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

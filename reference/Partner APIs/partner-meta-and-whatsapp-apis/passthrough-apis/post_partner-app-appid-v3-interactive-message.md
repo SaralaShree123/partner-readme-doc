@@ -2,7 +2,7 @@
 api:
   file: interactive.json
   operationId: post_partner-app-appid-v3-message
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

@@ -2,7 +2,7 @@
 api:
   file: Passthrough_flow (2).json
   operationId: post_partner-app-appid-v3-message
-hidden: false
+hidden: true
 ---
 <Callout icon="📘" theme="info">
   **Note: **
@@ -370,7 +370,17 @@ curl --location --request POST 'https://partner.gupshup.io/partner/app/{{APP_ID}
       <td>
         \{
 
-        "messages": [\{"id": "GUPSHUP_MESSAGE_ID"        }        ],        "messaging_product": "whatsapp",        "contacts": [        \{        "input": "DESTINATION_PHONE_NO",        "wa_id": "DESTINATION_PHONE_NO"        }        ]        }
+        "messages": [\{"id": "GUPSHUP_MESSAGE_ID"
+        }
+        ],
+        "messaging_product": "whatsapp",
+        "contacts": [
+        \{
+        "input": "DESTINATION_PHONE_NO",
+        "wa_id": "DESTINATION_PHONE_NO"
+        }
+        ]
+        }
       </td>
 
       <td>

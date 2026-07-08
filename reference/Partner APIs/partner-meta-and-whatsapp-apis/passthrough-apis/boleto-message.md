@@ -2,7 +2,7 @@
 title: Boleto Message
 excerpt: Use this API to send a boleto message to a WhatsApp user.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---

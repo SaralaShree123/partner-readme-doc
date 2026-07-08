@@ -4,7 +4,7 @@ excerpt: This is an app level API used to sync the templates on Gupshup platform
 api:
   file: TemplateSyncApiVer.json
   operationId: syncTemplate
-hidden: false
+hidden: true
 ---
 # Rate Limit
 

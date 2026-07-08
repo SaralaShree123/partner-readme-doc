@@ -24,8 +24,3 @@ Overview of inbound message types delivered to your webhook.
 | Product messages | [Single/Multi Product Messages](/docs/singlemulti-product-message) |
 | Request welcome | [Request Welcome](/docs/request-welcome) |
 | Other | [Other](/docs/other) |
-
-## Related
-
-- [Understanding Webhooks](/docs/understanding-webhooks-and-callback)
-- [Message events](/docs/message-events)

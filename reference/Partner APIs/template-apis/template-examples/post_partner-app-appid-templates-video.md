@@ -5,7 +5,7 @@ api:
   file: create-video-type-template-1.json
   operationId: post_partner-app-appid-templates
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

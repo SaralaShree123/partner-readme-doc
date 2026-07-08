@@ -1,0 +1,6 @@
+- post_partner-account-login
+- get_partner-account-api-partnerapps
+- post_partner-account-api-applink
+- get_partner-app-appid-token
+- createtemplatefromlibrary
+- gettemplatesfromlibrary

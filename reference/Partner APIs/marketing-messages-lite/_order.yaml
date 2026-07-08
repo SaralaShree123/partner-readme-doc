@@ -1,0 +1,7 @@
+- mmlitesendmessage
+- sendmmlitegiftemplatemessage
+- getmmlitelink
+- gettemplateaddetails
+- gettemplateinsights
+- post_app-appid-mmlite-msg-enable
+- get_partner-app-appid-template-templateid-insights

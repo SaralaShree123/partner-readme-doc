@@ -4,7 +4,7 @@ excerpt: Using this API, you can Create a template for a particular app
 api:
   file: 2Apply For Templates.json
   operationId: post_partner-app-appid-templates
-hidden: false
+hidden: true
 ---
 <Callout icon="📘" theme="info">
   Apply for template now supports named parameter syntax in headers and body components.

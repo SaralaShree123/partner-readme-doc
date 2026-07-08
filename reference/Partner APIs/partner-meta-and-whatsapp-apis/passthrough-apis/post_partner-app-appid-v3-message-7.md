@@ -2,7 +2,7 @@
 api:
   file: Pix_send_template_msg.json
   operationId: post_partner-app-appid-v3-message
-hidden: false
+hidden: true
 ---
 <br />
 
@@ -414,7 +414,19 @@ curl --location --request POST 'https://partner.gupshup.io/partner/app/{{APP_ID}
       <td>
         \{
 
-        "messages":[\{        "id": "GUPSHUP_MESSAGE_ID"        }        ],        "messaging_product": "whatsapp",        "contacts":        [        \{        "input": "DESTINATION_PHONE_NO",        "wa_id": "DESTINATION_PHONE_NO"        }        ]        }
+        "messages":[\{
+        "id": "GUPSHUP_MESSAGE_ID"
+        }
+        ],
+        "messaging_product": "whatsapp",
+        "contacts":
+        [
+        \{
+        "input": "DESTINATION_PHONE_NO",
+        "wa_id": "DESTINATION_PHONE_NO"
+        }
+        ]
+        }
       </td>
 
       <td>
@@ -444,7 +456,8 @@ curl --location --request POST 'https://partner.gupshup.io/partner/app/{{APP_ID}
       <td>
         \{
 
-        "message": "Callback Billing must be enabled for this API","status": "error"        }
+        "message": "Callback Billing must be enabled for this API","status": "error"
+        }
       </td>
 
       <td>
@@ -460,7 +473,8 @@ curl --location --request POST 'https://partner.gupshup.io/partner/app/{{APP_ID}
       <td>
         \{
 
-        "message": "Invalid App Details","status": "error"        }
+        "message": "Invalid App Details","status": "error"
+        }
       </td>
 
       <td>
@@ -478,7 +492,8 @@ curl --location --request POST 'https://partner.gupshup.io/partner/app/{{APP_ID}
 
         "status": "error",
 
-        "message": "Authentication Failed"        }
+        "message": "Authentication Failed"
+        }
       </td>
 
       <td>

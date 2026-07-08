@@ -8,7 +8,7 @@ excerpt: >-
 api:
   file: Get Templates.json
   operationId: get_partner-app-appid-templates
-hidden: false
+hidden: true
 ---
 <Callout icon="📘" theme="info">
   **Note** - Starting June 1, 2024, to ensure that all templates are correctly categorized, Meta has implemented a recurring process that automatically identifies and updates the category of any marketing or utility templates that have been miscategorized, according to their guidelines.

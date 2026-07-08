@@ -8,7 +8,7 @@ excerpt: >-
 api:
   file: DeregisterPhoneApiVer1.json
   operationId: deregisterPhoneApp
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 

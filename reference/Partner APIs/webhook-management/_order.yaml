@@ -1,0 +1,8 @@
+- put_partner-app-appid-subscription-subscriptionid
+- get_partner-app-appid-subscription-subscriptionid
+- delete_partner-app-appid-subscription
+- get_partner-app-appid-subscription
+- delete_partner-app-appid-subscription-subscriptionid
+- setsubscription-api-v3
+- put_partner-app-appid-callbackurl
+- put_partner-app-appid-callback-mode

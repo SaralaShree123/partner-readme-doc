@@ -4,7 +4,7 @@ excerpt: Use this API to create the flow.
 api:
   file: flowAPIs-a.json
   operationId: createflow
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 

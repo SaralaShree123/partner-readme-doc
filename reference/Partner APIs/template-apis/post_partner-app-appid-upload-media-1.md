@@ -5,7 +5,7 @@ api:
   file: partner-portal-public-apis-1.json
   operationId: post_partner-app-appid-upload-media
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

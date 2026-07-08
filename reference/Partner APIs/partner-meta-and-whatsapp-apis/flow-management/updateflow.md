@@ -4,7 +4,7 @@ excerpt: Use this API to update existing flow.
 api:
   file: flowAPIs-a.json
   operationId: updateflow
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 
@@ -75,7 +75,8 @@ curl --location --globoff --request PUT 'https://partner.gupshup.io/partner/app/
       </td>
 
       <td>
-        \{          
+        \{
+          
             "status": "success",
             "success": true
         }
@@ -106,7 +107,8 @@ curl --location --globoff --request PUT 'https://partner.gupshup.io/partner/app/
       </td>
 
       <td>
-        \{          
+        \{
+          
             "status": "error",
             "message": "Flow can only be modified in Draft status"
         }

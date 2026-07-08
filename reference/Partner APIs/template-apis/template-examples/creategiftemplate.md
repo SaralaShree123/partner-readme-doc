@@ -4,7 +4,7 @@ excerpt: Creates a new GIF template for WhatsApp Business API messaging
 api:
   file: gif-template-api-swagger.yaml
   operationId: createGifTemplate
-hidden: false
+hidden: true
 ---
 # Rate Limit:
 

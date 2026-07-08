@@ -10,7 +10,7 @@ api:
   file: partner-portal-api-10.json
   operationId: getTemplatesFromLibrary_3
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

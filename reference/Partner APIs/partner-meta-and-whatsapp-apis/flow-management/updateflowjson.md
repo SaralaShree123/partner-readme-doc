@@ -4,7 +4,7 @@ excerpt: Use this API to update the flow json.
 api:
   file: flowAPIs-a.json
   operationId: updateflowjson
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 
@@ -74,7 +74,8 @@ curl --location --request PUT 'https://partner.gupshup.io/partner/app/{{APP_ID}}
       </td>
 
       <td>
-        \{          
+        \{
+          
             "status": "success",
             "success": true,
             "validation_errors": []
@@ -106,7 +107,8 @@ curl --location --request PUT 'https://partner.gupshup.io/partner/app/{{APP_ID}}
       </td>
 
       <td>
-        \{          
+        \{
+          
             "status": "error",
             "message": "Unable to upload Flow JSON Asset as media size is greater than permitted size"
         }

@@ -11,7 +11,7 @@ api:
   file: partner-portal-public-apis.json
   operationId: get_partner-app-appid-discount
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

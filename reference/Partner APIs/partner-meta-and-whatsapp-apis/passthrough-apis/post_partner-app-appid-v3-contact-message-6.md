@@ -2,7 +2,7 @@
 api:
   file: Passthrough_contacts (1).json
   operationId: post_partner-app-appid-v3-message
-hidden: false
+hidden: true
 ---
 Contacts messages allow you to send rich contact information directly to Whats App users, such as names, phone numbers, physical addresses, and email addresses.
 
@@ -155,7 +155,17 @@ curl --location --request POST 'https://partner.gupshup.io/partner/app/{{{APP_ID
       <td>
         \{
 
-        "messages": [\{"id": "GUPSHUP_MESSAGE_ID"        }        ],        "messaging_product": "whatsapp",        "contacts": [        \{        "input": "DESTINATION_PHONE_NO",        "wa_id": "DESTINATION_PHONE_NO"        }        ]        }
+        "messages": [\{"id": "GUPSHUP_MESSAGE_ID"
+        }
+        ],
+        "messaging_product": "whatsapp",
+        "contacts": [
+        \{
+        "input": "DESTINATION_PHONE_NO",
+        "wa_id": "DESTINATION_PHONE_NO"
+        }
+        ]
+        }
       </td>
 
       <td>

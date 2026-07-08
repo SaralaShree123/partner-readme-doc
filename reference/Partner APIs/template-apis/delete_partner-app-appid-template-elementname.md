@@ -5,7 +5,7 @@ api:
   file: partner-portal-public-apis.json
   operationId: delete_partner-app-appid-template-elementname
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''
@@ -147,7 +147,8 @@ curl --location --request DELETE 'https://partner.gupshup.io/partner/app/{{APP_I
       </td>
 
       <td style={{ textAlign: "left" }}>
-        \{          
+        \{
+          
             "status":"error",
             "message":"Please Check If App Has been approved"
         }
@@ -164,7 +165,8 @@ curl --location --request DELETE 'https://partner.gupshup.io/partner/app/{{APP_I
       </td>
 
       <td style={{ textAlign: "left" }}>
-        \{          
+        \{
+          
             "status":"error",
             "message":"Template Does not exists."
         }
@@ -181,7 +183,8 @@ curl --location --request DELETE 'https://partner.gupshup.io/partner/app/{{APP_I
       </td>
 
       <td style={{ textAlign: "left" }}>
-        \{          
+        \{
+          
             "status":"error",
             "message":"Template Cannot be deleted"
         }
@@ -198,7 +201,8 @@ curl --location --request DELETE 'https://partner.gupshup.io/partner/app/{{APP_I
       </td>
 
       <td style={{ textAlign: "left" }}>
-        \{          
+        \{
+          
             "status":"error",
             "message":"Unable to delete the template, please try after sometime and if issue still exists than contact dev support"
         }
@@ -215,7 +219,8 @@ curl --location --request DELETE 'https://partner.gupshup.io/partner/app/{{APP_I
       </td>
 
       <td style={{ textAlign: "left" }}>
-        \{          
+        \{
+          
             "status":"error",
             "message":"Not App Owner"
         }
@@ -232,7 +237,8 @@ curl --location --request DELETE 'https://partner.gupshup.io/partner/app/{{APP_I
       </td>
 
       <td style={{ textAlign: "left" }}>
-        \{          
+        \{
+          
           "status": "error",
           "message": "Internal server error. Please try again later and If Issue still persist than contact Gupshup Dev Support"
         }

@@ -2,7 +2,7 @@
 title: Meta Passthrough APIs v3
 excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

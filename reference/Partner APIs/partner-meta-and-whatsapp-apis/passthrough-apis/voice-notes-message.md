@@ -2,7 +2,7 @@
 title: Voice Notes Message
 excerpt: Use this API to send a Audio Voice Notes Message to a WhatsApp user.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---

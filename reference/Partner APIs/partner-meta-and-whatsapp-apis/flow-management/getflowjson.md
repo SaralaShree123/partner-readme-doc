@@ -4,7 +4,7 @@ excerpt: Use this API to get JSON asset.
 api:
   file: flowAPIs-a.json
   operationId: getflowjson
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 
@@ -74,7 +74,8 @@ curl --location --request GET 'https://partner.gupshup.io/partner/app/{{APP_ID}}
       </td>
 
       <td>
-        \[          
+        \[
+          
             \{
                 "asset_type": "FLOW_JSON",
                 "download_url": "https://mmg.whatsapp.net/m1/v/t24/An9xSDGdyGcW0nTRCOYpSKqDhpPeFj1_tKBxswuOYC6DzClzkb3K28561rl0WVKF-go0gzdaAz7H4GRaMaL6b0bLmWG2yH77Vsj40Zv2gjR0NuNMV0B60qqb3fnsT8aQRnM?ccb=10-5&oh=01_Q5AaIJC0sV_X8sXaonaGes0uh3_AVS5aAhgI4OTOYVER7v7H&oe=669CC7C9&_nc_sid=471a72",
@@ -108,7 +109,8 @@ curl --location --request GET 'https://partner.gupshup.io/partner/app/{{APP_ID}}
       </td>
 
       <td>
-        \{          
+        \{
+          
             "status": "error",
             "message": "Unsupported get request. Object with ID '52635765283582' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api"
         }

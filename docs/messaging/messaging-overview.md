@@ -11,16 +11,16 @@ slug: messaging-overview
 
 # Messaging
 
-Guides for sending and receiving WhatsApp messages on the Gupshup Partner Platform.
+Guides for sending and receiving WhatsApp messages. Expand sections in the sidebar for details.
 
-| Topic | Guide |
-|-------|-------|
-| WhatsApp Messages | [WhatsApp Messages](/docs/whatsapp-messages) |
-| Outbound messages | [Outbound messages](/docs/outbound-messages) |
-| Inbound messages | [Inbound Messages](/docs/inbound-messages) |
-| Media | [Media Management](/docs/media-management) |
-| Marketing Messages Lite | [MM Lite](/docs/marketing-messages-lite-mm-lite-api) |
-| Voice (Outbound) | [Voice Outbound & SIP](/docs/guide-to-voice-outbound-business-initiated-calls-sip-integration-via-gupshup) |
+| Section | What you'll find |
+|---------|------------------|
+| [WhatsApp Messages](/docs/whatsapp-messages) | Core messaging concepts |
+| [Outbound messages](/docs/outbound-messages) | Outbound message guides |
+| [Inbound Messages](/docs/inbound-messages) | Text, media, interactive, product messages |
+| [Media Management](/docs/media-management) | Upload and manage media |
+| [Marketing Messages Lite](/docs/marketing-messages-lite-mm-lite-api) | MM Lite guide |
+| [Voice](/docs/voice) | Inbound/outbound voice and SIP |
 
 ## Related API categories
 

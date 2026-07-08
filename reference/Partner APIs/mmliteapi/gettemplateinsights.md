@@ -4,7 +4,7 @@ excerpt: This API returns the details around the marketing template insights.
 api:
   file: mm-lite-insight.json
   operationId: getTemplateInsights
-hidden: false
+hidden: true
 ---
 ## Request Parameters
 

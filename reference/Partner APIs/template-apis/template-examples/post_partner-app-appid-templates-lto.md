@@ -5,7 +5,7 @@ api:
   file: lto-template-text-type.json
   operationId: post_partner-app-appid-templates
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

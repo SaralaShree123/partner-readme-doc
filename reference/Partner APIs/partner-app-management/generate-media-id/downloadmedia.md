@@ -8,7 +8,7 @@ excerpt: >-
 api:
   file: DownloadMediaVer3.json
   operationId: downloadMedia
-hidden: false
+hidden: true
 ---
 > ℹ️ Important Note:
 >

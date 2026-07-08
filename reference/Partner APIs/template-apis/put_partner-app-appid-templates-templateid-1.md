@@ -5,7 +5,7 @@ api:
   file: partner-portal-public-apis-1.json
   operationId: put_partner-app-appid-templates-templateid
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

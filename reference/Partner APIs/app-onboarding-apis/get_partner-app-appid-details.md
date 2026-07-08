@@ -5,7 +5,7 @@ api:
   file: partner-portal-public-apis.json
   operationId: get_partner-app-appid-details
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''
