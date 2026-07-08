@@ -1,16 +1,17 @@
 ---
 title: Partner API Overview
-summary: Gupshup Partner API reference organized by category.
-excerpt: Gupshup Partner API reference organized by category.
+summary: Gupshup Partner API reference organized by business category.
+excerpt: Gupshup Partner API reference organized by business category.
 deprecated: false
 hidden: false
 metadata:
   robots: index
+slug: partner-api-overview
 ---
 
 # Partner API
 
-Gupshup Partner APIs let you build branded WhatsApp experiences. Endpoints are grouped by business category.
+Gupshup Partner APIs let you build branded WhatsApp experiences for your customers. Endpoints are grouped by business category below.
 
 ## API Categories
 
@@ -31,4 +32,12 @@ Gupshup Partner APIs let you build branded WhatsApp experiences. Endpoints are g
 
 ## Authentication
 
-See [Generate Secret and Token](/docs/generate-secret-and-token) and [Get Partner Token](/reference/post_partner-account-login).
+All Partner API requests require a partner token.
+
+1. [Generate Secret and Token](/docs/generate-secret-and-token) in the guides
+2. [Get Partner Token](/reference/post_partner-account-login) API endpoint
+
+## Guides
+
+- [Partner API overview (guides)](/docs/partner-api-overview)
+- [Onboarding APIs](/docs/onboarding-apis)

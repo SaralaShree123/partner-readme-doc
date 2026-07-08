@@ -6,14 +6,15 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+slug: webhook-management
 ---
 
 # Webhook Management
 
 Set up and manage webhook subscriptions and callback URLs.
 
-## Endpoints
-
-- [Set subscription](/reference/setsubscription-api-v3)
-- [Get All Subscriptions](/reference/get_partner-app-appid-subscription)
-- [Update App Subscription](/reference/put_partner-app-appid-subscription-subscriptionid)
+| API | Reference |
+|-----|-----------|
+| Set subscription | [/reference/setsubscription-api-v3](/reference/setsubscription-api-v3) |
+| Get All Subscriptions | [/reference/get_partner-app-appid-subscription](/reference/get_partner-app-appid-subscription) |
+| Update App Subscription | [/reference/put_partner-app-appid-subscription-subscriptionid](/reference/put_partner-app-appid-subscription-subscriptionid) |

@@ -6,13 +6,14 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+slug: marketing-messages-lite
 ---
 
 # Marketing Messages Lite
 
 MM Lite enablement, sending, and insights.
 
-## Endpoints
-
-- [Enable MM Lite messages](/reference/post_app-appid-mmlite-msg-enable)
-- [MM Lite Send Message](/reference/mmlitesendmessage)
+| API | Reference |
+|-----|-----------|
+| Enable MM Lite messages | [/reference/post_app-appid-mmlite-msg-enable](/reference/post_app-appid-mmlite-msg-enable) |
+| MM Lite Send Message | [/reference/mmlitesendmessage](/reference/mmlitesendmessage) |

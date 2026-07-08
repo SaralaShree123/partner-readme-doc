@@ -6,14 +6,15 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+slug: whatsapp-flows
 ---
 
 # WhatsApp Flows
 
 Create, publish, and manage WhatsApp Flow experiences.
 
-## Endpoints
-
-- [Create Flow](/reference/createflow)
-- [Get All Flows](/reference/getallflow)
-- [Publish flow](/reference/publishflow)
+| API | Reference |
+|-----|-----------|
+| Create Flow | [/reference/createflow](/reference/createflow) |
+| Get All Flows | [/reference/getallflow](/reference/getallflow) |
+| Publish flow | [/reference/publishflow](/reference/publishflow) |

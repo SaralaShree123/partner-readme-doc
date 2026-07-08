@@ -6,14 +6,15 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+slug: balance-and-usage
 ---
 
 # Balance & Usage
 
 Wallet balance, commissions, usage, and billing APIs.
 
-## Endpoints
-
-- [Get Wallet Balance](/reference/get_partner-app-appid-wallet-balance)
-- [Get App's Daily Usage](/reference/get_partner-app-appid-usage)
-- [Get App's Daily Discount](/reference/get_partner-app-appid-discount)
+| API | Reference |
+|-----|-----------|
+| Get Wallet Balance | [/reference/get_partner-app-appid-wallet-balance](/reference/get_partner-app-appid-wallet-balance) |
+| Get App's Daily Usage | [/reference/get_partner-app-appid-usage](/reference/get_partner-app-appid-usage) |
+| Get App's Daily Discount | [/reference/get_partner-app-appid-discount](/reference/get_partner-app-appid-discount) |

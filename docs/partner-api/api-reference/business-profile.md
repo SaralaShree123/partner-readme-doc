@@ -6,6 +6,7 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+slug: business-profile
 ---
 
 # Business Profile

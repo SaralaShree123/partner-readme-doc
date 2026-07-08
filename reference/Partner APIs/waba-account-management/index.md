@@ -6,14 +6,15 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+slug: waba-account-management
 ---
 
 # WABA Account Management
 
 WABA health, phone numbers, quality ratings, and account settings.
 
-## Endpoints
-
-- [Get Waba Info](/reference/getwabahealth)
-- [Check Health](/reference/get_partner-app-appid-health)
-- [Register phone](/reference/registerphoneapp)
+| API | Reference |
+|-----|-----------|
+| Get Waba Info | [/reference/getwabahealth](/reference/getwabahealth) |
+| Check Health | [/reference/get_partner-app-appid-health](/reference/get_partner-app-appid-health) |
+| Register phone | [/reference/registerphoneapp](/reference/registerphoneapp) |

@@ -6,14 +6,30 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+slug: onboarding-overview
 ---
 
 # Onboarding
 
+Guides for integrating with the Gupshup Partner Platform — app creation, webhooks, events, and advanced setup.
+
+## Core topics
+
 | Topic | Guide |
 |-------|-------|
 | Onboarding APIs | [Onboarding APIs](/docs/onboarding-apis) |
-| Webhooks | [Understanding Webhooks](/docs/understanding-webhooks-and-callback) |
-| Events (V2) | [Inbound Events V2](/docs/inbound-events-v2) |
+| Webhooks & callbacks | [Understanding Webhooks](/docs/understanding-webhooks-and-callback) |
+| Inbound events (V2) | [Inbound Events V2](/docs/inbound-events-v2) |
 | Coexistence | [Coexistence](/docs/co-existence-closed-beta-phase) |
-| Embedded Signup | [Partner Hosted Embedded Sign Up](/docs/partner-hosted-embedded-sign-up-flow) |
+| Embedded signup | [Partner Hosted Embedded Sign Up](/docs/partner-hosted-embedded-sign-up-flow) |
+| IP allowlisting | [Gupshup IP Allowlisting](/docs/gupshup-ip-allowlisting) |
+
+## Event guides
+
+| Event type | Guide |
+|------------|-------|
+| Account events | [Account events](/docs/account-events) |
+| Billing events | [Billing events](/docs/billing-events) |
+| Message events | [Message events](/docs/message-events) |
+| System events | [System events](/docs/system-events) |
+| User events | [User events](/docs/user-events) |

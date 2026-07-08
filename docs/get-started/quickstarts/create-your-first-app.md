@@ -1,6 +1,7 @@
 ---
 summary: Create your first App
 title: Create your first App
+slug: create-your-first-app
 excerpt: ''
 deprecated: false
 hidden: false
@@ -36,3 +37,7 @@ next:
 * In the 3rd step FB embedded flow will open, complete the flow, and your app will be live.
 
 Now you can start sending messages.
+
+## Next step
+
+→ [Generate Secret and Token](/docs/generate-secret-and-token)

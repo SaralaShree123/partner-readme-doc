@@ -6,6 +6,7 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+slug: api-reference-overview
 ---
 
 # API Reference
@@ -24,3 +25,5 @@ metadata:
 | [Business Profile](business-profile) | Profile and display name |
 | [User Management](user-management) | Block/unblock users |
 | [Marketing Messages Lite](marketing-messages-lite) | MM Lite |
+
+For interactive Try It and full OpenAPI schemas, see [/reference/partner-api-overview](/reference/partner-api-overview).

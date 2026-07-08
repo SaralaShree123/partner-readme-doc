@@ -6,14 +6,15 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+slug: media-management
 ---
 
 # Media Management
 
 Upload, download, and delete media for WhatsApp messages.
 
-## Endpoints
-
-- [Generate Media ID (file upload)](/reference/post_partner-app-appid-media)
-- [Download Media](/reference/downloadmedia)
-- [Delete media by ID](/reference/delete_partner-app-appid-media-mediaid)
+| API | Reference |
+|-----|-----------|
+| Generate Media ID (file upload) | [/reference/post_partner-app-appid-media](/reference/post_partner-app-appid-media) |
+| Download Media | [/reference/downloadmedia](/reference/downloadmedia) |
+| Delete media by ID | [/reference/delete_partner-app-appid-media-mediaid](/reference/delete_partner-app-appid-media-mediaid) |

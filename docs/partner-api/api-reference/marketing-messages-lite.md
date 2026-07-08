@@ -6,6 +6,7 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+slug: marketing-messages-lite
 ---
 
 # Marketing Messages Lite

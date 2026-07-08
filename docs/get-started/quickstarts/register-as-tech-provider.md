@@ -1,32 +1,40 @@
 ---
-summary: Register as Tech Provider
 title: Register as Tech Provider
-excerpt: ''
+summary: Get your Meta Solution ID and register as a Tech Provider.
+excerpt: Get your Meta Solution ID and register as a Tech Provider.
 deprecated: false
 hidden: false
 metadata:
-  title: ''
-  description: ''
   robots: index
-next:
-  description: ''
+slug: register-as-tech-provider
 ---
-# Solution Partners
 
-Solution Partners(SP) provide WhatsApp Business Platform services to other businesses. Solution Partners take care of the credit line extended to the businesses, removing the need businesses to enter their own payment methods.
+# Register as Tech Provider
 
-Solution Partners also have access to dedicated support from Meta, which helps their customers i.e businesses for quick resolution of concerns with Meta.
+## Prerequisites
 
-# Tech Providers
+- Approved Gupshup Partner account
+- Meta Developer account and WhatsApp Business app
 
-Tech Provider Program, enables third-party developers (ISVs) to work with a Solution Provider like Gupshup. This program presents a valuable opportunity for businesses to leverage Meta's ecosystem and work together to develop joint solutions that can benefit all parties involved.
+## Steps
 
-## Benefits of Tech Provider Program
+### 1. Read the Tech Provider program
 
-* ISVs can benefit from several advantages as a Tech Provider(TP). These advantages may include:\
-  Permission to manage an end business’s account and perform action on behalf of the business (e.g. manage templates, get webhook events, etc.)
-* Tech Providers can onboard businesses on their own platform using Embedded Signup. Alternatively, they can delegate this to Gupshup to host the embedded signup flow.
-* Tech Providers will be eligible to become a Tech Partner with access to the Meta Partner Directory and various marketing and training resources.
-* You can continue to access the Solution Partners' credit line if you partner with a Solution Partner like Gupshup.
+Review [Solution Partners & Tech Providers](/docs/what-is-sp-tp) for ISV vs TP roles and Meta requirements.
 
-For more information, refer to the <Anchor label="article" target="_blank" href="https://partner-docs.gupshup.io/docs/get-solution-id-from-meta">article</Anchor>.
+### 2. Get your Solution ID from Meta
+
+Follow [Get Solution ID from Meta](/docs/get-solution-id-from-meta) to obtain the Solution ID required for embedded onboarding flows.
+
+### 3. Configure your Meta app
+
+Link your Meta app to Gupshup using the Solution ID when creating apps via API or embedded signup.
+
+## Related APIs
+
+- [Generate Embed Signed Link](/reference/get_partner-app-appid-onboarding-embed-link)
+- [Create App](/reference/post_partner-app)
+
+## Next step
+
+→ [Create your first App](/docs/create-your-first-app)

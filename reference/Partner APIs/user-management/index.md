@@ -6,14 +6,15 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+slug: user-management
 ---
 
 # User Management
 
 Block, unblock, and list blocked WhatsApp users.
 
-## Endpoints
-
-- [Get Blocked Users list](/reference/get_partner-app-appid-user-blocklist)
-- [Block Users](/reference/post_partner-app-appid-user-block)
-- [Unblock Users](/reference/post_partner-app-appid-user-unblock)
+| API | Reference |
+|-----|-----------|
+| Get Blocked Users list | [/reference/get_partner-app-appid-user-blocklist](/reference/get_partner-app-appid-user-blocklist) |
+| Block Users | [/reference/post_partner-app-appid-user-block](/reference/post_partner-app-appid-user-block) |
+| Unblock Users | [/reference/post_partner-app-appid-user-unblock](/reference/post_partner-app-appid-user-unblock) |

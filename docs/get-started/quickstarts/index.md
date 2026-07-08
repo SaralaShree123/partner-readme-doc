@@ -6,14 +6,19 @@ deprecated: false
 hidden: false
 metadata:
   robots: index
+slug: quickstarts
 ---
 
 # Quickstarts
 
+Follow these steps in order to go from partner signup to sending your first WhatsApp message.
+
 | Step | Guide | Outcome |
 |------|-------|---------|
 | 1 | [Get Started as a Partner](/docs/get-started-as-partner) | Partner account and portal access |
-| 2 | [Register as Tech Provider](/docs/register-as-tech-provider) | Meta Tech Provider setup |
+| 2 | [Register as Tech Provider](/docs/register-as-tech-provider) | Meta Tech Provider / Solution ID (if applicable) |
 | 3 | [Create your first App](/docs/create-your-first-app) | WABA onboarded via Partner Portal |
 | 4 | [Generate Secret and Token](/docs/generate-secret-and-token) | API credentials |
-| 5 | [Send your first message](/docs/send-your-first-message) | First WhatsApp message |
+| 5 | [Send your first message](/docs/send-your-first-message) | First WhatsApp message sent |
+
+Each page includes prerequisites, numbered steps, and a link to the next step.

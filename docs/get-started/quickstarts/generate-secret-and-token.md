@@ -1,6 +1,7 @@
 ---
 summary: Generate Secret and Token
 title: Generate Secret and Token
+slug: generate-secret-and-token
 excerpt: ''
 deprecated: false
 hidden: false
@@ -39,3 +40,7 @@ This client secret is used to generate a **partner token** [GET partner token AP
 > However, in case you change your password, you will need to generate the client secret via the settings page.
 >
 > Refer to the [API ](https://docs.gupshup.io/reference/enable-mfa-for-partner-account)document.
+
+## Next step
+
+→ [Send your first message](/docs/send-your-first-message)
