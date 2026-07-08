@@ -11,7 +11,7 @@ slug: onboarding-overview
 
 # Onboarding
 
-Guides for integrating with the Gupshup Partner Platform — app creation, webhooks, events, and advanced setup.
+Guides for integrating with the Gupshup Partner Platform — credentials, webhooks, events, and advanced onboarding.
 
 ## Core topics
 
@@ -19,7 +19,8 @@ Guides for integrating with the Gupshup Partner Platform — app creation, webho
 |-------|-------|
 | Onboarding APIs | [Onboarding APIs](/docs/onboarding-apis) |
 | Webhooks & callbacks | [Understanding Webhooks](/docs/understanding-webhooks-and-callback) |
-| Inbound events (V2) | [Inbound Events V2](/docs/inbound-events-v2) |
+| Inbound events (V2) | [Inbound events (V2)](/docs/inbound-events-v2) |
+| Incoming events (V3) | [Incoming Events (V3)](/docs/v3-events) |
 | Coexistence | [Coexistence](/docs/co-existence-closed-beta-phase) |
 | Embedded signup | [Partner Hosted Embedded Sign Up](/docs/partner-hosted-embedded-sign-up-flow) |
 | IP allowlisting | [Gupshup IP Allowlisting](/docs/gupshup-ip-allowlisting) |

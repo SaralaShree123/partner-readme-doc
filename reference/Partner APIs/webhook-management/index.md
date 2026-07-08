@@ -17,16 +17,16 @@ Endpoints for webhook subscriptions and callbacks.
 
 > Create a webhook subscription.
 
-→ Full endpoint docs & Try It: [/reference/setsubscription-api-v3](/reference/setsubscription-api-v3)
+→ Full endpoint & Try It: [/reference/setsubscription-api-v3](/reference/setsubscription-api-v3)
 
 ## Get All Subscriptions
 
-> List all subscriptions for an app.
+> List subscriptions for an app.
 
-→ Full endpoint docs & Try It: [/reference/get_partner-app-appid-subscription](/reference/get_partner-app-appid-subscription)
+→ Full endpoint & Try It: [/reference/get_partner-app-appid-subscription](/reference/get_partner-app-appid-subscription)
 
 ## Update App Subscription
 
 > Update a subscription.
 
-→ Full endpoint docs & Try It: [/reference/put_partner-app-appid-subscription-subscriptionid](/reference/put_partner-app-appid-subscription-subscriptionid)
+→ Full endpoint & Try It: [/reference/put_partner-app-appid-subscription-subscriptionid](/reference/put_partner-app-appid-subscription-subscriptionid)

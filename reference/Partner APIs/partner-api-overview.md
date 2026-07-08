@@ -11,13 +11,11 @@ slug: partner-api-overview
 
 # Partner API
 
-Gupshup Partner APIs let you build branded WhatsApp experiences for your customers. Endpoints are grouped by business category below.
-
-## API Categories
+Gupshup Partner APIs are grouped by business category (same model as 360dialog Partner API Reference).
 
 | Category | Description |
 |----------|-------------|
-| [Partner Management](partner-management/) | Authentication, apps, linking |
+| [Partner Management](partner-management/) | Login, apps, linking |
 | [Channel Management](channel-management/) | Create and manage WABA apps |
 | [WABA Account Management](waba-account-management/) | Health, phone, quality |
 | [Webhook Management](webhook-management/) | Subscriptions and callbacks |
@@ -32,12 +30,10 @@ Gupshup Partner APIs let you build branded WhatsApp experiences for your custome
 
 ## Authentication
 
-All Partner API requests require a partner token.
-
-1. [Generate Secret and Token](/docs/generate-secret-and-token) in the guides
-2. [Get Partner Token](/reference/post_partner-account-login) API endpoint
+1. [Generate Secret and Token](/docs/generate-secret-and-token)
+2. [Get Partner Token](/reference/post_partner-account-login)
 
 ## Guides
 
-- [Partner API overview (guides)](/docs/partner-api-overview)
-- [Onboarding APIs](/docs/onboarding-apis)
+- [Partner API Overview (Guides)](/docs/partner-api-overview)
+- [API Reference (Guides)](/docs/api-reference-overview)

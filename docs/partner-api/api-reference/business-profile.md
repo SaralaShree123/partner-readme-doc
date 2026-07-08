@@ -1,7 +1,7 @@
 ---
 title: Business Profile
-summary: Manage business profile, photo, and display name.
-excerpt: Manage business profile, photo, and display name.
+summary: Endpoints for business profile and display name.
+excerpt: Endpoints for business profile and display name.
 deprecated: false
 hidden: false
 metadata:
@@ -11,10 +11,22 @@ slug: business-profile
 
 # Business Profile
 
-Manage business profile, photo, and display name.
+Endpoints for business profile and display name.
 
-| API | Reference |
-|-----|-----------|
-| Get Profile Details | [/reference/get_partner-app-appid-business-profile](/reference/get_partner-app-appid-business-profile) |
-| Update Profile Details | [/reference/put_partner-app-appid-business-profile](/reference/put_partner-app-appid-business-profile) |
-| Get Profile Picture | [/reference/get_partner-app-appid-business-profile-photo](/reference/get_partner-app-appid-business-profile-photo) |
+## Get Profile Details
+
+> Get business profile.
+
+→ Full endpoint & Try It: [/reference/get_partner-app-appid-business-profile](/reference/get_partner-app-appid-business-profile)
+
+## Update Profile Details
+
+> Update business profile.
+
+→ Full endpoint & Try It: [/reference/put_partner-app-appid-business-profile](/reference/put_partner-app-appid-business-profile)
+
+## Get Profile Picture
+
+> Get profile photo.
+
+→ Full endpoint & Try It: [/reference/get_partner-app-appid-business-profile-photo](/reference/get_partner-app-appid-business-profile-photo)

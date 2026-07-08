@@ -17,7 +17,7 @@ This documentation is a central resource for current and prospective **Gupshup i
 >
 > This documentation is intended for Gupshup Partners and focuses on partner-specific concepts, workflows, and integration requirements.
 >
-> Sign up at [partner.gupshup.io](https://partner.gupshup.io).
+> Sign up at [partner.gupshup.io](https://partner.gupshup.io/).
 
 ---
 
@@ -25,39 +25,49 @@ This documentation is a central resource for current and prospective **Gupshup i
 
 Kick off your Partner journey with quick access to the most essential guides and tools.
 
-| | |
-|---|---|
-| **[Quickstarts](/docs/quickstarts)** | Five steps from signup to your first WhatsApp message |
-| **[Partner API Reference](/reference/partner-api-overview)** | Explore the complete API reference for building and managing integrations |
-| **[Partner Portal](https://partner.gupshup.io)** | Manage apps, customers, and integrations |
-| **[Support](/docs/support)** | Expert support with escalation paths |
+| Resource | Description |
+|----------|-------------|
+| [Quickstarts](/docs/quickstarts) | Five steps from signup to your first WhatsApp message |
+| [Partner API Reference](/docs/api-reference-overview) | Explore APIs grouped by business capability |
+| [Partner Portal](https://partner.gupshup.io/) | Manage apps, customers, and integrations |
+| [Support](/docs/support) | Help and escalation paths |
 
 ---
 
 ## Who is Gupshup for?
-
-From SaaS platforms to software vendors, Gupshup serves a diverse range of Partner use cases.
 
 | Partner Type | How They Benefit from Gupshup |
 |--------------|-------------------------------|
 | SaaS Platforms | Add WhatsApp messaging into your product and automate client workflows |
 | Enterprises | Deploy large-scale messaging for sales, marketing, and support use cases |
 | Agencies & Developers | Build WhatsApp-powered solutions and tools |
-| ISVs | Become a Meta Tech Provider with Gupshup’s expert guidance |
+| ISVs | Become a Meta Tech Provider with Gupshup’s partner platform |
 
 ---
 
 ## How it works
 
-Gupshup provides a developer-first, API-driven approach to WhatsApp Business messaging.
-Easily integrate, onboard clients, and manage messaging workflows within a scalable, partner-friendly ecosystem.
+Gupshup provides a developer-first, API-driven approach to WhatsApp Business messaging. Integrate, onboard clients, and manage messaging workflows in a scalable partner ecosystem.
 
 ### Partner journey
 
-1. **Set up your Partner account** — Create a partner account, set API credentials, and start testing. → [Get Started as a Partner](/docs/get-started-as-partner)
-2. **Integrate WhatsApp API** — Connect Partner APIs and integrate them into your solution. → [Generate Secret and Token](/docs/generate-secret-and-token)
-3. **Onboard clients & manage WABAs** — Add numbers, onboard clients, and start messaging. → [Create your first App](/docs/create-your-first-app)
-4. **Scale & optimise messaging** — Optimise performance and grow. → [Send your first message](/docs/send-your-first-message)
+1. **Set up your Partner account** — Create a partner account and start testing → [Get Started as a Partner](/docs/get-started-as-partner)
+2. **Integrate Partner APIs** — Generate credentials and authenticate → [Generate Secret and Token](/docs/generate-secret-and-token)
+3. **Onboard clients & manage WABAs** — Create apps and connect numbers → [Create your first App](/docs/create-your-first-app)
+4. **Scale & optimise messaging** — Send messages and grow → [Send your first message](/docs/send-your-first-message)
+
+---
+
+## Documentation sections
+
+| Section | What it covers |
+|---------|----------------|
+| [Get Started](/docs/overview) | Landing, quickstarts, pricing, Tech Provider program |
+| [Onboarding](/docs/onboarding-overview) | Webhooks, events, coexistence, onboarding APIs |
+| [Partner API](/docs/partner-api-overview) | REST APIs by category |
+| [Partner Hub](/docs/partner-hub-overview) | Portal UI, wallet, support |
+| [Messaging](/docs/messaging-overview) | Templates, session messages, media, voice |
+| [Commerce & Payments](/docs/commerce-overview) | Brazil payments, INR wallet, wire transfers |
 
 ---
 

@@ -17,9 +17,9 @@ The Gupshup Partner Portal is your control center for WhatsApp partner operation
 
 | Topic | Guide |
 |-------|-------|
-| Getting started | [Get started with Partner Portal](/docs/get-started-with-partner-portal) |
+| Get started | [Get started with Partner Portal](/docs/get-started-with-partner-portal) |
 | Walkthrough | [Partner Portal Walkthrough](/docs/partner-portal-walkthrough) |
-| Wallet & billing | [Wallet](/docs/wallet-1) · [Commissions](/docs/commissions) |
+| Wallet | [Wallet](/docs/wallet-1) |
+| Commissions | [Commissions / Wallet Overview](/docs/commissions) |
 | Support | [Support](/docs/support) |
 | Customer portal | [Partner Customer Portal](/docs/partner-customer-portal) |
-| Wire transfers | [Partner Wire Transfers](/docs/wire-transfer-automation) |

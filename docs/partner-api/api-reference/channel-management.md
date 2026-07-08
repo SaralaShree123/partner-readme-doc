@@ -17,22 +17,22 @@ Endpoints for creating and managing WABA channel applications.
 
 > Create a new partner application.
 
-→ Full endpoint docs & Try It: [/reference/post_partner-app](/reference/post_partner-app)
+→ Full endpoint & Try It: [/reference/post_partner-app](/reference/post_partner-app)
 
 ## Update application
 
 > Update an existing application.
 
-→ Full endpoint docs & Try It: [/reference/put_partner-app-appid](/reference/put_partner-app-appid)
+→ Full endpoint & Try It: [/reference/put_partner-app-appid](/reference/put_partner-app-appid)
 
 ## Generate Embed Signed Link
 
-> Generate an embed signed link for onboarding.
+> Create an embed onboarding link.
 
-→ Full endpoint docs & Try It: [/reference/get_partner-app-appid-onboarding-embed-link](/reference/get_partner-app-appid-onboarding-embed-link)
+→ Full endpoint & Try It: [/reference/get_partner-app-appid-onboarding-embed-link](/reference/get_partner-app-appid-onboarding-embed-link)
 
 ## Filter app list
 
 > Filter and list partner apps.
 
-→ Full endpoint docs & Try It: [/reference/get_partner-app-list](/reference/get_partner-app-list)
+→ Full endpoint & Try It: [/reference/get_partner-app-list](/reference/get_partner-app-list)

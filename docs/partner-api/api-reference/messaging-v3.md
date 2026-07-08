@@ -17,22 +17,22 @@ Endpoints for sending session (passthrough) messages.
 
 > Send a text session message.
 
-→ Full endpoint docs & Try It: [/reference/post_partner-app-appid-v3-text-message](/reference/post_partner-app-appid-v3-text-message)
+→ Full endpoint & Try It: [/reference/post_partner-app-appid-v3-text-message](/reference/post_partner-app-appid-v3-text-message)
 
 ## Image Message
 
 > Send an image session message.
 
-→ Full endpoint docs & Try It: [/reference/post_partner-app-appid-v3-image-message](/reference/post_partner-app-appid-v3-image-message)
+→ Full endpoint & Try It: [/reference/post_partner-app-appid-v3-image-message](/reference/post_partner-app-appid-v3-image-message)
 
 ## Interactive Message
 
-> Send an interactive session message.
+> Send an interactive message.
 
-→ Full endpoint docs & Try It: [/reference/post_partner-app-appid-v3-interactive-message](/reference/post_partner-app-appid-v3-interactive-message)
+→ Full endpoint & Try It: [/reference/post_partner-app-appid-v3-interactive-message](/reference/post_partner-app-appid-v3-interactive-message)
 
 ## Reaction Message
 
-> Send a reaction message.
+> Send a reaction.
 
-→ Full endpoint docs & Try It: [/reference/post_partner-app-appid-v3-reaction-message](/reference/post_partner-app-appid-v3-reaction-message)
+→ Full endpoint & Try It: [/reference/post_partner-app-appid-v3-reaction-message](/reference/post_partner-app-appid-v3-reaction-message)

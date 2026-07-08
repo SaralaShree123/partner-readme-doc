@@ -1,7 +1,7 @@
 ---
 title: WhatsApp Flows
-summary: Create, publish, and manage WhatsApp Flow experiences.
-excerpt: Create, publish, and manage WhatsApp Flow experiences.
+summary: Endpoints for creating, publishing, and managing WhatsApp Flows.
+excerpt: Endpoints for creating, publishing, and managing WhatsApp Flows.
 deprecated: false
 hidden: false
 metadata:
@@ -11,10 +11,22 @@ slug: whatsapp-flows
 
 # WhatsApp Flows
 
-Create, publish, and manage WhatsApp Flow experiences.
+Endpoints for creating, publishing, and managing WhatsApp Flows.
 
-| API | Reference |
-|-----|-----------|
-| Create Flow | [/reference/createflow](/reference/createflow) |
-| Get All Flows | [/reference/getallflow](/reference/getallflow) |
-| Publish flow | [/reference/publishflow](/reference/publishflow) |
+## Create Flow
+
+> Create a flow.
+
+→ Full endpoint & Try It: [/reference/createflow](/reference/createflow)
+
+## Get All Flows
+
+> List flows.
+
+→ Full endpoint & Try It: [/reference/getallflow](/reference/getallflow)
+
+## Publish flow
+
+> Publish a flow.
+
+→ Full endpoint & Try It: [/reference/publishflow](/reference/publishflow)

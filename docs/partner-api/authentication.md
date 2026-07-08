@@ -13,17 +13,18 @@ slug: authentication
 
 ## Partner token
 
-1. Generate a client secret in Partner Portal → **Settings** → **API client details**
-2. Call [Get Partner Token](/reference/post_partner-account-login) with the secret in the `password` parameter
-3. Use the returned token in subsequent API requests
+1. In Partner Portal go to **Settings → API client details**
+2. Generate a **client secret**
+3. Call [Get Partner Token](/reference/post_partner-account-login) with the secret in the `password` parameter
+4. Use the returned token on subsequent Partner API calls
 
-See [Generate Secret and Token](/docs/generate-secret-and-token) for step-by-step instructions.
+Step-by-step UI guide: [Generate Secret and Token](/docs/generate-secret-and-token)
 
 ## App access token
 
 For app-level APIs, use [Get Access Token for an App](/reference/get_partner-app-appid-token).
 
-## Security best practices
+## Related
 
-- Rotate client secrets regularly (recommended: max 3 months)
-- See [Security](/docs/security-overview) for MFA and IP allowlisting guides
+- [Partner Management](/docs/partner-management)
+- [Security Overview](/docs/security-overview)

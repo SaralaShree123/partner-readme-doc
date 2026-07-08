@@ -11,8 +11,6 @@ slug: meta-whatsapp-features-overview
 
 # Meta WhatsApp Features
 
-Guides for Meta WhatsApp platform features available to Gupshup partners.
-
 | Topic | Guide |
 |-------|-------|
 | BSUID | [BSUID](/docs/bsuid) |

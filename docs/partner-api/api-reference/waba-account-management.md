@@ -1,7 +1,7 @@
 ---
 title: WABA Account Management
-summary: WABA health, phone numbers, quality ratings, and account settings.
-excerpt: WABA health, phone numbers, quality ratings, and account settings.
+summary: Endpoints for WABA health, phone registration, and account quality.
+excerpt: Endpoints for WABA health, phone registration, and account quality.
 deprecated: false
 hidden: false
 metadata:
@@ -11,10 +11,22 @@ slug: waba-account-management
 
 # WABA Account Management
 
-WABA health, phone numbers, quality ratings, and account settings.
+Endpoints for WABA health, phone registration, and account quality.
 
-| API | Reference |
-|-----|-----------|
-| Get Waba Info | [/reference/getwabahealth](/reference/getwabahealth) |
-| Check Health | [/reference/get_partner-app-appid-health](/reference/get_partner-app-appid-health) |
-| Register phone | [/reference/registerphoneapp](/reference/registerphoneapp) |
+## Get Waba Info
+
+> Retrieve WABA health information.
+
+→ Full endpoint & Try It: [/reference/getwabahealth](/reference/getwabahealth)
+
+## Check Health
+
+> Check app/channel health.
+
+→ Full endpoint & Try It: [/reference/get_partner-app-appid-health](/reference/get_partner-app-appid-health)
+
+## Register phone
+
+> Register a phone number for an app.
+
+→ Full endpoint & Try It: [/reference/registerphoneapp](/reference/registerphoneapp)
