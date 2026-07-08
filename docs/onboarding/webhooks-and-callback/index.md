@@ -1,5 +1,6 @@
 ---
 title: Webhooks & Callback
+icon: fa-duotone fa-satellite-dish
 summary: How webhooks and callback URLs work for Partner apps.
 excerpt: How webhooks and callback URLs work for Partner apps.
 deprecated: false

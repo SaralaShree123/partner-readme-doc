@@ -1,5 +1,6 @@
 ---
 title: WhatsApp Flows
+icon: fa-duotone fa-diagram-project
 summary: Endpoints for creating, publishing, and managing WhatsApp Flows.
 excerpt: Endpoints for creating, publishing, and managing WhatsApp Flows.
 deprecated: false

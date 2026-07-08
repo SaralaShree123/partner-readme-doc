@@ -1,5 +1,6 @@
 ---
 title: Partner Portal
+icon: fa-duotone fa-browser
 summary: Partner Portal UI guides for managing customers and WABAs.
 excerpt: Partner Portal UI guides for managing customers and WABAs.
 deprecated: false

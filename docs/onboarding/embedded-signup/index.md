@@ -1,5 +1,6 @@
 ---
 title: Embedded Signup
+icon: fa-duotone fa-window
 summary: Host Meta Embedded Signup in your own UI.
 excerpt: Host Meta Embedded Signup in your own UI.
 deprecated: false

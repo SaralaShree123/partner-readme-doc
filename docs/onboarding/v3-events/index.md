@@ -1,5 +1,6 @@
 ---
 title: Incoming Events (V3)
+icon: fa-duotone fa-bolt
 summary: V3 incoming webhook events for Partner apps.
 excerpt: V3 incoming webhook events for Partner apps.
 deprecated: false

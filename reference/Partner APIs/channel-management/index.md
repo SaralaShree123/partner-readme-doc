@@ -1,5 +1,6 @@
 ---
 title: Channel Management
+icon: fa-duotone fa-tower-broadcast
 summary: Endpoints for creating and managing WABA channel applications.
 excerpt: Endpoints for creating and managing WABA channel applications.
 deprecated: false

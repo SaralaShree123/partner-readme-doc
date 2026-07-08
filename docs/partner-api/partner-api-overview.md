@@ -1,5 +1,6 @@
 ---
 title: Partner API Overview
+icon: fa-duotone fa-brackets-curly
 summary: REST APIs for partner integrations with Gupshup.
 excerpt: REST APIs for partner integrations with Gupshup.
 deprecated: false

@@ -1,5 +1,6 @@
 ---
 title: API Reference
+icon: fa-duotone fa-book
 summary: Partner API endpoints grouped by business category.
 excerpt: Partner API endpoints grouped by business category.
 deprecated: false

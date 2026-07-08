@@ -1,5 +1,6 @@
 ---
 title: Messaging Overview
+icon: fa-duotone fa-messages
 summary: Send and receive WhatsApp messages, templates, media, and voice.
 excerpt: Send and receive WhatsApp messages, templates, media, and voice.
 deprecated: false

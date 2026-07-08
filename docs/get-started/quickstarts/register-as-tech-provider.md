@@ -1,5 +1,6 @@
 ---
 title: Register as Tech Provider
+icon: fa-duotone fa-id-card
 summary: Get your Meta Solution ID and register as a Tech Provider.
 excerpt: Get your Meta Solution ID and register as a Tech Provider.
 deprecated: false

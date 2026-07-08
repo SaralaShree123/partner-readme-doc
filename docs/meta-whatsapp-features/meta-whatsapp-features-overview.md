@@ -1,5 +1,6 @@
 ---
 title: Meta WhatsApp Features Overview
+icon: fa-duotone fa-sparkles
 summary: Meta WhatsApp platform features for partners.
 excerpt: Meta WhatsApp platform features for partners.
 deprecated: false

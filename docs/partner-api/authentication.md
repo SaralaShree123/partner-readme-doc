@@ -1,5 +1,6 @@
 ---
 title: Authentication
+icon: fa-duotone fa-lock
 summary: How to authenticate Partner API requests.
 excerpt: How to authenticate Partner API requests.
 deprecated: false

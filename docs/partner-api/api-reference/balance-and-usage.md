@@ -1,5 +1,6 @@
 ---
 title: Balance & Usage
+icon: fa-duotone fa-chart-pie
 summary: Endpoints for wallet balance, usage, and discounts.
 excerpt: Endpoints for wallet balance, usage, and discounts.
 deprecated: false

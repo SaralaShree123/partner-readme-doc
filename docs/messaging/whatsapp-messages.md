@@ -1,6 +1,7 @@
 ---
 summary: WhatsApp Messages
 title: WhatsApp Messages
+icon: fa-duotone fa-comment
 excerpt: ''
 deprecated: false
 hidden: false

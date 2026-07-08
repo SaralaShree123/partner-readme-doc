@@ -1,6 +1,7 @@
 ---
 summary: Support
 title: Support
+icon: fa-duotone fa-life-ring
 excerpt: ''
 deprecated: false
 hidden: false

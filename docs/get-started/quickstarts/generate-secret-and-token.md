@@ -1,6 +1,7 @@
 ---
 summary: Generate Secret and Token
 title: Generate Secret and Token
+icon: fa-duotone fa-key
 slug: generate-secret-and-token
 excerpt: ''
 deprecated: false

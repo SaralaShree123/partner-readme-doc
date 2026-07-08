@@ -1,5 +1,6 @@
 ---
 title: Voice
+icon: fa-duotone fa-phone
 summary: WhatsApp Voice (inbound/outbound) and SIP integration for partners.
 excerpt: WhatsApp Voice (inbound/outbound) and SIP integration for partners.
 deprecated: false

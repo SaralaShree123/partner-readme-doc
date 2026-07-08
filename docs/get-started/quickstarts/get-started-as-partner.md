@@ -1,5 +1,6 @@
 ---
 title: Get Started as a Partner
+icon: fa-duotone fa-user-plus
 summary: Sign up for the Gupshup Partner program and access the Partner Portal.
 excerpt: Sign up for the Gupshup Partner program and access the Partner Portal.
 deprecated: false

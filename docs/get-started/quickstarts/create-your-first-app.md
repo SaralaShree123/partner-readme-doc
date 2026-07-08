@@ -1,6 +1,7 @@
 ---
 summary: Create your first App
 title: Create your first App
+icon: fa-duotone fa-mobile
 slug: create-your-first-app
 excerpt: ''
 deprecated: false

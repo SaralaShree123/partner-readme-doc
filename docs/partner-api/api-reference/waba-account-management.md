@@ -1,5 +1,6 @@
 ---
 title: WABA Account Management
+icon: fa-duotone fa-building-columns
 summary: Endpoints for WABA health, phone registration, and account quality.
 excerpt: Endpoints for WABA health, phone registration, and account quality.
 deprecated: false

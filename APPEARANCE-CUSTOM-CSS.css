@@ -1,0 +1,29 @@
+/* ============================================================
+   Paste into ReadMe → Settings → Custom CSS
+   Makes main Guide categories look bold (360dialog-style hierarchy)
+   ============================================================ */
+
+/* Bold top-level category headings in the Guides sidebar */
+.rm-Sidebar-heading,
+.rm-Sidebar [class*="heading"],
+.rm-Sidebar-section-title {
+  font-weight: 700 !important;
+  letter-spacing: 0.01em;
+}
+
+/* Category wrapper slightly stronger contrast */
+.rm-Sidebar-wrapper > .rm-Sidebar-heading {
+  font-size: 0.95rem;
+  text-transform: none;
+}
+
+/* Active / hover polish */
+.rm-Sidebar-link:hover {
+  font-weight: 600;
+}
+
+/* Optional: give page icons a bit more presence next to titles */
+.rm-Sidebar-link i,
+.rm-Sidebar-link svg {
+  opacity: 0.9;
+}

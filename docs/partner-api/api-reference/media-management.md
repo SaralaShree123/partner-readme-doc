@@ -1,5 +1,6 @@
 ---
 title: Media Management
+icon: fa-duotone fa-photo-film
 summary: Endpoints for uploading, downloading, and deleting media.
 excerpt: Endpoints for uploading, downloading, and deleting media.
 deprecated: false

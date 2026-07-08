@@ -1,5 +1,6 @@
 ---
 title: Coexistence
+icon: fa-duotone fa-arrows-rotate
 summary: WhatsApp Coexistence: Business App + Cloud API together.
 excerpt: WhatsApp Coexistence: Business App + Cloud API together.
 deprecated: false

@@ -1,5 +1,6 @@
 ---
 title: Quickstarts
+icon: fa-duotone fa-rocket-launch
 summary: Five steps from partner signup to your first WhatsApp message.
 excerpt: Five steps from partner signup to your first WhatsApp message.
 deprecated: false

@@ -1,5 +1,6 @@
 ---
 title: Partner Management
+icon: fa-duotone fa-user-gear
 summary: Endpoints for managing partner accounts, authentication, and app linking.
 excerpt: Endpoints for managing partner accounts, authentication, and app linking.
 deprecated: false

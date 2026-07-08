@@ -1,5 +1,6 @@
 ---
 title: Inbound Messages
+icon: fa-duotone fa-inbox-in
 summary: Types of inbound WhatsApp messages partners can receive.
 excerpt: Types of inbound WhatsApp messages partners can receive.
 deprecated: false

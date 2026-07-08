@@ -1,5 +1,6 @@
 ---
 title: Pricing
+icon: fa-duotone fa-tags
 summary: Partner billing models, wallet, and commissions.
 excerpt: Partner billing models, wallet, and commissions.
 deprecated: false

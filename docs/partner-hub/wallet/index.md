@@ -1,5 +1,6 @@
 ---
 title: Wallet & Billing
+icon: fa-duotone fa-wallet
 summary: Prepaid wallet, commissions, and billing for partners.
 excerpt: Prepaid wallet, commissions, and billing for partners.
 deprecated: false

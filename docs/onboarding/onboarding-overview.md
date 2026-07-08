@@ -1,5 +1,6 @@
 ---
 title: Onboarding Overview
+icon: fa-duotone fa-route
 summary: Integrate with Gupshup: apps, webhooks, events, and coexistence.
 excerpt: Integrate with Gupshup: apps, webhooks, events, and coexistence.
 deprecated: false

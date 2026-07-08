@@ -1,5 +1,6 @@
 ---
 title: User Management
+icon: fa-duotone fa-users
 summary: Endpoints for blocking and unblocking WhatsApp users.
 excerpt: Endpoints for blocking and unblocking WhatsApp users.
 deprecated: false

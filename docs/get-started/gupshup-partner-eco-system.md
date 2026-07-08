@@ -1,6 +1,7 @@
 ---
 summary: Gupshup Partner Eco-System
 title: Gupshup Partner Eco-System
+icon: fa-duotone fa-building
 excerpt: ''
 deprecated: false
 hidden: false

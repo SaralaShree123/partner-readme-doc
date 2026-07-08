@@ -1,5 +1,6 @@
 ---
 title: Inbound events (V2)
+icon: fa-duotone fa-bell
 summary: V2 inbound webhook event reference for Partner apps.
 excerpt: V2 inbound webhook event reference for Partner apps.
 deprecated: false

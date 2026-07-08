@@ -1,6 +1,7 @@
 ---
 summary: Solution Partners & Tech Providers
 title: Solution Partners & Tech Providers
+icon: fa-duotone fa-handshake
 excerpt: ''
 deprecated: false
 hidden: false

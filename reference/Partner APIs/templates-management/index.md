@@ -1,5 +1,6 @@
 ---
 title: Templates Management
+icon: fa-duotone fa-file-lines
 summary: Endpoints for creating, managing, and sending WhatsApp message templates.
 excerpt: Endpoints for creating, managing, and sending WhatsApp message templates.
 deprecated: false

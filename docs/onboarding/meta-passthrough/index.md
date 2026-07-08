@@ -1,5 +1,6 @@
 ---
 title: Meta Passthrough & Flows
+icon: fa-duotone fa-share-nodes
 summary: Passthrough messaging and Flow management for Partners.
 excerpt: Passthrough messaging and Flow management for Partners.
 deprecated: false

@@ -1,5 +1,6 @@
 ---
 title: Marketing Messages Lite
+icon: fa-duotone fa-bullhorn
 summary: Endpoints for MM Lite enablement and sending.
 excerpt: Endpoints for MM Lite enablement and sending.
 deprecated: false

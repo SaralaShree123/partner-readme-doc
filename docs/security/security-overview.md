@@ -1,5 +1,6 @@
 ---
 title: Security Overview
+icon: fa-duotone fa-shield-halved
 summary: Partner Portal security, authentication, and best practices.
 excerpt: Partner Portal security, authentication, and best practices.
 deprecated: false

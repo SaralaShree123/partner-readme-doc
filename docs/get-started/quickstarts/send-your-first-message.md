@@ -1,5 +1,6 @@
 ---
 title: Send your first message
+icon: fa-duotone fa-paper-plane
 summary: Send your first WhatsApp message using the Partner API.
 excerpt: Send your first WhatsApp message using the Partner API.
 deprecated: false

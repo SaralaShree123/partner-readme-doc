@@ -1,5 +1,6 @@
 ---
 title: Messaging (V3)
+icon: fa-duotone fa-comments
 summary: Endpoints for sending session (passthrough) messages.
 excerpt: Endpoints for sending session (passthrough) messages.
 deprecated: false

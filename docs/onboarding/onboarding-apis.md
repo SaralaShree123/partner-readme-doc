@@ -1,6 +1,7 @@
 ---
 summary: Onboarding APIs
 title: Onboarding APIs
+icon: fa-duotone fa-code
 excerpt: ''
 deprecated: false
 hidden: false

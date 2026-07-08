@@ -1,5 +1,6 @@
 ---
 title: Webhook Management
+icon: fa-duotone fa-satellite-dish
 summary: Endpoints for webhook subscriptions and callbacks.
 excerpt: Endpoints for webhook subscriptions and callbacks.
 deprecated: false

@@ -1,5 +1,6 @@
 ---
 title: Business Profile
+icon: fa-duotone fa-id-badge
 summary: Endpoints for business profile and display name.
 excerpt: Endpoints for business profile and display name.
 deprecated: false
