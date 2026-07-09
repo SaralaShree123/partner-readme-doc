@@ -10,8 +10,8 @@ metadata:
 next:
   description: ''
 ---
-[Create Retargeting Schedule](https://partner-docs.gupshup.io/reference/post_api-v2-services-serviceid-retargeting-schedules)
+[Create Retargeting Schedule](/reference/post_api-v2-services-serviceid-retargeting-schedules)
 
-[Get Retargeting Schedules](https://partner-docs.gupshup.io/reference/get_api-v2-services-serviceid-retargeting-schedules)
+[Get Retargeting Schedules](/reference/get_api-v2-services-serviceid-retargeting-schedules)
 
-[Get Retargeting Schedule](https://partner-docs.gupshup.io/reference/get_api-v2-services-serviceid-retargeting-schedules-retargetingscheduleid)
+[Get Retargeting Schedule](/reference/get_api-v2-services-serviceid-retargeting-schedules-retargetingscheduleid)

@@ -10,6 +10,6 @@ metadata:
 next:
   description: ''
 ---
-<Anchor label="Event - Payment Transaction" target="_blank" href="https://partner-docs.gupshup.io/reference/event-payment-transaction#/">Event - Payment Transaction</Anchor>
+<Anchor label="Event - Payment Transaction" target="_blank" href="/reference/event-payment-transaction#/">Event - Payment Transaction</Anchor>
 
-[Event - Refund Transaction](https://partner-docs.gupshup.io/reference/event-refund-transaction#/)
+[Event - Refund Transaction](/reference/event-refund-transaction#/)

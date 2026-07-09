@@ -30,4 +30,4 @@ Tech Provider Program, enables third-party developers (ISVs) to work with a Solu
 * Tech Providers will be eligible to become a Tech Partner with access to the Meta Partner Directory and various marketing and training resources.
 * You can continue to access the Solution Partners' credit line if you partner with a Solution Partner like Gupshup.
 
-For more information, refer to the <Anchor label="article" target="_blank" href="https://partner-docs.gupshup.io/docs/get-solution-id-from-meta">article</Anchor>.
+For more information, refer to the <Anchor label="article" target="_blank" href="/docs/get-solution-id-from-meta">article</Anchor>.

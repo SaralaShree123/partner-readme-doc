@@ -10,14 +10,14 @@ metadata:
 next:
   description: ''
 ---
-[Create a New Ad for a Service](https://partner-docs.gupshup.io/reference/post_api-v2-services-serviceid-ads)
+[Create a New Ad for a Service](/reference/post_api-v2-services-serviceid-ads)
 
-[List Ads](https://partner-docs.gupshup.io/reference/get_api-v2-services-serviceid-ads)
+[List Ads](/reference/get_api-v2-services-serviceid-ads)
 
-[Get Ad Insights](https://partner-docs.gupshup.io/reference/get_api-v2-services-serviceid-ads-ad-insightshttps://partner-docs.gupshup.io/reference/get_api-v2-services-serviceid-ads-ad-insights)
+[Get Ad Insights](/reference/get_api-v2-services-serviceid-ads-ad-insights)
 
-[Compare Ads](https://partner-docs.gupshup.io/reference/get_api-v2-services-serviceid-ads-comparison)
+[Compare Ads](/reference/get_api-v2-services-serviceid-ads-comparison)
 
-[Get Details of a Specific Ad](https://partner-docs.gupshup.io/reference/get_api-v2-services-serviceid-ads-adid)
+[Get Details of a Specific Ad](/reference/get_api-v2-services-serviceid-ads-adid)
 
-[Get Ad Insights by Ad ID](https://partner-docs.gupshup.io/reference/get_api-v2-services-serviceid-ads-adid-ad-insights)
+[Get Ad Insights by Ad ID](/reference/get_api-v2-services-serviceid-ads-adid-ad-insights)

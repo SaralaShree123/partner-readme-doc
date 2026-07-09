@@ -52,7 +52,7 @@ Link the Facebook page with the phone number onboarded:
 
 Once you have completed the ad creation process, set up your AmpLead app on Gupshup.
 
-APIs Docs [here](https://partner-docs.gupshup.io/reference/goal#/).
+APIs Docs [here](/reference/goal#/).
 
 **This will require -**
 
@@ -72,7 +72,7 @@ Goals represent significant milestones in the lead's journey through the bot, wh
 
 During the bot journey, you should track the lead's progress by calling the Achieved Milestone API, which records the most recent tracker the user has completed.  You can define multiple goals and trackers for your bot, with at least one goal required.  Any tracker, typically the final one in the last goal, can be set as the milestone to mark a **Qualified Lead**—indicating the user has successfully navigated through the expected bot journey.
 
-API Docs [here](https://partner-docs.gupshup.io/reference/goal#/).
+API Docs [here](/reference/goal#/).
 
 ### Build the Bot
 
@@ -82,7 +82,7 @@ Build the bot on your preferred platform and call the API Milestone achieved (AP
 
 Retargeting is a powerful tool for re-engaging leads who did not complete their interactions with a bot, within the free 72-hour window provided by Meta for C2WA users. Retargeting can be done based on the goals and trackers set in the onboarding APIs and within your bot, within a fixed time of C2WA event or dynamic. The leads who met a certain tracker, except the last one, will then be triggered by the template defined by you in the onboarding APIs. With this approach, it's possible to reach out to these leads up to 2 times with the same template.
 
-API docs [here](https://partner-docs.gupshup.io/reference/retargeting).
+API docs [here](/reference/retargeting).
 
 You can set a callback to recieve webhook events when the retargeting messages are sent.
 
@@ -136,7 +136,7 @@ Ad Comparison Analytics gives you insights of your ads. You can compare up to 4 
 
 <Image align="center" className="border" border={true} src="https://files.readme.io/cd8e64d0729ec8a8487fb4149e590a5bd9565ae25d979d0b63a09c9f084e0b4a-image.png" />
 
-For more information, please refer to the guide [here](https://partner-docs.gupshup.io/docs/amplead-analytics-sdk-guide).
+For more information, please refer to the guide [here](/docs/amplead-analytics-sdk-guide).
 
 > 📘 To use this feature please write to us at [amplead.support@gupshup.io]()  to get started. Here our support team will share a link that will help you link your Ad Account to AmpLead ServiceID.
 

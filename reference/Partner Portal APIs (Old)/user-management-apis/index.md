@@ -10,5 +10,5 @@ metadata:
 next:
   description: ''
 ---
-1. [Grant or Revoke User Access](https://partner-docs.gupshup.io/reference/put_partner-users-userid-active)
-2. [Delete Non-Admin Partner User](https://partner-docs.gupshup.io/reference/delete_partner-users-userid)
+1. [Grant or Revoke User Access](/reference/put_partner-users-userid-active)
+2. [Delete Non-Admin Partner User](/reference/delete_partner-users-userid)

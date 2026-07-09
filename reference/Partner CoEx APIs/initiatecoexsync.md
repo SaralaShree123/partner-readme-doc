@@ -6,7 +6,7 @@ hidden: false
 ---
 # CoEx Event Guide
 
-[https://partner-docs.gupshup.io/update/docs/coexistence-events](https://partner-docs.gupshup.io/update/docs/coexistence-events)
+[/update/docs/coexistence-events](/update/docs/coexistence-events)
 
 <br />
 

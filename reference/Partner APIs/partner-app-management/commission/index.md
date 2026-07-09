@@ -10,4 +10,4 @@ metadata:
 next:
   description: ''
 ---
-[Update Partner Capping](https://partner-docs.gupshup.io/reference/put_partner-app-appid-capping)
+[Update Partner Capping](/reference/put_partner-app-appid-capping)

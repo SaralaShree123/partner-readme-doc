@@ -6,4 +6,4 @@ hidden: true
 metadata:
   robots: index
 ---
-This page can now be found [here](https://partner-docs.gupshup.io/docs/partner-hosted-onboarding)
+This page can now be found [here](/docs/partner-hosted-onboarding)

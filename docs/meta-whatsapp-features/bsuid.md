@@ -12,7 +12,7 @@ metadata:
 ---
 # API Reference to enable BSUID
 
-[https://partner-docs.gupshup.io/update/docs/api-to-enable-bsuid-flag-for-an-app](https://partner-docs.gupshup.io/update/docs/api-to-enable-bsuid-flag-for-an-app)
+[/update/docs/api-to-enable-bsuid-flag-for-an-app](/update/docs/api-to-enable-bsuid-flag-for-an-app)
 
 <br />
 

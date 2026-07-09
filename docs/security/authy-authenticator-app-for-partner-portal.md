@@ -3,7 +3,7 @@ summary: Using the Authy Authenticator App for Partner Portal
 title: Using the Authy Authenticator App for Partner Portal
 excerpt: ''
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''

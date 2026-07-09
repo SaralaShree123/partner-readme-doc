@@ -29,7 +29,7 @@ An ISV can create an automated WABA Onboarding journey in their own platform wit
 
 ## Let's understand the APIs one by one.
 
-Please check out the API Documentation [here](https://partner-docs.gupshup.io/reference/app-onboarding-apis)
+Please check out the API Documentation [here](/reference/app-onboarding-apis)
 
 * **Create App** - This API is to create an Gupshup App. Please note that your app comes pre-linked to your Partner ID.
 * **Set CallBack** - To set call back to receive the events
@@ -47,4 +47,4 @@ Please check out the API Documentation [here](https://partner-docs.gupshup.io/re
 
 ## Set Live-Event callback
 
-Finally, you can configure the callback event to receive notifications about the app's live events. This will inform you whenever an app goes live through the embedded link refer [here](https://partner-docs.gupshup.io/docs/system-events#/go-live-event)
+Finally, you can configure the callback event to receive notifications about the app's live events. This will inform you whenever an app goes live through the embedded link refer [here](/docs/system-events#/go-live-event)

@@ -10,5 +10,5 @@ metadata:
 next:
   description: ''
 ---
-* [Partner for business verification](https://partner-docs.gupshup.io/reference/submitbusinessverification): This API is used for partner business verification.
-* [Get Partner for Business Verification Status](https://partner-docs.gupshup.io/reference/getbusinessverificationstatus): This API is used to verify the business status of a partner to ensure compliance and authenticity.
+* [Partner for business verification](/reference/submitbusinessverification): This API is used for partner business verification.
+* [Get Partner for Business Verification Status](/reference/getbusinessverificationstatus): This API is used to verify the business status of a partner to ensure compliance and authenticity.

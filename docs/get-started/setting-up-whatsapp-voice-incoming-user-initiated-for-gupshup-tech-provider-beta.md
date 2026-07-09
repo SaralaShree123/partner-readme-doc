@@ -9,6 +9,6 @@ metadata:
 ---
 This page is now managed on -
 
-[LINK](https://partner-docs.gupshup.io/docs/copy-of-guide-to-whatsapp-voice-inbound-sip-integration-via-gupshup)
+[LINK](/docs/copy-of-guide-to-whatsapp-voice-inbound-sip-integration-via-gupshup)
 
 <br />

@@ -44,10 +44,10 @@ Businesses create a new payment configuration using the WhatsApp Business Manage
 
 # APIs
 
-* <Anchor label="Send Message API" target="_blank" href="https://partner-docs.gupshup.io/reference/passthrough-apis#/">Send Message API</Anchor>
-* <Anchor label="Order Details" target="_blank" href="https://partner-docs.gupshup.io/reference/order-details">Order Details</Anchor>
-* <Anchor label="Order Status" target="_blank" href="https://partner-docs.gupshup.io/reference/order-status">Order Status</Anchor>
-* <Anchor label="Payment Status Check API" target="_blank" href="https://partner-docs.gupshup.io/reference/get_partner-app-appid-payments-payment-configuration-reference-id#/">Payment Status Check API</Anchor>
-* <Anchor label="Payment Refund API" target="_blank" href="https://partner-docs.gupshup.io/reference/post_partner-app-appid-payments-refund#/">Payment Refund API</Anchor>
-* <Anchor label="Subscription API - V3" target="_blank" href="https://partner-docs.gupshup.io/reference/setsubscription-api-v3#/">Subscription API - V3</Anchor>
-* <Anchor label="Event Payloads" target="_blank" href="https://partner-docs.gupshup.io/reference/event-payloads#/">Event Payloads</Anchor>
+* <Anchor label="Send Message API" target="_blank" href="/reference/passthrough-apis#/">Send Message API</Anchor>
+* <Anchor label="Order Details" target="_blank" href="/reference/order-details">Order Details</Anchor>
+* <Anchor label="Order Status" target="_blank" href="/reference/order-status">Order Status</Anchor>
+* <Anchor label="Payment Status Check API" target="_blank" href="/reference/get_partner-app-appid-payments-payment-configuration-reference-id#/">Payment Status Check API</Anchor>
+* <Anchor label="Payment Refund API" target="_blank" href="/reference/post_partner-app-appid-payments-refund#/">Payment Refund API</Anchor>
+* <Anchor label="Subscription API - V3" target="_blank" href="/reference/setsubscription-api-v3#/">Subscription API - V3</Anchor>
+* <Anchor label="Event Payloads" target="_blank" href="/reference/event-payloads#/">Event Payloads</Anchor>

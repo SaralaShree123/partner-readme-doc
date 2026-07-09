@@ -146,7 +146,7 @@ This section explains the inbound event type `message` you receive on your callb
       </td>
 
       <td>
-        See [the payload object description](https://partner-docs.gupshup.io/update/docs/inbound-message-events#/) for more information.
+        See [the payload object description](/update/docs/inbound-message-events#/) for more information.
       </td>
     </tr>
 
@@ -162,7 +162,7 @@ This section explains the inbound event type `message` you receive on your callb
       </td>
 
       <td>
-        See [the sender object description](https://partner-docs.gupshup.io/docs/inbound-message-events#/sender-object-description) for more information.
+        See [the sender object description](/docs/inbound-message-events#/sender-object-description) for more information.
       </td>
     </tr>
 
@@ -176,7 +176,7 @@ This section explains the inbound event type `message` you receive on your callb
       </td>
 
       <td>
-        See [the context object description](https://partner-docs.gupshup.io/docs/inbound-message-events#/context-object-description) for more information.
+        See [the context object description](/docs/inbound-message-events#/context-object-description) for more information.
       </td>
     </tr>
   </tbody>

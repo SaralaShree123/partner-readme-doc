@@ -53,7 +53,7 @@
             },
             "example": "{{PARTNER_TOKEN}}",
             "required": true,
-            "description": "Your partner token, please refer [**Get partner token api**](https://partner-docs.gupshup.io/reference/post_partner-account-login#/) to get the token from partner documentation."
+            "description": "Your partner token, please refer [**Get partner token api**](/reference/post_partner-account-login#/) to get the token from partner documentation."
           }
         ],
         "responses": {

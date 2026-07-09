@@ -116,7 +116,7 @@ hidden: true
 
     <tr>
       <td style={{ textAlign: "left" }}>
-        [modes](https://partner-docs.gupshup.io/reference/setsubscription-api-v3#/modes)
+        [modes](/reference/setsubscription-api-v3#/modes)
       </td>
 
       <td style={{ textAlign: "left" }}>

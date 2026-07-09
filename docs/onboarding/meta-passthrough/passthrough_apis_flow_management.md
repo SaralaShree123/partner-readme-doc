@@ -57,7 +57,7 @@ All the existing APIs will work with the existing subscriptions and newer APIs w
 
 To consume the passthrough send message APIs, the following steps should have been completed:-
 
-1. Onboarding on the partner portal to get a [partner token](https://partner-docs.gupshup.io/update/reference/post_partner-account-login#/).
+1. Onboarding on the partner portal to get a [partner token](/reference/post_partner-account-login#/).
 2. Create an account on gupshup.io to get an API key and a wallet.
 3. If the partner is on the prepaid model, contact support to convert the wallet to a postpaid.
 4. If the WABA onboarding is through gupshup.io UI.
@@ -65,13 +65,13 @@ To consume the passthrough send message APIs, the following steps should have be
 
 ## Flow Management
 
-1. **Create Flow**: This API allows the user to create a flow in a Gupshup application by specifying the flow's name and categories.  Read how to use the [Create Flow API](https://partner-docs.gupshup.io/reference/createflow).
-2. **Get Flow**: To retrieve detailed information about a specific flow, the **Get Flow** API is used.  Read how to use the [Get Flow API](https://partner-docs.gupshup.io/reference/getflowbyid).
-3. **Get All Flow API**: To retrieve a list of all flows associated with a specific appID,  the **Get All Flow** API is used.  Read how to use the [Get All Flow API](https://partner-docs.gupshup.io/reference/getallflow).
-4. **Update Flow**: Used to modify an existing flow within an application by providing the app ID and flow ID.  Read how to use the [Update Flow API](https://partner-docs.gupshup.io/reference/updateflow).
-5. **Get Flow Json**: This endpoint is used to retrieve the *Json* assets of specific app flows. Read how to use the [Get Flow Json API](https://partner-docs.gupshup.io/reference/getflowjson).
-6. **Get Preview URL**: This endpoint is used to retrieve the preview URL for a specific flow in an application. Read how to use the [Get Preview URL API](https://partner-docs.gupshup.io/reference/getpreviewurl).
-7. **Delete Flow**: Used to delete a specific flow in an application by providing the app ID and flow ID. Successful deletion returns a status of "success" with a true value.  Read how to use the [Delete Flow API](https://partner-docs.gupshup.io/reference/deleteflow).
-8. **Deprecate Flow**: Used to deprecate the flow.  Read how to use the [Deprecate Flow API](https://partner-docs.gupshup.io/reference/deprecateflow).
-9. **Publish Flow**: Used to publish a flow message.  Read how to use the [Publish Flow API](https://partner-docs.gupshup.io/reference/publishflow).
-10. **Update Flow Json**: Used for updating the JSON structure of an existing flow.  Read how to use the [Update Flow Json API](https://partner-docs.gupshup.io/reference/updateflowjson).
+1. **Create Flow**: This API allows the user to create a flow in a Gupshup application by specifying the flow's name and categories.  Read how to use the [Create Flow API](/reference/createflow).
+2. **Get Flow**: To retrieve detailed information about a specific flow, the **Get Flow** API is used.  Read how to use the [Get Flow API](/reference/getflowbyid).
+3. **Get All Flow API**: To retrieve a list of all flows associated with a specific appID,  the **Get All Flow** API is used.  Read how to use the [Get All Flow API](/reference/getallflow).
+4. **Update Flow**: Used to modify an existing flow within an application by providing the app ID and flow ID.  Read how to use the [Update Flow API](/reference/updateflow).
+5. **Get Flow Json**: This endpoint is used to retrieve the *Json* assets of specific app flows. Read how to use the [Get Flow Json API](/reference/getflowjson).
+6. **Get Preview URL**: This endpoint is used to retrieve the preview URL for a specific flow in an application. Read how to use the [Get Preview URL API](/reference/getpreviewurl).
+7. **Delete Flow**: Used to delete a specific flow in an application by providing the app ID and flow ID. Successful deletion returns a status of "success" with a true value.  Read how to use the [Delete Flow API](/reference/deleteflow).
+8. **Deprecate Flow**: Used to deprecate the flow.  Read how to use the [Deprecate Flow API](/reference/deprecateflow).
+9. **Publish Flow**: Used to publish a flow message.  Read how to use the [Publish Flow API](/reference/publishflow).
+10. **Update Flow Json**: Used for updating the JSON structure of an existing flow.  Read how to use the [Update Flow Json API](/reference/updateflowjson).

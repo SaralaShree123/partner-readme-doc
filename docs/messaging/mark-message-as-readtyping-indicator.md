@@ -23,7 +23,7 @@ metadata:
 * **Mark the message as read**, and
 * **Send a typing indicator**, showing that you’re preparing a response.
 
-> 📘 You can use this partner <Anchor label="API" target="_blank" href="https://partner-docs.gupshup.io/reference/voicecallaction-1#/">API</Anchor> to mark the message as read and send typing indicators for a message ID.
+> 📘 You can use this partner <Anchor label="API" target="_blank" href="/reference/voicecallaction-1#/">API</Anchor> to mark the message as read and send typing indicators for a message ID.
 
 ***
 

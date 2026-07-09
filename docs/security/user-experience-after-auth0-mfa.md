@@ -3,7 +3,7 @@ summary: User Experience After Auth0 & MFA
 title: User Experience After Auth0 & MFA
 excerpt: ''
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
@@ -128,7 +128,7 @@ Developers can generate their client secret from settings page in partner portal
 
 > 📘 Note :
 >
-> For older partner portal users, who have been onboarded before 20th Nov, we have configured their current partner portal password as their client secret, they can continue to pass their current password, in the [GET partner token API](https://partner-docs.gupshup.io/reference/post_partner-account-login#/) to generate partner token. This has been done to ensure that there is no impact to our older partners.
+> For older partner portal users, who have been onboarded before 20th Nov, we have configured their current partner portal password as their client secret, they can continue to pass their current password, in the [GET partner token API](/reference/post_partner-account-login#/) to generate partner token. This has been done to ensure that there is no impact to our older partners.
 >
 > However, in case you change your password, you will need to generate the client secret via the settings page.
 >

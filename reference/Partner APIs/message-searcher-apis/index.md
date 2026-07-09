@@ -10,5 +10,5 @@ metadata:
 next:
   description: ''
 ---
-* [Inbound Message Events](https://partner-docs.gupshup.io/reference/get_partner-account-api-event-incoming-3#/)
-* [Outbound Message Events](https://partner-docs.gupshup.io/reference/get_partner-account-api-event-outgoing-3#/)
+* [Inbound Message Events](/reference/get_partner-account-api-event-incoming-3#/)
+* [Outbound Message Events](/reference/get_partner-account-api-event-outgoing-3#/)

@@ -9,7 +9,7 @@ metadata:
 <Callout icon="❗️">
   **Please Note: This page has been deprecated.** 
 
-  Please navigate to this <Anchor label="page " target="_blank" href="https://partner-docs.gupshup.io/update/docs/coexistence-events">page </Anchor> for the latest details on Coexistence Events and Webhooks.
+  Please navigate to this <Anchor label="page " target="_blank" href="/update/docs/coexistence-events">page </Anchor> for the latest details on Coexistence Events and Webhooks.
 </Callout>
 
 # Coex Feature Events

@@ -55,7 +55,7 @@ next:
 <tr>
   <td style="border: 1px solid #ddd; padding: 8px;"><p>disableOptinPrefUrl</p>
 </td>
-  <td style="border: 1px solid #ddd; padding: 8px;"><p>Use this flag to toggle optin preferences - <a href="https://partner-docs.gupshup.io/reference/put_partner-app-appid-optin">Mark User Optin or Optout</a></p>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Use this flag to toggle optin preferences - <a href="/reference/put_partner-app-appid-optin">Mark User Optin or Optout</a></p>
 </td>
   <td style="border: 1px solid #ddd; padding: 8px;"><p>Boolean</p>
 </td>

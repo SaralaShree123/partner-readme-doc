@@ -9,7 +9,7 @@ metadata:
 ---
 ## Step 1: Create a basic Flow
 
-Begin by creating a flow with an endpoint using the Gupshup API. Since this involves a flow with an endpoint, ensure that you utilize the Gupshup Create Flow API and specify your endpoint in the `endpoint_uri` parameter within the API request. - [LINK](https://partner-docs.gupshup.io/reference/createflow#/)
+Begin by creating a flow with an endpoint using the Gupshup API. Since this involves a flow with an endpoint, ensure that you utilize the Gupshup Create Flow API and specify your endpoint in the `endpoint_uri` parameter within the API request. - [LINK](/reference/createflow#/)
 
 ```curl
 curl --location --request POST 'https://partner.gupshup.io/partner/app/{{APP_ID}}/flows/' \

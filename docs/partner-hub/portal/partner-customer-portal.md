@@ -89,7 +89,7 @@ The Partner Customer Portal is a user-friendly interface designed to allow busin
 2. Create your customer wallet.
    1. In case of INR wallets complete the KYC for your wallet providing GSTIN number.
 3. View your wallet balance, usage overview and detailed metrics for your Whatsapp usage
-4. .You can read more about the wallet section [here](https://partner-docs.gupshup.io/docs/commissions).
+4. .You can read more about the wallet section [here](/docs/commissions).
 
 ### Manage Project
 

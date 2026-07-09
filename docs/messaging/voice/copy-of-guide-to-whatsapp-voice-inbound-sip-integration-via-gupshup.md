@@ -134,7 +134,7 @@ WhatsApp Voice enables end-customers to initiate and receive calls via WhatsApp,
 
 ***
 
-## <Anchor label="How to Enable WhatsApp Voice on WABA" target="_blank" href="https://partner-docs.gupshup.io/reference/post_partner-app-appid-voice#/">How to Enable WhatsApp Voice on WABA</Anchor>
+## <Anchor label="How to Enable WhatsApp Voice on WABA" target="_blank" href="/reference/post_partner-app-appid-voice#/">How to Enable WhatsApp Voice on WABA</Anchor>
 
 **Step 1:** Partner initiates enablement via Partner API with SIP configuration. **Step 2:** Gupshup forwards the request to Meta.
 **Step 3:** Meta responds:

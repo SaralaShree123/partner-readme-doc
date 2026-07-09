@@ -25,7 +25,7 @@ Before using the Groups APIs, you must configure Webhooks to receive group-relat
 
 # Subscribing to Events
 
-Use the <Anchor label="Subscribe to Events API" target="_blank" href="https://partner-docs.gupshup.io/reference/setsubscription-api-v3">Subscribe to Events API</Anchor> to enable webhook notifications.
+Use the <Anchor label="Subscribe to Events API" target="_blank" href="/reference/setsubscription-api-v3">Subscribe to Events API</Anchor> to enable webhook notifications.
 
 When working with WhatsApp Groups, there are two types of webhook events:
 
@@ -48,7 +48,7 @@ Subscription version must be set to v3
 
 This will notify you about: Sent, Delivered, Read Receipts, Failed messages events.
 
-Check the list of Sample Events <Anchor label="here" target="_blank" href="https://partner-docs.gupshup.io/docs/whatsapp-groups-sample-events">here</Anchor>.
+Check the list of Sample Events <Anchor label="here" target="_blank" href="/docs/whatsapp-groups-sample-events">here</Anchor>.
 
 # Getting Started with Groups Creation and Genrating Groups Invite
 
@@ -56,19 +56,19 @@ Follow the steps below to start managing WhatsApp Groups.
 
 ## Step 1: Create a Group
 
-Use the <Anchor label="Create Group API" target="_blank" href="https://partner-docs.gupshup.io/reference/creategroup">Create Group API</Anchor> to create a new WhatsApp group.
+Use the <Anchor label="Create Group API" target="_blank" href="/reference/creategroup">Create Group API</Anchor> to create a new WhatsApp group.
 
 Once the group is created: A Group ID is generated.
 
 ## Step 2: Retrieve the Group ID
 
-Use the <Anchor label="Get All Groups API" target="_blank" href="https://partner-docs.gupshup.io/reference/getallgroups">Get All Groups API</Anchor> to fetch the list of active groups and retrieve the groupId.
+Use the <Anchor label="Get All Groups API" target="_blank" href="/reference/getallgroups">Get All Groups API</Anchor> to fetch the list of active groups and retrieve the groupId.
 
 This API will give all the groups create for the app
 
 ## Step 3: Generate or Access the Invite Link
 
-Use the <Anchor label="Create Invite Link API" target="_blank" href="https://partner-docs.gupshup.io/reference/creategroupinvitelink">Create Invite Link API</Anchor> to invite users
+Use the <Anchor label="Create Invite Link API" target="_blank" href="/reference/creategroupinvitelink">Create Invite Link API</Anchor> to invite users
 
 **The invite link will be returned via:**
 
@@ -81,10 +81,10 @@ You can now share this link with users so they can join the group.
 
 The following APIs help automate and manage the group lifecycle:
 
-* [Get Groups by ID](https://partner-docs.gupshup.io/reference/getgroupbyid) – Retrieve the group details by Group ID
-* <Anchor label="Update Group Details" target="_blank" href="https://partner-docs.gupshup.io/reference/updategroupprofile">Update Group Details</Anchor> - Update a group name or descirption
-* <Anchor label="Delete Group" target="_blank" href="https://partner-docs.gupshup.io/reference/deletegroup">Delete Group</Anchor> – Permanently delete a group
-* [Remove Group Participants](https://partner-docs.gupshup.io/reference/removegroupparticipants) – Remove one or more users from a group
+* [Get Groups by ID](/reference/getgroupbyid) – Retrieve the group details by Group ID
+* <Anchor label="Update Group Details" target="_blank" href="/reference/updategroupprofile">Update Group Details</Anchor> - Update a group name or descirption
+* <Anchor label="Delete Group" target="_blank" href="/reference/deletegroup">Delete Group</Anchor> – Permanently delete a group
+* [Remove Group Participants](/reference/removegroupparticipants) – Remove one or more users from a group
 
 These APIs allow full control over group operations and help streamline automation workflows.
 

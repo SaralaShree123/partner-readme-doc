@@ -13,4 +13,4 @@ metadata:
 next:
   description: ''
 ---
-[Delete Sandbox App](https://partner-docs.gupshup.io/reference/deleteappsandbox)
+[Delete Sandbox App](/reference/deleteappsandbox)

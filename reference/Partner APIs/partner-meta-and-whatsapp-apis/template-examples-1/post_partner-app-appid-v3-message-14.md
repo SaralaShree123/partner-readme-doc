@@ -12,7 +12,7 @@ next:
 ---
 > 📘 Note:
 >
-> 1. Sending Marketing Templates through MM Lite for enhanced delivery optimization. For more details, refer to [_MM Lite_](https://partner-docs.gupshup.io/docs/marketing-messages-lite-mm-lite-api) document.
+> 1. Sending Marketing Templates through MM Lite for enhanced delivery optimization. For more details, refer to [_MM Lite_](/docs/marketing-messages-lite-mm-lite-api) document.
 > 2. To send a text-based message template, make a` POST` call to `/PHONE_NUMBER_ID/messages` and attach a message object with `type=template`. Then, add a `template `object.
 > 3. Substitute the placeholder properties below using the properties table.
 > 4. Use the `recipient` parameter only when BSUID is enabled for the app

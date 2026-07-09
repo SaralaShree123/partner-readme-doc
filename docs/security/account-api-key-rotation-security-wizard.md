@@ -2,7 +2,7 @@
 summary: Account API Key Rotation (Security Wizard)
 title: Account API Key Rotation (Security Wizard)
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---

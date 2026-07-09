@@ -10,11 +10,11 @@ Embedded Signup lets businesses onboard using their existing WhatsApp Business a
 
 # Synchronizing WhatsApp Business App Data
 
-Use this <Anchor label="Sync API" target="_blank" href="https://partner-docs.gupshup.io/update/reference/initiatecoexsync">Sync API</Anchor> to trigger the `history` and `smb_app_state_sync`
+Use this <Anchor label="Sync API" target="_blank" href="/reference/initiatecoexsync">Sync API</Anchor> to trigger the `history` and `smb_app_state_sync`
 
 ## Webhook event for `history`
 
-Use the [Sync API](https://partner-docs.gupshup.io/update/reference/initiatecoexsync) with syncType=history to start message history sync. If the business opts in, history webhooks will be triggered for messages within the selected time range.
+Use the [Sync API](/reference/initiatecoexsync) with syncType=history to start message history sync. If the business opts in, history webhooks will be triggered for messages within the selected time range.
 
 ```
 {
@@ -411,7 +411,7 @@ Use the [Sync API](https://partner-docs.gupshup.io/update/reference/initiatecoex
 
 Describes WhatsApp contacts in a business account. Triggered when contacts are synced or when a customer adds, edits, or removes contacts.
 
-Use the [Sync API](https://partner-docs.gupshup.io/update/reference/initiatecoexsync) with `syncType`=`smb_app_state_sync `to start contact sync. Successful requests trigger webhooks for existing and future contact changes. This can be done only once unless the customer offboards and re-onboards.
+Use the [Sync API](/reference/initiatecoexsync) with `syncType`=`smb_app_state_sync `to start contact sync. Successful requests trigger webhooks for existing and future contact changes. This can be done only once unless the customer offboards and re-onboards.
 
 ```
 {

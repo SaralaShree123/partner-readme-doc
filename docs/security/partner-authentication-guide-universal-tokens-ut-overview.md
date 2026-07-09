@@ -2,7 +2,7 @@
 summary: 'Partner Authentication Guide: Universal Tokens (UT) Overview'
 title: 'Partner Authentication Guide: Universal Tokens (UT) Overview'
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
@@ -97,7 +97,7 @@ Universal Tokens (UT) provide a unified, secure, and simplified authentication m
 ### Prerequisites
 
 - Your user account must have **Admin access** on the Gupshup Partner Portal.
-- The Universal Token configuration section becomes available only after completing the initial Security Wizard steps up to the 'Client Secret' phase. See the [Partner Portal Security Wizard Guide](https://partner-docs.gupshup.io/docs/comprehensive-step-by-step-guide-for-the-partner-portal-security-wizard#step-by-step-wizard-guide) for details.
+- The Universal Token configuration section becomes available only after completing the initial Security Wizard steps up to the 'Client Secret' phase. See the [Partner Portal Security Wizard Guide](/docs/comprehensive-step-by-step-guide-for-the-partner-portal-security-wizard#step-by-step-wizard-guide) for details.
 - Universal token works only for apps linked to your partner ID.
 
 ### Generation Workflow

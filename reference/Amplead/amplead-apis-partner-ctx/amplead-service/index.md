@@ -10,8 +10,8 @@ metadata:
 next:
   description: ''
 ---
-[Create a New Service](https://partner-docs.gupshup.io/reference/post_api-v2-services)
+[Create a New Service](/reference/post_api-v2-services)
 
-[Retrieve Service Details](https://partner-docs.gupshup.io/reference/get_api-v2-services-serviceid)
+[Retrieve Service Details](/reference/get_api-v2-services-serviceid)
 
-[Perform Actions on a Service](https://partner-docs.gupshup.io/reference/post_api-v2-services-serviceid-actions)
+[Perform Actions on a Service](/reference/post_api-v2-services-serviceid-actions)

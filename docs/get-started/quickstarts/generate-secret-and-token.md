@@ -19,7 +19,7 @@ Generate Client Secrets: Ensure every active user generates a unique Client Secr
 Recommended expiry for partner’s admin/developers:  Maximum of 3 months
 Recommended expiry for non-developers : Earliest date
 
-This client secret is used to generate a **partner token** [GET partner token API](https://partner-docs.gupshup.io/reference/post_partner-account-login). You need to pass the client secret in the password parameter.
+This client secret is used to generate a **partner token** [GET partner token API](/reference/post_partner-account-login). You need to pass the client secret in the password parameter.
 
 <Image align="center" border={true} width="% " src="https://files.readme.io/b30cdc1fde75e276269db46c5624b6f12a9eb02c4d9f801adda31e0fc6d2280b-image_14.png" className="border" />
 
@@ -36,7 +36,7 @@ This client secret is used to generate a **partner token** [GET partner token AP
 
 > 📘 Note :
 >
-> For older partner portal users, who have been onboarded before 20th Nov'2024, we have configured their current partner portal password as their client secret, they can continue to pass their current password, in the [GET partner token API](https://partner-docs.gupshup.io/reference/post_partner-account-login) to generate partner token. This has been done to ensure that there is no impact to our older partners.
+> For older partner portal users, who have been onboarded before 20th Nov'2024, we have configured their current partner portal password as their client secret, they can continue to pass their current password, in the [GET partner token API](/reference/post_partner-account-login) to generate partner token. This has been done to ensure that there is no impact to our older partners.
 >
 > However, in case you change your password, you will need to generate the client secret via the settings page.
 >

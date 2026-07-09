@@ -23,8 +23,8 @@ This guide is intended for partners who want to host an Embedded Signup flow on 
 
 # Prerequisites
 
-1. <Anchor label="Register as a Tech provider" target="_blank" href="https://partner-docs.gupshup.io/docs/get-solution-id-from-meta">Register as a Tech provider</Anchor> with Meta.
-2. [Create a joint solution](https://partner-docs.gupshup.io/docs/get-solution-id-from-meta) with the Gupshup.
+1. <Anchor label="Register as a Tech provider" target="_blank" href="/docs/get-solution-id-from-meta">Register as a Tech provider</Anchor> with Meta.
+2. [Create a joint solution](/docs/get-solution-id-from-meta) with the Gupshup.
 3. Register as a Tech provider with the Gupshup partner portal, and create a new [wallet](https://support.gupshup.io/hc/en-us/articles/29522963720473-WABA-and-Wallet-Management-Guide-for-Partners-onboarded-on-Gupshup-6th-March-24-onwards).
 4. [Configure Embedded signup](https://developers.facebook.com/docs/whatsapp/solution-providers/multi-partner-solutions) with the joint Solution ID generated in step 2.
 5. Complete a new onboarding with the above configured embedded signup.
@@ -34,7 +34,7 @@ This guide is intended for partners who want to host an Embedded Signup flow on 
 > Post embedded sign-up completion partners or Partner’s customer should **not**:
 >
 > * Register the WABA using the registration API.
->   * Gupshup will handle the registration process as per the onboarding flow when the partner calls the [App linking API](https://partner-docs.gupshup.io/docs/tech-partner-hosted-embed-sign-up-flow#step-1-link-an-app).
+>   * Gupshup will handle the registration process as per the onboarding flow when the partner calls the [App linking API](/docs/tech-partner-hosted-embed-sign-up-flow#step-1-link-an-app).
 > * Enable and set 2FA.
 
 6. Follow the steps here to add Embedded Signup to your website. Implementation - W[hatsApp Business Platform - Documentation - Meta for Developers](https://developers.facebook.com/docs/whatsapp/embedded-signup/implementation) . Meta SDK for embed signup details are also present here.
@@ -386,7 +386,7 @@ curl --location '{{PARTNER_URL}}/partner/app/:appId/pipeline' \
 </table>
 `}</HTMLBlock>
 
-# Step 4: [Subscription API](https://partner-docs.gupshup.io/reference/setsubscription-api-v3)
+# Step 4: [Subscription API](/reference/setsubscription-api-v3)
 
 > 📘 Note
 >
@@ -396,7 +396,7 @@ curl --location '{{PARTNER_URL}}/partner/app/:appId/pipeline' \
 
 <br />
 
-**Partner Portal Setup for Tech Provider** Once you have an approved solutionID, [sign up as a partner](https://partner-docs.gupshup.io/docs/get-solution-id-from-meta) on the Gupshup partner portal, providing your solution ID. If you are already registered with us on the partner portal, existing ISVs can add their solution details from the settings screen.
+**Partner Portal Setup for Tech Provider** Once you have an approved solutionID, [sign up as a partner](/docs/get-solution-id-from-meta) on the Gupshup partner portal, providing your solution ID. If you are already registered with us on the partner portal, existing ISVs can add their solution details from the settings screen.
 
 **Anything else**, such as service level agreements, services provided, billing processes, etc. This decision will be made jointly by you and Gupshup based on your agreements with Meta.
 

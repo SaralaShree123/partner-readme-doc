@@ -13,7 +13,7 @@ metadata:
 To place a call to a WhatsApp user, your business must **receive explicit user permission**.
 Call permissions are **temporary** and can be obtained in three ways:
 
-1. **[Call Permission Request](https://partner-docs.gupshup.io/reference/post_partner-app-appid-v3-message-16)** — Send a free-form or templated message requesting calling permission.
+1. **[Call Permission Request](/reference/post_partner-app-appid-v3-message-16)** — Send a free-form or templated message requesting calling permission.
 2. **Callback Permission** — A WhatsApp user calls the business first (callback setting must be enabled).
 3. **Business Profile Permission** — The user grants permission via the business profile.
 

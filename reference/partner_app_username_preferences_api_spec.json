@@ -37,7 +37,7 @@
               "type": "string"
             },
             "example": "sk_987654xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-            "description": "Your app token, please refer [**Get access token api**](https://partner-docs.gupshup.io/reference/get_partner-app-appid-token) to get the token from partner documentation."
+            "description": "Your app token, please refer [**Get access token api**](/reference/get_partner-app-appid-token) to get the token from partner documentation."
           },
           {
             "name": "appId",
@@ -246,7 +246,7 @@
               "type": "string"
             },
             "example": "sk_987654xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-            "description": "Your app token, please refer [**Get access token api**](https://partner-docs.gupshup.io/reference/get_partner-app-appid-token) to get the token from partner documentation."
+            "description": "Your app token, please refer [**Get access token api**](/reference/get_partner-app-appid-token) to get the token from partner documentation."
           },
           {
             "name": "appId",
@@ -397,7 +397,7 @@
               "type": "string"
             },
             "example": "sk_987654xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-            "description": "Your app token, please refer [**Get access token api**](https://partner-docs.gupshup.io/reference/get_partner-app-appid-token) to get the token from partner documentation."
+            "description": "Your app token, please refer [**Get access token api**](/reference/get_partner-app-appid-token) to get the token from partner documentation."
           },
           {
             "name": "appId",

@@ -58,7 +58,7 @@ All the existing APIs will work with the existing subscriptions and newer APIs w
 
 To consume the passthrough send message APIs, the following steps should have been completed:-
 
-1. Onboarding on the partner portal to get a [partner token](https://partner-docs.gupshup.io/reference/post_partner-account-login#/)
+1. Onboarding on the partner portal to get a [partner token](/reference/post_partner-account-login#/)
 2. Create an account on gupshup.io to get an API key and a wallet
 3. If the partner is on the prepaid model, contact support to convert the wallet to a postpaid
 4. If the WABA onboarding is through gupshup.io UI
@@ -66,16 +66,16 @@ To consume the passthrough send message APIs, the following steps should have be
 
 # Outgoing Session Message
 
-1. **Address**: Address messages give your users a simpler way to share the shipping address with the business on WhatsApp. Read how to send [address](https://partner-docs.gupshup.io/update/reference/post_partner-app-appid-v3-address-message-2#/) as a session message.
-2. **Audio**: Displays an audio icon, and when the WhatsApp user taps it, the audio file plays. Read how to send [audio](https://partner-docs.gupshup.io/update/reference/post_partner-app-appid-v3-audio-message-6#/) as a session message.
-3. **Contact**: The user can now send rich contact information directly to WhatsApp users, such as names, phone numbers, physical addresses, and email addresses. Read how to send [contact](https://partner-docs.gupshup.io/update/reference/post_partner-app-appid-v3-contact-message-6#/) as a session message.
-4. **Flow**: The user can send a flow message after creating a WhatsApp flow.  Read how to send a  [flow](https://partner-docs.gupshup.io/update/reference/post_partner-app-appid-v3-flow-message-6#/) as a session message.
-5. **Image**: Displays a single image with a caption (optional).  Read how to send  [image](https://partner-docs.gupshup.io/update/reference/post_partner-app-appid-v3-image-message#/) as a session message.
-6. **Interactive**: To communicate with WhatsApp users and send messages.  Read how to send [interactive](https://partner-docs.gupshup.io/update/reference/post_partner-app-appid-v3-interactive-message#/) as a session message.
-7. **Reaction**: This feature allows WhatsApp users to respond quickly and visually to messages with emoji reactions.  Read how to send [reaction](https://partner-docs.gupshup.io/update/reference/post_partner-app-appid-v3-reaction-message#/) as a session message.
-8. **Sticker**: Sticker messages, which display animated or static sticker images, add a fun and expressive element to WhatsApp messages.  Read how to send [sticker](https://partner-docs.gupshup.io/update/reference/post_partner-app-appid-v3-sticker-message#/) as a message.
-9. **Text**: The text messages contain only a text body and an optional link preview. These messages are widely used for personal and business communication for quick delivery.  Read how to send [text](https://partner-docs.gupshup.io/update/reference/post_partner-app-appid-v3-text-message#/) as a session message.
-10. **Video**: Display a thumbnail preview of a video message with a caption (optional) on WhatsApp.  When the user taps on the preview, the video loads and plays, providing an immediate viewing experience.  Read how to send [video](https://partner-docs.gupshup.io/update/reference/post_partner-app-appid-v3-video-message#/) as a session message.
+1. **Address**: Address messages give your users a simpler way to share the shipping address with the business on WhatsApp. Read how to send [address](/reference/post_partner-app-appid-v3-address-message-2#/) as a session message.
+2. **Audio**: Displays an audio icon, and when the WhatsApp user taps it, the audio file plays. Read how to send [audio](/reference/post_partner-app-appid-v3-audio-message-6#/) as a session message.
+3. **Contact**: The user can now send rich contact information directly to WhatsApp users, such as names, phone numbers, physical addresses, and email addresses. Read how to send [contact](/reference/post_partner-app-appid-v3-contact-message-6#/) as a session message.
+4. **Flow**: The user can send a flow message after creating a WhatsApp flow.  Read how to send a  [flow](/reference/post_partner-app-appid-v3-flow-message-6#/) as a session message.
+5. **Image**: Displays a single image with a caption (optional).  Read how to send  [image](/reference/post_partner-app-appid-v3-image-message#/) as a session message.
+6. **Interactive**: To communicate with WhatsApp users and send messages.  Read how to send [interactive](/reference/post_partner-app-appid-v3-interactive-message#/) as a session message.
+7. **Reaction**: This feature allows WhatsApp users to respond quickly and visually to messages with emoji reactions.  Read how to send [reaction](/reference/post_partner-app-appid-v3-reaction-message#/) as a session message.
+8. **Sticker**: Sticker messages, which display animated or static sticker images, add a fun and expressive element to WhatsApp messages.  Read how to send [sticker](/reference/post_partner-app-appid-v3-sticker-message#/) as a message.
+9. **Text**: The text messages contain only a text body and an optional link preview. These messages are widely used for personal and business communication for quick delivery.  Read how to send [text](/reference/post_partner-app-appid-v3-text-message#/) as a session message.
+10. **Video**: Display a thumbnail preview of a video message with a caption (optional) on WhatsApp.  When the user taps on the preview, the video loads and plays, providing an immediate viewing experience.  Read how to send [video](/reference/post_partner-app-appid-v3-video-message#/) as a session message.
 11. **Document**: Document messages display a document icon that links to a document, allowing a WhatsApp user to tap and download it.
 
 ```curl
@@ -91,16 +91,16 @@ OR
 
 ## Flow Management
 
-1. **Create Flow**: This API allows the user to create a flow in a Gupshup application by specifying the flow's name and categories.  Read how to use the [Create Flow API](https://partner-docs.gupshup.io/update/reference/createflow#/).
-2. **Get Flow**: To retrieve detailed information about a specific flow, the **Get Flow** API is used.  Read how to use the [Get Flow API](https://partner-docs.gupshup.io/update/reference/getflowbyid#/).
-3. **Get All Flow API**: To retrieve a list of all flows associated with a specific appID,  the **Get All Flow** API is used.  Read how to use the [Get All Flow API](https://partner-docs.gupshup.io/update/reference/getallflow#/).
-4. **Update Flow**: Used to modify an existing flow within an application by providing the app ID and flow ID.  Read how to use the [Update Flow API](https://partner-docs.gupshup.io/update/reference/updateflow#/).
-5. **Get Flow Json**: This endpoint is used to retrieve the *Json* assets of specific app flows. Read how to use the [Get Flow Json API](https://partner-docs.gupshup.io/update/reference/getflowjson#/).
-6. **Get Preview URL**: This endpoint is used to retrieve the preview URL for a specific flow in an application. Read how to use the [Get Preview URL API](https://partner-docs.gupshup.io/update/reference/getpreviewurl#/).
-7. **Delete Flow**: Used to delete a specific flow in an application by providing the app ID and flow ID. Successful deletion returns a status of "success" with a true value.  Read how to use the [Delete Flow API](https://partner-docs.gupshup.io/update/reference/deleteflow#/).
-8. **Deprecate Flow**: Used to deprecate the flow.  Read how to use the [Deprecate Flow API](https://partner-docs.gupshup.io/update/reference/deprecateflow#/).
-9. **Publish Flow**: Used to publish a flow message.  Read how to use the [Publish Flow API](https://partner-docs.gupshup.io/update/reference/publishflow#/).
-10. **Update Flow Json**: Used for updating the JSON structure of an existing flow.  Read how to use the [Update Flow Json API](https://partner-docs.gupshup.io/update/reference/updateflowjson#/).
+1. **Create Flow**: This API allows the user to create a flow in a Gupshup application by specifying the flow's name and categories.  Read how to use the [Create Flow API](/reference/createflow#/).
+2. **Get Flow**: To retrieve detailed information about a specific flow, the **Get Flow** API is used.  Read how to use the [Get Flow API](/reference/getflowbyid#/).
+3. **Get All Flow API**: To retrieve a list of all flows associated with a specific appID,  the **Get All Flow** API is used.  Read how to use the [Get All Flow API](/reference/getallflow#/).
+4. **Update Flow**: Used to modify an existing flow within an application by providing the app ID and flow ID.  Read how to use the [Update Flow API](/reference/updateflow#/).
+5. **Get Flow Json**: This endpoint is used to retrieve the *Json* assets of specific app flows. Read how to use the [Get Flow Json API](/reference/getflowjson#/).
+6. **Get Preview URL**: This endpoint is used to retrieve the preview URL for a specific flow in an application. Read how to use the [Get Preview URL API](/reference/getpreviewurl#/).
+7. **Delete Flow**: Used to delete a specific flow in an application by providing the app ID and flow ID. Successful deletion returns a status of "success" with a true value.  Read how to use the [Delete Flow API](/reference/deleteflow#/).
+8. **Deprecate Flow**: Used to deprecate the flow.  Read how to use the [Deprecate Flow API](/reference/deprecateflow#/).
+9. **Publish Flow**: Used to publish a flow message.  Read how to use the [Publish Flow API](/reference/publishflow#/).
+10. **Update Flow Json**: Used for updating the JSON structure of an existing flow.  Read how to use the [Update Flow Json API](/reference/updateflowjson#/).
 
 # Outgoing Template Message
 
@@ -138,7 +138,7 @@ curl --location --globoff '{{PARTNER}}/partner/app/{{APP_ID}}/v3/message' \
 
 # Subscription API - V3
 
-To manage the subscription effectively, use [subscription](https://partner-docs.gupshup.io/update/reference/setsubscription-api-v3#/) API.
+To manage the subscription effectively, use [subscription](/reference/setsubscription-api-v3#/) API.
 
 # Incoming Message
 

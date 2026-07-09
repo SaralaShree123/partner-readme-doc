@@ -320,7 +320,7 @@ You will need below details to start using this API.
       </td>
 
       <td style={{ textAlign: "left" }}>
-        Boolean value. If True, Meta will automatically update the category of the template as per the template content. Default value is False. If the category gets updated, you can view the oldCategory from the [Get Templates API](https://partner-docs.gupshup.io/update/reference/get_partner-app-appid-templates#/)
+        Boolean value. If True, Meta will automatically update the category of the template as per the template content. Default value is False. If the category gets updated, you can view the oldCategory from the [Get Templates API](/reference/get_partner-app-appid-templates#/)
       </td>
 
       <td style={{ textAlign: "left" }}>

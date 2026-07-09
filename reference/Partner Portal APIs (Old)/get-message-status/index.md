@@ -10,5 +10,5 @@ metadata:
 next:
   description: ''
 ---
-1. [Get Inbound Message Status](https://partner-docs.gupshup.io/reference/get_partner-account-api-event-incoming-1)
-2. [Get Outbound Message Status](https://partner-docs.gupshup.io/reference/get_partner-account-api-event-outgoing-1)
+1. [Get Inbound Message Status](/reference/get_partner-account-api-event-incoming-1)
+2. [Get Outbound Message Status](/reference/get_partner-account-api-event-outgoing-1)

@@ -13,7 +13,7 @@ metadata:
 next:
   description: ''
 ---
-> 🚧 We are going to be deprecating this API soon, we request you that you start using the [subscription API](https://partner-docs.gupshup.io/reference/setsubscription-api-v3#/), as it provides you with a granular control for event management on your callback URL
+> 🚧 We are going to be deprecating this API soon, we request you that you start using the [subscription API](/reference/setsubscription-api-v3#/), as it provides you with a granular control for event management on your callback URL
 
 ## Parameters
 

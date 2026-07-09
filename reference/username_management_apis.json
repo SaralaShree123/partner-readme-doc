@@ -6,7 +6,7 @@
   },
   "externalDocs": {
     "description": "Gupshup Partner Documentation",
-    "url": "https://partner-docs.gupshup.io/"
+    "url": "/"
   },
   "servers": [
     {

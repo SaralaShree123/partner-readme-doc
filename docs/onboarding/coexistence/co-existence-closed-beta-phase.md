@@ -127,7 +127,7 @@ There is no enablement required. You can continue creating apps through Self Ser
 ## Sync API - To trigger `history` and `smb_app_state_sync`
 
 <Cards>
-  <Card title="Sync API Reference" href="https://partner-docs.gupshup.io/reference/initiatecoexsync#/" icon="fa-code">
+  <Card title="Sync API Reference" href="/reference/initiatecoexsync#/" icon="fa-code">
     API Reference
   </Card>
 </Cards>
@@ -141,15 +141,15 @@ Both `smb_app_state_sync` and `history` synchronization can be triggered only on
 
 ## Coexistence Webhooks
 
-* Use this <Anchor label="API" target="_blank" href="https://partner-docs.gupshup.io/reference/setsubscription-api-v3">API</Anchor> to subscribe to Coexistence Webhooks
-* More information on the Coexistence events <Anchor label="here" target="_blank" href="https://partner-docs.gupshup.io/docs/coexistence-events#/">here</Anchor>
+* Use this <Anchor label="API" target="_blank" href="/reference/setsubscription-api-v3">API</Anchor> to subscribe to Coexistence Webhooks
+* More information on the Coexistence events <Anchor label="here" target="_blank" href="/docs/coexistence-events#/">here</Anchor>
 
 <Callout icon="ℹ️" theme="info">
   **Please note the following regarding Media URLs in events:**
 
   For CoEx, we forward the v3 events exactly as received from Meta without any modifications. Meta now provides only the Media ID instead of a direct media URL.
 
-  To retrieve the media file using the Media ID, you can use the [Media Retrieval API](https://partner-docs.gupshup.io/reference/downloadmedia).
+  To retrieve the media file using the Media ID, you can use the [Media Retrieval API](/reference/downloadmedia).
 </Callout>
 
 Now you are ready to start messaging from Whatsapp business app and Whatsapp cloud API.

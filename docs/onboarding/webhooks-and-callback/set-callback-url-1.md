@@ -11,7 +11,7 @@ metadata:
 next:
   description: ''
 ---
-To manage the subscription effectively, use [subscription](https://partner-docs.gupshup.io/reference/setsubscription-api-v3) API.
+To manage the subscription effectively, use [subscription](/reference/setsubscription-api-v3) API.
 
 # Incoming Message
 

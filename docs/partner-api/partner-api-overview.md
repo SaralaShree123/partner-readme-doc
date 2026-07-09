@@ -19,7 +19,7 @@ Gupshup Partner APIs let you build branded WhatsApp experiences for your custome
 | | |
 |---|---|
 | [Authentication](/docs/authentication) | Partner token and app access token |
-| [API Reference](/docs/api-reference-overview) | All categories and endpoints |
+| [API Reference](/docs/api-reference) | All categories and endpoints |
 
 ## API categories
 

@@ -41,13 +41,13 @@ FOR APPS CREATED FROM AUG 2025  : MM Lite onboarding happens while go-live.
 ### STEP 2 : Confirm onboarding is completed
 
 1. If onboarding is completed by a customer, Meta triggers an event called **tos_signed**.  After an **tos_signed** event is received from _Meta > Gupshup_ it means Onboarding is marked as completed on Gupshup.  [**There could be a known Issue:** _No event received from Meta intermittently_]
-2. <Anchor label="V2 users" target="_blank" href="https://partner-docs.gupshup.io/reference/post_partner-app-appid-template-msg#/">V2 users</Anchor> can now jump to next step, while V3 MM Lite endpoint users can use this [API](https://partner-docs.gupshup.io/reference/getwabahealth#/) to check MM Lite Onboarding status.  Click [here](https://partner-docs.gupshup.io/docs/system-events#/mm-lite-webhook-event-v2--v3) for reference.
+2. <Anchor label="V2 users" target="_blank" href="/reference/post_partner-app-appid-template-msg#/">V2 users</Anchor> can now jump to next step, while V3 MM Lite endpoint users can use this [API](/reference/getwabahealth#/) to check MM Lite Onboarding status.  Click [here](/docs/system-events#/mm-lite-webhook-event-v2--v3) for reference.
 
 <br />
 
 ### STEP 3: Template creation
 
-No special template creation.  Existing templates created on Cloud API for marketing can be used in MM Lite as well.  Partners can use this [existing API](https://partner-docs.gupshup.io/reference/post_partner-app-appid-templates-6#/) to do the same. Also add deep links in the CTA buttons for your Android apps to be able to track them. Read <Anchor label="more" target="_blank" href="https://developers.facebook.com/docs/whatsapp/marketing-messages-lite-api/guides/deep-links#template-creation-via-whatsapp-manager">more</Anchor>
+No special template creation.  Existing templates created on Cloud API for marketing can be used in MM Lite as well.  Partners can use this [existing API](/reference/post_partner-app-appid-templates-6#/) to do the same. Also add deep links in the CTA buttons for your Android apps to be able to track them. Read <Anchor label="more" target="_blank" href="https://developers.facebook.com/docs/whatsapp/marketing-messages-lite-api/guides/deep-links#template-creation-via-whatsapp-manager">more</Anchor>
 
 **NOTE:** For marketing you can set TTL while you apply templates, which will apply if marketing messages are sent via MM Lite.
 
@@ -58,10 +58,10 @@ No special template creation.  Existing templates created on Cloud API for marke
 There are 2 ways to send marketing messages via MM Lite:
 
 1. #### Option A: _Automatically route marketing messages sent on v2 via MM Lite  (recommended if you use v2 send template endpoints)._Here are the steps for the same:
-   After or before step 2 above is completed, partner has to use [this API](https://partner-docs.gupshup.io/reference/post_app-appid-mmlite-msg-enable#/) to enable v2 mmlite messaging.  This API will allow you to enable the MM-Lite Messaging flag (no need to reach out to support)
+   After or before step 2 above is completed, partner has to use [this API](/reference/post_app-appid-mmlite-msg-enable#/) to enable v2 mmlite messaging.  This API will allow you to enable the MM-Lite Messaging flag (no need to reach out to support)
    > 📘 **NOTE:**
    >
-   > [**RATE LIMIT**](https://partner-docs.gupshup.io/update/docs/partner-rate-limits#/) - 2 per hour per app.
+   > [**RATE LIMIT**](/update/docs/partner-rate-limits#/) - 2 per hour per app.
 
 As soon as 'tos_signed' webhook is received from Meta & some other checks internally OR new apps are onboarded - marketing messages sent on V2 template endpoint are routed through mm lite endpoint. Thus no extra charge.If event not received, marketing messages sent on v2 template endpoint go via cloud api, thus incurring 6% extra charges over WA fee.
 
@@ -69,7 +69,7 @@ As soon as 'tos_signed' webhook is received from Meta & some other checks intern
 
 1. #### Option B: _Send marketing messages via dedicated v3 MM lite endpoint (recommended if you use v3 send template endpoints)._
 
-After step 2 above is completed, run the v3 MM Lite endpoint.  The syntax and payload of MM Lite send message API replicates that of Cloud API [V3 send message API](https://partner-docs.gupshup.io/reference/post_partner-app-appid-v3-text-message#/).  Other messages (Auth, Service, Utility, free form) return an error in this API.
+After step 2 above is completed, run the v3 MM Lite endpoint.  The syntax and payload of MM Lite send message API replicates that of Cloud API [V3 send message API](/reference/post_partner-app-appid-v3-text-message#/).  Other messages (Auth, Service, Utility, free form) return an error in this API.
 
 If 'tos_signed' webhook is received from Meta & some other checks internally OR new apps are onboarded --
 a. marketing messages sent on Regular V3 template endpoint will go via cloud api, thus incurring 6% extra charges over WA fee
@@ -97,7 +97,7 @@ MM Lite Insights can help you track metrics of the marketing campaigns sent on M
 
 '*' stands for if conversion event is sent to Meta via Meta Pixel or Conversions API. Read more about it below.
 
-1. Partner API to fetch <Anchor label="MM Lite Ad Insights" target="_blank" href="https://partner-docs.gupshup.io/reference/gettemplateinsights#/">MM Lite Ad Insights</Anchor>.
+1. Partner API to fetch <Anchor label="MM Lite Ad Insights" target="_blank" href="/reference/gettemplateinsights#/">MM Lite Ad Insights</Anchor>.
 
 Here are a few features you can benefit with this API -
 

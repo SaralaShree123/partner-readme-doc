@@ -60,7 +60,7 @@ These events state the status of the message sent using the send message API to 
 
       <td>
         This is Gupshup Message Id for message-event types: `enqueued` and `failed`
-        In case of `failed` please check the below [Sync](https://partner-docs.gupshup.io/docs/message-events#/sync-failed) and [Async](https://partner-docs.gupshup.io/docs/message-events#/async-failed) section.
+        In case of `failed` please check the below [Sync](/docs/message-events#/sync-failed) and [Async](/docs/message-events#/async-failed) section.
         For the DLR events `sent`, `delivered`, `read` it is always WhatsApp Message ID.
       </td>
 
@@ -415,7 +415,7 @@ This event is received when the message sending has failed. You will receive the
       <td>
         Message failure reason with respect to the error code.
 
-        See [error and status messages](https://partner-docs.gupshup.io/docs/error-codes#/).
+        See [error and status messages](/docs/error-codes#/).
       </td>
 
       <td>
@@ -483,7 +483,7 @@ This event is received when messages have been failed by Whatsapp docker.
       <td>
         Message failure reason with respect to the error code.
 
-        See [error and status messages](https://partner-docs.gupshup.io/docs/error-codes#/).
+        See [error and status messages](/docs/error-codes#/).
       </td>
 
       <td>

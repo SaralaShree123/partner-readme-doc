@@ -2,7 +2,7 @@
 summary: Signing the JWT Token (Test JWT Step)
 title: Signing the JWT Token (Test JWT Step)
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---

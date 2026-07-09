@@ -13,7 +13,7 @@ metadata:
 next:
   description: ''
 ---
-> ❗️ Please note that this is an outdated document. Refer to the updated documentation [here](https://partner-docs.gupshup.io/reference/enablectxforpartner#/).
+> ❗️ Please note that this is an outdated document. Refer to the updated documentation [here](/reference/enablectxforpartner#/).
 
 ### Callback URL
 

@@ -10,10 +10,10 @@ metadata:
 next:
   description: ''
 ---
-[Mark a Lead Ad Milestone as Achieved](https://partner-docs.gupshup.io/reference/post_api-v2-services-serviceid-goals-goalid-milestones-milestoneindex)
+[Mark a Lead Ad Milestone as Achieved](/reference/post_api-v2-services-serviceid-goals-goalid-milestones-milestoneindex)
 
-[Get Lead Details](https://partner-docs.gupshup.io/reference/get_api-v2-services-serviceid-leads-leadid)
+[Get Lead Details](/reference/get_api-v2-services-serviceid-leads-leadid)
 
-[Retrieve a list of leads associated with a service](https://partner-docs.gupshup.io/reference/get_api-v2-services-ctxserviceid-leads)
+[Retrieve a list of leads associated with a service](/reference/get_api-v2-services-ctxserviceid-leads)
 
-[Update lead retargeting schedule](https://partner-docs.gupshup.io/reference/post_api-v2-services-serviceid-lead-retargeting-schedule)
+[Update lead retargeting schedule](/reference/post_api-v2-services-serviceid-lead-retargeting-schedule)

@@ -179,7 +179,7 @@ um profissional da equipe do Parceiro, tanto no agendamento quanto na participa�
 8. **LINKS ÚTEIS**
 
 🔗 Guppy, o assistente virtual da Gupshup:  
-🔗 Documentação: [https://partner-docs.gupshup.io/](https://partner-docs.gupshup.io/)  
+🔗 Documentação: [/](/)  
 🔗 Portal do Parceiro: [https://partner.gupshup.io/](https://partner.gupshup.io/)  
 🔗 Como ativar um número:  
 🔗 Como verificar um BM:  

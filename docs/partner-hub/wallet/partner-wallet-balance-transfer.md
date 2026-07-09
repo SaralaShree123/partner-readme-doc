@@ -33,7 +33,7 @@ If you're a TP with a wallet on Gupshup and your customers have their own separa
 
 ## API Endpoint
 
-Refer to the [Wallet Balance Transfer API](https://partner-docs.gupshup.io/reference/post_partner-account-api-wallet-balance-transfer#/).
+Refer to the [Wallet Balance Transfer API](/reference/post_partner-account-api-wallet-balance-transfer#/).
 
 ## Security
 

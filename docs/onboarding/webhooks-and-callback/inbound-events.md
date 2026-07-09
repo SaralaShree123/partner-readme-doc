@@ -23,4 +23,4 @@ Inbound events are classified in majorly four parts: User events, system events,
 
 <Image align="center" alt={3147} border={false} caption="Figure 01: Classification of events. Click on the image to zoom in and zoom out." title="classification-chart.png" src="https://files.readme.io/0411441-classification-chart.png" />
 
-## [Types of inbound events](https://partner-docs.gupshup.io/docs/types-of-inbound-events)
+## [Types of inbound events](/docs/types-of-inbound-events)

@@ -12,7 +12,7 @@ next:
 ---
 > 📘 Note:
 >
-> 1. Sending Marketing Templates through MM Lite for enhanced delivery optimization. For more details, refer to [_MM Lite_](https://partner-docs.gupshup.io/docs/marketing-messages-lite-mm-lite-api) document.
+> 1. Sending Marketing Templates through MM Lite for enhanced delivery optimization. For more details, refer to [_MM Lite_](/docs/marketing-messages-lite-mm-lite-api) document.
 > 2. Use the `recipient` parameter only when BSUID is enabled for the app.
 > 3. When both `to` and `recipient` fields are used in the payload, the `to` field gets the priority.
 

@@ -27,7 +27,7 @@ Business-initiated calling is available in all locations where the Cloud API is 
 
 Before you begin, ensure that Gupshup (GS-SIP) Inbound Calling is enabled for your account.
  This is mandatory for successful SIP call routing to our platform.
- The whatsapp user should have permission to receive call. **<Anchor label="Refer" target="_blank" href="https://partner-docs.gupshup.io/reference/post_partner-app-appid-voice#/">Refer</Anchor> **
+ The whatsapp user should have permission to receive call. **<Anchor label="Refer" target="_blank" href="/reference/post_partner-app-appid-voice#/">Refer</Anchor> **
 
 ***
 
@@ -137,8 +137,8 @@ The flow combines:
 
 ### Call Permission Flow (WhatsApp)
 
-1. <Anchor label="Send an interactive call permission request message." target="_blank" href="https://partner-docs.gupshup.io/reference/post_partner-app-appid-v3-message-16">Send an interactive call permission request message.</Anchor>
-2. <Anchor label="Send a template for a call permission request." target="_blank" href="https://partner-docs.gupshup.io/reference/post_partner-app-appid-templates-6">Send a template for a call permission request.</Anchor>
+1. <Anchor label="Send an interactive call permission request message." target="_blank" href="/reference/post_partner-app-appid-v3-message-16">Send an interactive call permission request message.</Anchor>
+2. <Anchor label="Send a template for a call permission request." target="_blank" href="/reference/post_partner-app-appid-templates-6">Send a template for a call permission request.</Anchor>
 
 **Step A — Request permission (Session V3 Passthrough)**
 

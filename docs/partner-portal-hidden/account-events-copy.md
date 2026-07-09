@@ -247,7 +247,7 @@ Account events are received when an event occurs in a specific WABA. For example
 
 Go-Live Event is sent to callback URLs whenever an app completes onboarding.
 
-> 📘 Subscribe to ACCOUNT mode using [subscription API](https://partner-docs.gupshup.io/reference/setsubscription-api-v3#/) to receive the Go-Live event on your registered callback
+> 📘 Subscribe to ACCOUNT mode using [subscription API](/reference/setsubscription-api-v3#/) to receive the Go-Live event on your registered callback
 
 #### Go-Live Event payload
 
