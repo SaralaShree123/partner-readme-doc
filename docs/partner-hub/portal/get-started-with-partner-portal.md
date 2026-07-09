@@ -28,7 +28,6 @@ Partners are either **Independent Service Providers (ISVs)** or **Tech Providers
 | Generate API credentials | [Generate Secret and Token](/docs/generate-secret-and-token) |
 | Wallet & commissions | [Wallet](/docs/wallet-1) · [Commissions](/docs/commissions) |
 | Support | [Support](/docs/support) |
-| Customer portal | [Partner Customer Portal](/docs/partner-customer-portal) |
 
 ## Sign up
 

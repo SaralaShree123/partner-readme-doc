@@ -15,5 +15,3 @@ slug: commerce-overview
 | Topic | Guide |
 |-------|-------|
 | Brazil Payments | [WhatsApp Brazil Payments](/docs/whatsapp-brazil-payments) |
-| INR Wallet & KYC | [INR Wallet Creation & KYC Flow](/docs/wallet-creation-kyc-flow-guide) |
-| USD Wire Transfers | [Partner USD Wire Transfers](/docs/partner-usd-wire-transfers) |

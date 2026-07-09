@@ -12,11 +12,8 @@ slug: security-overview
 
 # Security
 
+Partner Portal security, authentication, and best practices.
+
 | Topic | Guide |
 |-------|-------|
-| Portal security | [Security in Partner Portal](/docs/security-in-partner-portal) |
-| Google Authenticator | [Google Authenticator](/docs/google-authenticator-for-partner-portal) |
-| Authy | [Authy Authenticator](/docs/authy-authenticator-app-for-partner-portal) |
-| Security wizard | [Security Wizard](/docs/comprehensive-step-by-step-guide-for-the-partner-portal-security-wizard) |
-| JWT | [Signing the JWT Token](/docs/signing-the-jwt-token-test-jwt-step) |
-| API key rotation | [Account API Key Rotation](/docs/account-api-key-rotation-security-wizard) |
+| IP Allowlisting | [Gupshup IP Allowlisting](/docs/gupshup-ip-allowlisting) |

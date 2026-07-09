@@ -20,8 +20,6 @@ Guides for Meta passthrough messaging and related Partner capabilities.
 | Flow management | [Passthrough APIs — Flow Management](/docs/passthrough_apis_flow_management) |
 | V3 incoming events | [Passthrough V3 Incoming Events](/docs/passthrough-v3-incoming-events) |
 | Dynamic flows | [WhatsApp Dynamic Flows](/docs/whatsapp-dynamic-flows) |
-| WhatsApp Pay events | [WhatsApp Pay Events](/docs/whatsapp-pay-events) |
-| For partners | [For Partners](/docs/for-partners) |
 
 ## API Reference
 

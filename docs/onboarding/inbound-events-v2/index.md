@@ -18,7 +18,6 @@ Reference for V2 inbound webhook events sent to your callback URL.
 
 | Event type | Guide |
 |------------|-------|
-| Account events | [Account events](/docs/account-events) |
 | Billing events | [Billing events](/docs/billing-events) |
 | Message events | [Message events](/docs/message-events) |
 | System events | [System events](/docs/system-events) |

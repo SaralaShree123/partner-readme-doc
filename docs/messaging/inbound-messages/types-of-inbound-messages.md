@@ -16,6 +16,5 @@ slug: types-of-inbound-messages
 | Text | [Text](/docs/text) |
 | Media | [Media](/docs/media) |
 | Interactive | [Interactive](/docs/interactive) |
-| Single / Multi Product | [Single/Multi Product Messages](/docs/singlemulti-product-message) |
 | Request Welcome | [Request Welcome](/docs/request-welcome) |
 | Other | [Other](/docs/other) |

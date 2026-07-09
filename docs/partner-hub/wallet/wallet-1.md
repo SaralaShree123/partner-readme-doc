@@ -19,8 +19,6 @@ The prepaid method of billing is called **Wallet** in Gupshup. You recharge your
 |-------|-------|
 | Wallet overview & how to recharge | [Wallet Overview](/docs/commissions) |
 | Overdraft | [Overdraft Limit](/docs/overdraft-limit) |
-| Balance transfer | [Partner Wallet Balance Transfer](/docs/partner-wallet-balance-transfer) |
-| Wire transfers | [Partner Wire Transfers](/docs/wire-transfer-automation) |
 | Unused commissions | [Unused Commission Policy](/docs/unused-commission-policy) |
 
 ## How to use a wallet (summary)

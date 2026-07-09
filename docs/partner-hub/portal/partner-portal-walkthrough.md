@@ -26,7 +26,6 @@ Use these guided steps to complete core Partner Portal setup.
 | Topic | Guide |
 |-------|-------|
 | Wallet | [Wallet](/docs/wallet-1) |
-| Security | [Security in Partner Portal](/docs/security-in-partner-portal) |
 | Support | [Support](/docs/support) |
 
 ## Next step

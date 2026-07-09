@@ -17,7 +17,4 @@ slug: wallet
 | Wallet | [Wallet](/docs/wallet-1) |
 | Wallet overview / commissions | [Commissions](/docs/commissions) |
 | Overdraft | [Overdraft Limit](/docs/overdraft-limit) |
-| Balance transfer | [Wallet Balance Transfer](/docs/partner-wallet-balance-transfer) |
-| Recharge | [Recharge via Stripe or Ebanx](/docs/recharge-via-stipe-or-ebanx) |
-| Wire transfers | [Wire Transfers](/docs/wire-transfer-automation) |
 | Unused commissions | [Unused Commission Policy](/docs/unused-commission-policy) |

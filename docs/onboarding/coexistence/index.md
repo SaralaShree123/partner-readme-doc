@@ -19,5 +19,3 @@ Clients can onboard a number to WhatsApp Cloud API even if it is already connect
 | Topic | Guide |
 |-------|-------|
 | Coexistence guide | [Coexistence (Closed Beta)](/docs/co-existence-closed-beta-phase) |
-| Coexistence events | [Coexistence Events](/docs/coexistence-events) |
-| Coexistence webhooks | [Coexistence Webhooks](/docs/coexistence-webhooks) |

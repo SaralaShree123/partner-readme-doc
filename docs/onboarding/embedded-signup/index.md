@@ -18,7 +18,4 @@ Host the Meta Embedded Signup experience in your product so customers can onboar
 
 | Topic | Guide |
 |-------|-------|
-| Partner hosted flow | [Partner Hosted Embedded Sign Up](/docs/partner-hosted-embedded-sign-up-flow) |
-| Tech Partner hosted flow | [Tech Partner Hosted Embed Sign Up](/docs/tech-partner-hosted-embed-sign-up-flow) |
 | Error codes | [Error codes](/docs/error-codes) |
-| TPP onboarding | [TPP Partner Hosted Onboarding](/docs/tpp-partner-hosted-onboarding) |

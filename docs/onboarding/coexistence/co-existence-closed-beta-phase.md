@@ -142,7 +142,7 @@ Both `smb_app_state_sync` and `history` synchronization can be triggered only on
 ## Coexistence Webhooks
 
 * Use this <Anchor label="API" target="_blank" href="/reference/setsubscription-api-v3">API</Anchor> to subscribe to Coexistence Webhooks
-* More information on the Coexistence events <Anchor label="here" target="_blank" href="/docs/coexistence-events#/">here</Anchor>
+* More information on the Coexistence events here</Anchor>
 
 <Callout icon="ℹ️" theme="info">
   **Please note the following regarding Media URLs in events:**

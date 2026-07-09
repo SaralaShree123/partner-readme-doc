@@ -42,4 +42,4 @@ Welcome Messages are great for service interactions, such as customer support or
 
 ### Other Reference
 
-Welcome Messages is a subset of the Conversational Components. Dive into the specifics by visiting [Conversational Components: Welcome Messages](/docs/welcome-messages) for a comprehensive overview.
+Welcome Messages is a subset of the Conversational Components. Dive into the specifics by visiting Conversational Components: Welcome Messages for a comprehensive overview.
