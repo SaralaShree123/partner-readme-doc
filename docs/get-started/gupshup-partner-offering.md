@@ -3,7 +3,7 @@ title: Gupshup Partner Offering
 summary: Products and offerings available to Gupshup partners.
 excerpt: Products and offerings available to Gupshup partners.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 slug: gupshup-partner-offering

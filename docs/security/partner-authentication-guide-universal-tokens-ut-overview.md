@@ -2,7 +2,7 @@
 summary: 'Partner Authentication Guide: Universal Tokens (UT) Overview'
 title: 'Partner Authentication Guide: Universal Tokens (UT) Overview'
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---

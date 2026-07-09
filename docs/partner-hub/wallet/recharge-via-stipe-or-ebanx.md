@@ -3,7 +3,7 @@ title: Recharge via Stripe or Ebanx
 summary: How partners recharge the Gupshup wallet.
 excerpt: How partners recharge the Gupshup wallet.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 slug: recharge-via-stipe-or-ebanx

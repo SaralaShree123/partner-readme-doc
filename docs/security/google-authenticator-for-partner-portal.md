@@ -3,7 +3,7 @@ summary: Using the Google Authenticator for Partner Portal
 title: Using the Google Authenticator for Partner Portal
 excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

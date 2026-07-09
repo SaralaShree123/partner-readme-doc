@@ -6,7 +6,7 @@ excerpt: >-
   in mind, once the security wizard is enabled for them on partner portal. The
   security wizard will help them make their Gupshup platforms secure and safe.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---

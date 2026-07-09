@@ -35,20 +35,6 @@ def fix_file(path: Path) -> int:
     return count
 
 
-def unhide_security_pages() -> int:
-    changed = 0
-    for path in SECURITY_PAGES.glob("*.md"):
-        if path.name == "security-overview.md":
-            continue
-        text = path.read_text(encoding="utf-8")
-        if "hidden: true" in text:
-            new_text = text.replace("hidden: true", "hidden: false", 1)
-            path.write_text(new_text, encoding="utf-8")
-            changed += 1
-            print(f"UNHIDE {path.relative_to(ROOT)}")
-    return changed
-
-
 def main() -> None:
     total = 0
     files_changed = 0
@@ -63,8 +49,7 @@ def main() -> None:
             total += count
             print(f"LINKS {path.relative_to(ROOT)} ({count})")
 
-    unhidden = unhide_security_pages()
-    print(f"\nDone: {total} links fixed in {files_changed} files, {unhidden} security pages unhidden")
+    print(f"\nDone: {total} links fixed in {files_changed} files")
 
 
 if __name__ == "__main__":

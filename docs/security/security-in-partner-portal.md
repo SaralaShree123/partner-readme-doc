@@ -3,7 +3,7 @@ summary: Security in Partner Portal
 title: Security in Partner Portal
 excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

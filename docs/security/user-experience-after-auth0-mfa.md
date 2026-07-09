@@ -3,7 +3,7 @@ summary: User Experience After Auth0 & MFA
 title: User Experience After Auth0 & MFA
 excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

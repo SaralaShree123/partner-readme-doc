@@ -3,7 +3,7 @@ title: Partner hosted embedded sign up flow
 summary: Host Meta Embedded Signup in your own UI.
 excerpt: Host Meta Embedded Signup in your own UI.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 slug: partner-hosted-embedded-sign-up-flow
