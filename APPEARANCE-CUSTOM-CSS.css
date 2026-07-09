@@ -22,8 +22,15 @@
   font-weight: 600;
 }
 
-/* Optional: give page icons a bit more presence next to titles */
-.rm-Sidebar-link i,
-.rm-Sidebar-link svg {
-  opacity: 0.9;
+/* Optional: hide ReadMe footer branding */
+.rm-Footer .ReadMeLogo,
+.rm-Footer a[href*="readme.com"],
+.rm-PageFooter a[href*="readme.io"] {
+  display: none !important;
+}
+
+/* Logo sizing tweak if needed after uploading Gupshup SVG */
+.rm-Logo-img {
+  max-height: 40px;
+  width: auto;
 }
