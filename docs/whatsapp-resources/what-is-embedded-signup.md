@@ -51,6 +51,6 @@ Only an owner/admin of the Meta Business portfolio should complete the Facebook 
 ## Related guides
 
 - [Embedded Signup](/docs/embedded-signup)
-- [Partner-hosted Embedded Sign Up](/docs/partner-hosted-embedded-sign-up-flow)
+- [Partner-hosted Embedded Sign Up](/docs/tech-partner-hosted-embed-sign-up-flow)
 - [Phone numbers](/docs/phone-numbers)
 - [Channel Management APIs](/docs/channel-management)

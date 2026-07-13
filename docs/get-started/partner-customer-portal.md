@@ -2,7 +2,7 @@
 summary: Partner Customer Portal
 title: Partner Customer Portal
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---

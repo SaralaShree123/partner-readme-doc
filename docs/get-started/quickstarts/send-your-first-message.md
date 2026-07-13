@@ -36,7 +36,7 @@ Use [Text Message (V3)](/reference/post_partner-app-appid-v3-text-message).
 
 ### 4. Verify delivery
 
-Configure [webhooks](/docs/understanding-webhooks-and-callback) to receive message and delivery status notifications.
+Configure [webhooks](/docs/webhooks-and-callback) to receive message and delivery status notifications.
 
 ## Learn more
 

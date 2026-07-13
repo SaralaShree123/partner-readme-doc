@@ -3,7 +3,7 @@ summary: Tech Partner Hosted Embed Sign up flow
 title: Tech Partner Hosted Embed Sign up flow
 excerpt: ''
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   title: ''
   description: ''
