@@ -26,4 +26,4 @@ Partners recharge the prepaid wallet from Partner Portal using supported payment
 4. Confirm billing details
 5. Choose **Stripe** or **Ebanx** and complete payment
 
-Related: [Wallet](/docs/wallet-1) · [Wallet Overview](/docs/commissions)
+Related: [Wallet](/docs/wallet) · [Wallet Overview](/docs/commissions)
