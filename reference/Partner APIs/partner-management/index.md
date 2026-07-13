@@ -12,22 +12,6 @@ slug: partner-management
 
 # Partner Management
 
-Endpoints for managing partner accounts, authentication, and app linking.
+Use these APIs to authenticate as a partner, list linked apps, and link a Gupshup application to your partner account. Start here before calling app-scoped messaging or WABA APIs — most other Partner APIs require a partner token from this category.
 
-## Get Partner Token
-
-> Authenticate and obtain a partner token.
-
-→ Full endpoint & Try It: [/reference/post_partner-account-login](/reference/post_partner-account-login)
-
-## Get Partner Apps
-
-> List apps linked to the partner.
-
-→ Full endpoint & Try It: [/reference/get_partner-account-api-partnerapps](/reference/get_partner-account-api-partnerapps)
-
-## Link App with Partner
-
-> Link an application to the partner.
-
-→ Full endpoint & Try It: [/reference/post_partner-account-api-applink](/reference/post_partner-account-api-applink)
+Expand this section in the sidebar for individual endpoints and Try It.

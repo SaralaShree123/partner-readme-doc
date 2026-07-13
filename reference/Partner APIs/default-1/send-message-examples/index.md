@@ -2,7 +2,7 @@
 title: v2 Send Template Message Examples
 excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

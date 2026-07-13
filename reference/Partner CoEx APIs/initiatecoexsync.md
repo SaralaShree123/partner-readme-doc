@@ -2,7 +2,7 @@
 api:
   file: coex_new_contact_sync_api.json
   operationId: initiateCoexSync
-hidden: false
+hidden: true
 ---
 # CoEx Event Guide
 

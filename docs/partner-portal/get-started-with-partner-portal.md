@@ -19,16 +19,6 @@ Partners are either **Independent Service Providers (ISVs)** or **Tech Providers
 
 > 📘 Partner Portal currently supports WhatsApp as a channel.
 
-## What you can do
-
-| Topic | Guide |
-|-------|-------|
-| Portal walkthrough | [Partner Portal Walkthrough](/docs/partner-portal-walkthrough) |
-| Create your first app | [Create your first App](/docs/create-your-first-app) |
-| Generate API credentials | [Generate Secret and Token](/docs/generate-secret-and-token) |
-| Wallet & commissions | [Wallet](/docs/wallet-1) · [Commissions](/docs/commissions) |
-| Support | [Support](/docs/support) |
-
 ## Sign up
 
 Sign up at [partner.gupshup.io](https://partner.gupshup.io). Gupshup reviews each partner request. Once approved, Partner Portal is activated for your account.

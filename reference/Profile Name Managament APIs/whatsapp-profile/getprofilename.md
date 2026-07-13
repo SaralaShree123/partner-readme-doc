@@ -4,7 +4,7 @@ excerpt: 'This API retrieves the current display name for a WhatsApp application
 api:
   file: Profile Name Managament APIs.json
   operationId: getProfileName
-hidden: false
+hidden: true
 ---
 # Request Example
 

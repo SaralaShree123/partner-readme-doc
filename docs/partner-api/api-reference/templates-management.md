@@ -12,7 +12,7 @@ slug: templates-management
 
 # Templates Management
 
-Endpoints for creating, managing, and sending WhatsApp message templates.
+Create, list, update, and send WhatsApp message templates for partner apps. Templates are required to start business-initiated conversations outside the customer care window.
 
 ## Get Templates
 

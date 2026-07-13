@@ -12,11 +12,4 @@ slug: v3-events
 
 # Incoming Events (V3)
 
-Reference for V3 incoming events.
-
-## In this section
-
-| Topic | Guide |
-|-------|-------|
-| Events overview | [Events](/docs/events) |
-| PMP events | [PMP events](/docs/pmp-events) |
+Reference for V3 incoming webhook events delivered to Partner apps. Expand the sidebar for event catalogs and PMP-related payloads.

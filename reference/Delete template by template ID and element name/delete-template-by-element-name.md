@@ -2,7 +2,7 @@
 title: Delete template by element name
 excerpt: API to delete template by element name
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---

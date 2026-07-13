@@ -18,6 +18,9 @@ metadata:
 next:
   description: ''
 ---
+
+Generate or retrieve an access token for a partner application. Use this token for app-scoped WhatsApp operations such as templates and messaging. If a token already exists for the partner-app pair, the same token is returned.
+
 You can use this token to get App’s templates, submit templates, send messages etc.\
 You will need below details to start using this API. 
 

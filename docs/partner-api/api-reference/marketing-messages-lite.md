@@ -12,7 +12,7 @@ slug: marketing-messages-lite
 
 # Marketing Messages Lite
 
-Endpoints for MM Lite enablement and sending.
+Enable Marketing Messages Lite (MM Lite) for an app and send optimized marketing template messages. Use this category when integrating Meta’s MM Lite messaging capabilities through Gupshup.
 
 ## Enable MM Lite messages
 

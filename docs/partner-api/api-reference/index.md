@@ -12,7 +12,7 @@ slug: api-reference
 
 # API Reference
 
-Browse Partner API endpoints by business capability (same structure as 360dialog).
+Browse Partner API endpoints by business capability. Each category groups related endpoints for partner account, channel, messaging, and billing workflows.
 
 | Category | Description |
 |----------|-------------|

@@ -13,6 +13,9 @@ metadata:
 next:
   description: ''
 ---
+
+Create a new WhatsApp channel application under your partner account for a customer WABA.
+
 ## Request Parameters
 
 <HTMLBlock>{`

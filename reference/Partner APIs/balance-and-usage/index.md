@@ -11,22 +11,6 @@ slug: balance-and-usage
 
 # Balance & Usage
 
-Endpoints for wallet balance, usage, and discounts.
+Check prepaid wallet balance, usage, and related billing data for partner apps. Use these APIs to monitor credits and surface wallet status in your admin tools.
 
-## Get Wallet Balance
-
-> Get wallet balance for an app.
-
-→ Full endpoint & Try It: [/reference/get_partner-app-appid-wallet-balance](/reference/get_partner-app-appid-wallet-balance)
-
-## Get App's Daily Usage
-
-> Get daily usage.
-
-→ Full endpoint & Try It: [/reference/get_partner-app-appid-usage](/reference/get_partner-app-appid-usage)
-
-## Get App's Daily Discount
-
-> Get daily discount.
-
-→ Full endpoint & Try It: [/reference/get_partner-app-appid-discount](/reference/get_partner-app-appid-discount)
+Expand this section in the sidebar for individual endpoints and Try It.

@@ -12,28 +12,6 @@ slug: templates-management
 
 # Templates Management
 
-Endpoints for creating, managing, and sending WhatsApp message templates.
+Create, list, update, and send WhatsApp message templates for partner apps. Templates are required to start business-initiated conversations outside the customer care window.
 
-## Get Templates
-
-> List templates for an app.
-
-→ Full endpoint & Try It: [/reference/get_partner-app-appid-templates](/reference/get_partner-app-appid-templates)
-
-## Apply For Templates
-
-> Submit a template for approval.
-
-→ Full endpoint & Try It: [/reference/post_partner-app-appid-templates-6](/reference/post_partner-app-appid-templates-6)
-
-## Delete Template
-
-> Delete a template.
-
-→ Full endpoint & Try It: [/reference/delete_partner-app-appid-template-elementname](/reference/delete_partner-app-appid-template-elementname)
-
-## Send msg With Template ID
-
-> Send a template message.
-
-→ Full endpoint & Try It: [/reference/post_partner-app-appid-template-msg](/reference/post_partner-app-appid-template-msg)
+Expand this section in the sidebar for individual endpoints and Try It.

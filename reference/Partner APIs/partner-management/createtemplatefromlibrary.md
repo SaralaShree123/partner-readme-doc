@@ -16,6 +16,9 @@ metadata:
 next:
   description: ''
 ---
+
+Create a WhatsApp template from Meta’s pre-approved Template Library. Use this to deploy common industry templates faster when you only customize allowed variables.
+
 ## Request Parameters
 
 | Key                 | Description                                              | Constraints                                                                                                                                                                                                             |

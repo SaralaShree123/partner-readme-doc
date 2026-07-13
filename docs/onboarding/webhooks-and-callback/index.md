@@ -14,14 +14,6 @@ slug: webhooks-and-callback
 
 A webhook is an HTTP/HTTPS callback triggered by events on the platform. Partners use webhooks to receive inbound WhatsApp messages and status notifications.
 
-## In this section
-
-| Topic | Guide |
-|-------|-------|
-| Key requirements | [Webhook Key Points](/docs/webhook-key-points) |
-| Set callback URL | [Set Callback URL](/docs/set-callback-url-1) |
-| Inbound events overview | [Inbound Events](/docs/inbound-events) |
-
 ## Related sections
 
 - [Inbound events (V2)](/docs/inbound-events-v2)

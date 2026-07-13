@@ -11,22 +11,6 @@ slug: media-management
 
 # Media Management
 
-Endpoints for uploading, downloading, and deleting media.
+Upload media to obtain a media ID, then download or delete assets used in WhatsApp messages.
 
-## Generate Media ID (file upload)
-
-> Upload media and get a media ID.
-
-→ Full endpoint & Try It: [/reference/post_partner-app-appid-media](/reference/post_partner-app-appid-media)
-
-## Download Media
-
-> Download media by ID.
-
-→ Full endpoint & Try It: [/reference/downloadmedia](/reference/downloadmedia)
-
-## Delete media by ID
-
-> Delete media.
-
-→ Full endpoint & Try It: [/reference/delete_partner-app-appid-media-mediaid](/reference/delete_partner-app-appid-media-mediaid)
+Expand this section in the sidebar for individual endpoints and Try It.

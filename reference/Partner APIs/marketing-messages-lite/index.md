@@ -11,16 +11,6 @@ slug: marketing-messages-lite
 
 # Marketing Messages Lite
 
-Endpoints for MM Lite enablement and sending.
+Enable Marketing Messages Lite (MM Lite) for an app and send optimized marketing template messages through Gupshup.
 
-## Enable MM Lite messages
-
-> Enable MM Lite for an app.
-
-→ Full endpoint & Try It: [/reference/post_app-appid-mmlite-msg-enable](/reference/post_app-appid-mmlite-msg-enable)
-
-## MM Lite Send Message
-
-> Send an MM Lite message.
-
-→ Full endpoint & Try It: [/reference/mmlitesendmessage](/reference/mmlitesendmessage)
+Expand this section in the sidebar for individual endpoints and Try It.

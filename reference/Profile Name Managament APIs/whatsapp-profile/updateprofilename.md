@@ -4,7 +4,7 @@ excerpt: 'This API updates the display name for a WhatsApp application. '
 api:
   file: Profile Name Managament APIs.json
   operationId: updateProfileName
-hidden: false
+hidden: true
 ---
 <Callout icon="📘" theme="info">
   Rate limited to 3 requests per day

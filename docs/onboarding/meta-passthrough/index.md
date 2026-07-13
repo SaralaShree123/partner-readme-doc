@@ -12,9 +12,4 @@ slug: meta-passthrough
 
 # Meta Passthrough & Flows
 
-| Topic | Guide |
-|-------|-------|
-| Meta passthrough APIs | [Meta passthrough APIs](/docs/meta-passthrough-apis) |
-| Flow management | [Passthrough — Flow Management](/docs/passthrough_apis_flow_management) |
-| V3 incoming events | [Passthrough V3 Incoming Events](/docs/passthrough-v3-incoming-events) |
-| Dynamic flows | [WhatsApp Dynamic Flows](/docs/whatsapp-dynamic-flows) |
+Guides for passthrough messaging and WhatsApp Flow management on the Gupshup Partner Platform. Expand the sidebar for Flow APIs, dynamic flows, and related event references.

@@ -11,22 +11,6 @@ slug: whatsapp-flows
 
 # WhatsApp Flows
 
-Endpoints for creating, publishing, and managing WhatsApp Flows.
+Create, update, publish, and manage WhatsApp Flows for interactive in-chat experiences.
 
-## Create Flow
-
-> Create a flow.
-
-→ Full endpoint & Try It: [/reference/createflow](/reference/createflow)
-
-## Get All Flows
-
-> List flows.
-
-→ Full endpoint & Try It: [/reference/getallflow](/reference/getallflow)
-
-## Publish flow
-
-> Publish a flow.
-
-→ Full endpoint & Try It: [/reference/publishflow](/reference/publishflow)
+Expand this section in the sidebar for individual endpoints and Try It.

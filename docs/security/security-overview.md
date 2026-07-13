@@ -12,8 +12,4 @@ slug: security-overview
 
 # Security
 
-Partner Portal security, authentication, and best practices.
-
-| Topic | Guide |
-|-------|-------|
-| IP Allowlisting | [Gupshup IP Allowlisting](/docs/gupshup-ip-allowlisting) |
+Partner Portal security, authentication, and best practices — including MFA, API key rotation, and related controls. Expand the sidebar for setup guides. For webhook IP allowlisting, see [Gupshup IP Allowlisting](/docs/gupshup-ip-allowlisting).

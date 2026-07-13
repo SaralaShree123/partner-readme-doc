@@ -4,7 +4,7 @@ icon: fa-duotone fa-grid-2
 summary: Partner Portal UI for managing apps, customers, and billing.
 excerpt: Partner Portal UI for managing apps, customers, and billing.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 slug: partner-hub-overview

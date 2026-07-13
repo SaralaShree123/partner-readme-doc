@@ -12,7 +12,7 @@ slug: whatsapp-flows
 
 # WhatsApp Flows
 
-Endpoints for creating, publishing, and managing WhatsApp Flows.
+Create, update, publish, and manage WhatsApp Flows for interactive in-chat experiences. Use these APIs to control the Flow lifecycle from draft through publish and deprecation.
 
 ## Create Flow
 

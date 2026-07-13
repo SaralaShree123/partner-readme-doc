@@ -2,7 +2,7 @@
 title: Send Session Message V3 Examples
 excerpt: ''
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   title: ''
   description: ''

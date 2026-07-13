@@ -16,6 +16,9 @@ metadata:
 next:
   description: ''
 ---
+
+List the WhatsApp applications linked to the authenticated partner account. Use this after login to discover app IDs, health, and capping details for downstream Partner API calls.
+
 ### Parameters
 
 | Parameters    | Value               | Description                          |

@@ -11,22 +11,6 @@ slug: webhook-management
 
 # Webhook Management
 
-Endpoints for webhook subscriptions and callbacks.
+Configure where Gupshup delivers inbound messages and status events for each app. Create subscriptions, update callback URLs, and control callback modes.
 
-## Set subscription
-
-> Create a webhook subscription.
-
-→ Full endpoint & Try It: [/reference/setsubscription-api-v3](/reference/setsubscription-api-v3)
-
-## Get All Subscriptions
-
-> List subscriptions for an app.
-
-→ Full endpoint & Try It: [/reference/get_partner-app-appid-subscription](/reference/get_partner-app-appid-subscription)
-
-## Update App Subscription
-
-> Update a subscription.
-
-→ Full endpoint & Try It: [/reference/put_partner-app-appid-subscription-subscriptionid](/reference/put_partner-app-appid-subscription-subscriptionid)
+Expand this section in the sidebar for individual endpoints and Try It.

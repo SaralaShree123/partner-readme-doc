@@ -12,28 +12,6 @@ slug: channel-management
 
 # Channel Management
 
-Endpoints for creating and managing WABA channel applications.
+Create and manage WhatsApp channel applications for your customers. Use these APIs to create apps, update app settings, generate Embedded Signup links, and filter apps linked to your partner account.
 
-## Create App
-
-> Create a new partner application.
-
-→ Full endpoint & Try It: [/reference/post_partner-app](/reference/post_partner-app)
-
-## Update application
-
-> Update an existing application.
-
-→ Full endpoint & Try It: [/reference/put_partner-app-appid](/reference/put_partner-app-appid)
-
-## Generate Embed Signed Link
-
-> Create an embed onboarding link.
-
-→ Full endpoint & Try It: [/reference/get_partner-app-appid-onboarding-embed-link](/reference/get_partner-app-appid-onboarding-embed-link)
-
-## Filter app list
-
-> Filter and list partner apps.
-
-→ Full endpoint & Try It: [/reference/get_partner-app-list](/reference/get_partner-app-list)
+Expand this section in the sidebar for individual endpoints and Try It.

@@ -12,7 +12,7 @@ slug: partner-api-overview
 
 # Partner API
 
-Gupshup Partner APIs let you build branded WhatsApp experiences for your customers. Endpoints are organized by **business capability**, similar to [360dialog Partner API](https://docs.360dialog.com/partner/partner-api).
+Gupshup Partner APIs let you build branded WhatsApp experiences for your customers. Endpoints are organized by **business capability** so you can find login, channel, messaging, template, and billing APIs quickly.
 
 ## Start here
 

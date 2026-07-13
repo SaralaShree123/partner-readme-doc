@@ -2,7 +2,7 @@
 api:
   file: username_management_apis.json
   operationId: setBusinessUsername
-hidden: false
+hidden: true
 ---
 ## Sample Request:
 

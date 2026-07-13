@@ -12,10 +12,4 @@ slug: coexistence
 
 # Coexistence
 
-Clients can onboard a number to WhatsApp Cloud API even if it is already connected to the WhatsApp Business App.
-
-## In this section
-
-| Topic | Guide |
-|-------|-------|
-| Coexistence guide | [Coexistence (Closed Beta)](/docs/co-existence-closed-beta-phase) |
+Clients can onboard a number to WhatsApp Cloud API even if it is already connected to the WhatsApp Business App. For a short concept overview, see [What is coexistence?](/docs/what-is-coexistence). Expand the sidebar for implementation guides and webhooks.

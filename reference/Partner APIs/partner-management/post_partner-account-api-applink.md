@@ -15,6 +15,9 @@ metadata:
 next:
   description: ''
 ---
+
+Link an existing Gupshup application to your partner account with an API key and app name. After linking, you can manage the app through Partner APIs.
+
 <Callout icon="📘" theme="info">
   Additional Check: Partner must have MFA (Multi-Factor Authentication) enabled
 </Callout>

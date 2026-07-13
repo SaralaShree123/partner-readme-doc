@@ -11,22 +11,6 @@ slug: business-profile
 
 # Business Profile
 
-Endpoints for business profile and display name.
+Read and update the WhatsApp business profile for a partner app, including profile photo and display details shown to end users.
 
-## Get Profile Details
-
-> Get business profile.
-
-→ Full endpoint & Try It: [/reference/get_partner-app-appid-business-profile](/reference/get_partner-app-appid-business-profile)
-
-## Update Profile Details
-
-> Update business profile.
-
-→ Full endpoint & Try It: [/reference/put_partner-app-appid-business-profile](/reference/put_partner-app-appid-business-profile)
-
-## Get Profile Picture
-
-> Get profile photo.
-
-→ Full endpoint & Try It: [/reference/get_partner-app-appid-business-profile-photo](/reference/get_partner-app-appid-business-profile-photo)
+Expand this section in the sidebar for individual endpoints and Try It.

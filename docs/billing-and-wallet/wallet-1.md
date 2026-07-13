@@ -13,14 +13,6 @@ slug: wallet-1
 
 The prepaid method of billing is called **Wallet** in Gupshup. You recharge your Gupshup wallet; usage for your apps is deducted from the wallet. The wallet works in **USD**.
 
-## Guides in this section
-
-| Topic | Guide |
-|-------|-------|
-| Wallet overview & how to recharge | [Wallet Overview](/docs/commissions) |
-| Overdraft | [Overdraft Limit](/docs/overdraft-limit) |
-| Unused commissions | [Unused Commission Policy](/docs/unused-commission-policy) |
-
 ## How to use a wallet (summary)
 
 1. Log in to Partner Portal and open **Wallet**

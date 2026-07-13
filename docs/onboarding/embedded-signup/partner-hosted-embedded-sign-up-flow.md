@@ -13,14 +13,6 @@ slug: partner-hosted-embedded-sign-up-flow
 
 Host the Meta Embedded Signup experience in your own product so customers can onboard WhatsApp numbers without leaving your UI.
 
-## Guides
-
-| Topic | Guide |
-|-------|-------|
-| Tech Partner hosted flow | [Tech Partner Hosted Embed Sign Up](/docs/tech-partner-hosted-embed-sign-up-flow) |
-| Error codes | [Error codes](/docs/error-codes) |
-| TPP onboarding | [TPP Partner Hosted Onboarding](/docs/tpp-partner-hosted-onboarding) |
-
 ## Related APIs
 
 - [Channel Management](/reference/channel-management)

@@ -12,7 +12,7 @@ slug: business-profile
 
 # Business Profile
 
-Endpoints for business profile and display name.
+Read and update the WhatsApp business profile for a partner app, including profile photo and display details shown to end users in WhatsApp.
 
 ## Get Profile Details
 

@@ -12,10 +12,4 @@ slug: embedded-signup
 
 # Embedded Signup
 
-Host the Meta Embedded Signup experience in your product so customers can onboard WhatsApp numbers without leaving your UI.
-
-## In this section
-
-| Topic | Guide |
-|-------|-------|
-| Error codes | [Error codes](/docs/error-codes) |
+Host the Meta Embedded Signup experience in your product so customers can onboard WhatsApp numbers without leaving your UI. For a short concept overview, see [What is Embedded Signup?](/docs/what-is-embedded-signup). Expand the sidebar for hosted-flow guides and error codes.

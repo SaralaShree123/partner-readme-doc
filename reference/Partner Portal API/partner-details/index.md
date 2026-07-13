@@ -1,4 +1,4 @@
 ---
 title: Partner Details
-hidden: false
+hidden: true
 ---

@@ -3,7 +3,7 @@ title: Flow Management
 excerpt: >-
   APIs are available to manage the entire lifecycle flow supported for CAPI
   apps.
-hidden: false
+hidden: true
 ---
 > 📘 NOTE:
 >

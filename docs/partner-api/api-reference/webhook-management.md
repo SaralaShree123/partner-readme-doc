@@ -12,7 +12,7 @@ slug: webhook-management
 
 # Webhook Management
 
-Endpoints for webhook subscriptions and callbacks.
+Configure where Gupshup delivers inbound messages and status events for each app. Create subscriptions, update callback URLs, and control callback modes so your platform receives events reliably.
 
 ## Set subscription
 

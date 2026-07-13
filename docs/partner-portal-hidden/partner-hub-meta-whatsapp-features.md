@@ -3,7 +3,7 @@ title: Meta WhatsApp Features
 summary: Meta WhatsApp features available to Gupshup partners.
 excerpt: Meta WhatsApp features available to Gupshup partners.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 slug: meta-whatsapp-features

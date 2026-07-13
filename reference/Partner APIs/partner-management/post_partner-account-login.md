@@ -1,4 +1,9 @@
 ---
+title: Get Partner Token
+excerpt: >-
+  Authenticate with your partner email and client secret to obtain a partner
+  token. Use this token as authorization for other Partner APIs. Token expiry is
+  24 hours; rate limit is 10 requests per 60 seconds.
 api:
   file: token-apis.json
   operationId: post_partner-account-login
@@ -10,6 +15,9 @@ metadata:
 next:
   description: ''
 ---
+
+Authenticate as a Gupshup partner and receive a JWT partner token. Call this endpoint first; pass the returned token in the `Authorization` header for subsequent Partner APIs.
+
 <Callout icon="📘" theme="info">
   ###
 

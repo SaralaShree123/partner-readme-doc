@@ -18,6 +18,9 @@ metadata:
 next:
   description: ''
 ---
+
+Fetch pre-approved Meta Template Library templates for common utility use cases so you can create templates with reduced approval friction.
+
 ## Request Parameters
 
 | Key               | Description                                              | Constraints                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |

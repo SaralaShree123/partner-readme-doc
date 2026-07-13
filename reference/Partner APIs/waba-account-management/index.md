@@ -11,22 +11,6 @@ slug: waba-account-management
 
 # WABA Account Management
 
-Endpoints for WABA health, phone registration, and account quality.
+Monitor and manage WhatsApp Business Account health for partner apps — WABA info, phone registration, and quality signals needed to keep numbers messaging reliably.
 
-## Get Waba Info
-
-> Retrieve WABA health information.
-
-→ Full endpoint & Try It: [/reference/getwabahealth](/reference/getwabahealth)
-
-## Check Health
-
-> Check app/channel health.
-
-→ Full endpoint & Try It: [/reference/get_partner-app-appid-health](/reference/get_partner-app-appid-health)
-
-## Register phone
-
-> Register a phone number for an app.
-
-→ Full endpoint & Try It: [/reference/registerphoneapp](/reference/registerphoneapp)
+Expand this section in the sidebar for individual endpoints and Try It.

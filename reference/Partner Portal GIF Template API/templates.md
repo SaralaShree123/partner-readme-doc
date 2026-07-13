@@ -1,4 +1,4 @@
 ---
 title: Templates
-hidden: false
+hidden: true
 ---

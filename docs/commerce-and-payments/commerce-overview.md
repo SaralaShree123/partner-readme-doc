@@ -1,8 +1,8 @@
 ---
 title: Commerce & Payments Overview
 icon: fa-duotone fa-cart-shopping
-summary: Payments, wallet, and billing for partner commerce.
-excerpt: Payments, wallet, and billing for partner commerce.
+summary: Payments and commerce flows for partner integrations.
+excerpt: Payments and commerce flows for partner integrations.
 deprecated: false
 hidden: false
 metadata:
@@ -12,6 +12,4 @@ slug: commerce-overview
 
 # Commerce & Payments
 
-| Topic | Guide |
-|-------|-------|
-| Brazil Payments | [WhatsApp Brazil Payments](/docs/whatsapp-brazil-payments) |
+Guides for WhatsApp commerce and payment features available to Gupshup partners. Expand the sidebar for country-specific payment flows such as WhatsApp Brazil Payments.

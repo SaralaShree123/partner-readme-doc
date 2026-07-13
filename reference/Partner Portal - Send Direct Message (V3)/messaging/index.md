@@ -1,4 +1,4 @@
 ---
 title: Messaging
-hidden: false
+hidden: true
 ---

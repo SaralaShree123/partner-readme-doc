@@ -12,7 +12,7 @@ slug: balance-and-usage
 
 # Balance & Usage
 
-Endpoints for wallet balance, usage, and discounts.
+Check prepaid wallet balance, usage, and related billing data for partner apps. Use these APIs to monitor credits before messaging campaigns and to surface wallet status in your own admin tools.
 
 ## Get Wallet Balance
 

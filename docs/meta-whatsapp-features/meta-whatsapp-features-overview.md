@@ -12,7 +12,4 @@ slug: meta-whatsapp-features-overview
 
 # Meta WhatsApp Features
 
-| Topic | Guide |
-|-------|-------|
-| BSUID | [BSUID](/docs/bsuid) |
-| Enable BSUID flag | [API to enable BSUID flag](/docs/api-to-enable-bsuid-flag-for-an-app) |
+Feature guides for Meta WhatsApp capabilities on the Gupshup Partner Platform, such as BSUID. Expand the sidebar for details. For core platform concepts (WABA, Embedded Signup, limits, coexistence), see [WhatsApp Basics](/docs/whatsapp-basics).

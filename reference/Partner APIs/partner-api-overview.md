@@ -11,7 +11,7 @@ slug: partner-api-overview
 
 # Partner API
 
-Browse the sidebar by category. Expand a category to see its endpoints (Try It available on each endpoint page).
+Gupshup Partner APIs are grouped by business capability — partner account, channels, WABA, webhooks, messaging, templates, media, and billing. Browse the sidebar by category and expand a category to open endpoints (Try It is available on each endpoint page).
 
 | Category | Description |
 |----------|-------------|

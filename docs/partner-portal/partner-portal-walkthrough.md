@@ -21,13 +21,6 @@ Use these guided steps to complete core Partner Portal setup.
 | 2 | [Generate Secret and Token](/docs/generate-secret-and-token) | Create an API client secret and partner token |
 | 3 | [Partner Rate Limits](/docs/partner-rate-limits) | Understand rate limits for Partner APIs |
 
-## Related hub topics
-
-| Topic | Guide |
-|-------|-------|
-| Wallet | [Wallet](/docs/wallet-1) |
-| Support | [Support](/docs/support) |
-
 ## Next step
 
 → [Create your first App](/docs/create-your-first-app)

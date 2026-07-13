@@ -12,7 +12,4 @@ slug: portal
 
 # Partner Portal
 
-| Topic | Guide |
-|-------|-------|
-| Get started | [Get started with Partner Portal](/docs/get-started-with-partner-portal) |
-| Walkthrough | [Partner Portal Walkthrough](/docs/partner-portal-walkthrough) |
+Use the Gupshup Partner Portal to manage customer WABAs, apps, and day-to-day partner operations. Expand this section in the sidebar for walkthroughs, customer portal guides, and support.

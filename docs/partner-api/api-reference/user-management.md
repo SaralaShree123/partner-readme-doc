@@ -12,7 +12,7 @@ slug: user-management
 
 # User Management
 
-Endpoints for blocking and unblocking WhatsApp users.
+Block or unblock WhatsApp users for a partner app and retrieve the current block list. Use these APIs to enforce abuse controls and user preference policies in your product.
 
 ## Get Blocked Users list
 

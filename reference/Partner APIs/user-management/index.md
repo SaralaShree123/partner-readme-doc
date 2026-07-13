@@ -11,22 +11,6 @@ slug: user-management
 
 # User Management
 
-Endpoints for blocking and unblocking WhatsApp users.
+Block or unblock WhatsApp users for a partner app and retrieve the current block list.
 
-## Get Blocked Users list
-
-> List blocked users.
-
-→ Full endpoint & Try It: [/reference/get_partner-app-appid-user-blocklist](/reference/get_partner-app-appid-user-blocklist)
-
-## Block Users
-
-> Block users.
-
-→ Full endpoint & Try It: [/reference/post_partner-app-appid-user-block](/reference/post_partner-app-appid-user-block)
-
-## Unblock Users
-
-> Unblock users.
-
-→ Full endpoint & Try It: [/reference/post_partner-app-appid-user-unblock](/reference/post_partner-app-appid-user-unblock)
+Expand this section in the sidebar for individual endpoints and Try It.
