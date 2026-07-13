@@ -1,8 +1,8 @@
 ---
-title: Commerce, Wallet & Payments
+title: Wallet & Payments
 icon: fa-duotone fa-cart-shopping
-summary: Partner wallet, billing, and WhatsApp commerce payments.
-excerpt: Partner wallet, billing, and WhatsApp commerce payments.
+summary: Partner wallet, billing policies, and WhatsApp commerce payments.
+excerpt: Partner wallet, billing policies, and WhatsApp commerce payments.
 deprecated: false
 hidden: false
 metadata:
@@ -10,11 +10,11 @@ metadata:
 slug: commerce-overview
 ---
 
-# Commerce, Wallet & Payments
+# Wallet & Payments
 
-Guides for partner billing and WhatsApp commerce:
+Follow this section in order:
 
-- **Wallet & billing** — prepaid wallet, commissions, overdraft, recharge, wire transfers
-- **Commerce payments** — country-specific WhatsApp payment flows such as Brazil Payments
-
-Expand the sidebar for detailed guides.
+1. **[Wallet](/docs/wallet)** — set up and recharge the prepaid partner wallet  
+2. **[Overdraft Limit](/docs/overdraft-limit)** — optional overdraft when balance is low  
+3. **[Unused Commission Policy](/docs/unused-commission-policy)** — commission redemption rules  
+4. **[WhatsApp Brazil Payments](/docs/whatsapp-brazil-payments)** — WhatsApp commerce payment options (Pix, Boleto, payment links)

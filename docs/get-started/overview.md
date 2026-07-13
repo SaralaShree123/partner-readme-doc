@@ -100,8 +100,8 @@ Easily integrate, onboard clients, and manage messaging workflows within a scala
   <Card kind="tile" title="Partner API" href="/docs/partner-api-overview" icon="fa-duotone fa-brackets-curly">
     REST APIs grouped by business category
   </Card>
-  <Card kind="tile" title="Commerce, Wallet & Payments" href="/docs/commerce-overview" icon="fa-duotone fa-cart-shopping">
-    Wallet, billing, and WhatsApp commerce payments
+  <Card kind="tile" title="Wallet & Payments" href="/docs/commerce-overview" icon="fa-duotone fa-cart-shopping">
+    Partner wallet, commissions, and WhatsApp payments
   </Card>
 </Cards>
 
