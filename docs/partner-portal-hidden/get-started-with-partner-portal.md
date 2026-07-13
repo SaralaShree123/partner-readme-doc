@@ -3,7 +3,7 @@ title: Get started with Partner Portal
 summary: Introduction to the Gupshup Partner Portal for managing customers and WABAs.
 excerpt: Introduction to the Gupshup Partner Portal for managing customers and WABAs.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 slug: get-started-with-partner-portal

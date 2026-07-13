@@ -1,5 +1,5 @@
 ---
-title: What is Embedded Signup?
+title: Embedded Signup
 icon: fa-duotone fa-window
 summary: Embedded Signup lets customers connect WhatsApp without leaving your product.
 excerpt: Embedded Signup lets customers connect WhatsApp without leaving your product.
@@ -10,7 +10,7 @@ metadata:
 slug: what-is-embedded-signup
 ---
 
-# What is Embedded Signup?
+# Embedded Signup
 
 **Embedded Signup** is Meta’s onboarding flow that partners host inside their own product (or launch from Partner Portal). Customers create or connect a WhatsApp Business Account and phone number in one secure flow, instead of jumping across multiple portals.
 

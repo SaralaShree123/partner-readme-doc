@@ -1,5 +1,5 @@
 ---
-title: What is a WABA?
+title: WhatsApp Business Accounts
 icon: fa-duotone fa-building
 summary: WhatsApp Business Account (WABA) basics for partners.
 excerpt: WhatsApp Business Account (WABA) basics for partners.
@@ -10,7 +10,7 @@ metadata:
 slug: what-is-a-waba
 ---
 
-# What is a WABA?
+# WhatsApp Business Accounts
 
 A **WhatsApp Business Account (WABA)** stores the phone numbers registered on the WhatsApp Business Platform. Partners create and manage WABAs for their customers through Gupshup.
 

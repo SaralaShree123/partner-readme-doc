@@ -4,10 +4,10 @@ icon: fa-duotone fa-browser
 summary: Partner Portal UI guides for managing customers and WABAs.
 excerpt: Partner Portal UI guides for managing customers and WABAs.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
-slug: portal
+slug: portal-section-index-hidden
 ---
 
 # Partner Portal

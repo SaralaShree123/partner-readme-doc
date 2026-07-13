@@ -1,5 +1,5 @@
 ---
-title: What is coexistence?
+title: Coexistence
 icon: fa-duotone fa-mobile
 summary: Use the WhatsApp Business app and Cloud API on the same number.
 excerpt: Use the WhatsApp Business app and Cloud API on the same number.
@@ -10,7 +10,7 @@ metadata:
 slug: what-is-coexistence
 ---
 
-# What is coexistence?
+# Coexistence
 
 **Coexistence** (also called **Coex**) lets a business use the same phone number on both the **WhatsApp Business app** and the **WhatsApp Business Platform (Cloud API)** through Gupshup.
 

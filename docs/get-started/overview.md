@@ -35,8 +35,8 @@ Kick off your Partner journey with quick access to the most essential guides and
   <Card kind="tile" title="Quickstarts" href="/docs/quickstarts" icon="fa-duotone fa-rocket-launch">
     Five steps from partner signup to your first WhatsApp message.
   </Card>
-  <Card kind="tile" title="WhatsApp Basics" href="/docs/whatsapp-basics" icon="fa-duotone fa-circle-info">
-    Learn WABA, phone numbers, Embedded Signup, messaging limits, and coexistence.
+  <Card kind="tile" title="WhatsApp Resources" href="/docs/whatsapp-resources" icon="fa-duotone fa-circle-info">
+    Meta portfolio, WABA, phone numbers, quality, limits, Embedded Signup, coexistence, and more.
   </Card>
   <Card kind="tile" title="24/7 Support" href="/docs/support" icon="fa-duotone fa-life-ring">
     Expert support with escalation paths for urgent issues.
@@ -88,8 +88,8 @@ Easily integrate, onboard clients, and manage messaging workflows within a scala
   <Card kind="tile" title="Get Started" href="/docs/overview" icon="fa-duotone fa-hand-wave">
     Landing, quickstarts, pricing, Tech Provider program
   </Card>
-  <Card kind="tile" title="WhatsApp Basics" href="/docs/whatsapp-basics" icon="fa-duotone fa-circle-info">
-    WABA, phone numbers, Embedded Signup, limits, coexistence
+  <Card kind="tile" title="WhatsApp Resources" href="/docs/whatsapp-resources" icon="fa-duotone fa-circle-info">
+    Meta portfolio, WABA, numbers, quality, limits, ESU, coexistence
   </Card>
   <Card kind="tile" title="Onboarding" href="/docs/onboarding-overview" icon="fa-duotone fa-route">
     Webhooks, events, coexistence, onboarding APIs
@@ -100,14 +100,8 @@ Easily integrate, onboard clients, and manage messaging workflows within a scala
   <Card kind="tile" title="Partner API" href="/docs/partner-api-overview" icon="fa-duotone fa-brackets-curly">
     REST APIs grouped by business category
   </Card>
-  <Card kind="tile" title="Partner Portal" href="/docs/portal" icon="fa-duotone fa-browser">
-    Portal UI, customer management, support
-  </Card>
-  <Card kind="tile" title="Billing & Wallet" href="/docs/wallet" icon="fa-duotone fa-wallet">
-    Wallet, commissions, recharge
-  </Card>
-  <Card kind="tile" title="Commerce & Payments" href="/docs/commerce-overview" icon="fa-duotone fa-cart-shopping">
-    Brazil payments and commerce flows
+  <Card kind="tile" title="Commerce, Wallet & Payments" href="/docs/commerce-overview" icon="fa-duotone fa-cart-shopping">
+    Wallet, billing, and WhatsApp commerce payments
   </Card>
 </Cards>
 

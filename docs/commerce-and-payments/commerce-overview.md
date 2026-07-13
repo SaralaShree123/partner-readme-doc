@@ -1,8 +1,8 @@
 ---
-title: Commerce & Payments Overview
+title: Commerce, Wallet & Payments
 icon: fa-duotone fa-cart-shopping
-summary: Payments and commerce flows for partner integrations.
-excerpt: Payments and commerce flows for partner integrations.
+summary: Partner wallet, billing, and WhatsApp commerce payments.
+excerpt: Partner wallet, billing, and WhatsApp commerce payments.
 deprecated: false
 hidden: false
 metadata:
@@ -10,6 +10,11 @@ metadata:
 slug: commerce-overview
 ---
 
-# Commerce & Payments
+# Commerce, Wallet & Payments
 
-Guides for WhatsApp commerce and payment features available to Gupshup partners. Expand the sidebar for country-specific payment flows such as WhatsApp Brazil Payments.
+Guides for partner billing and WhatsApp commerce:
+
+- **Wallet & billing** — prepaid wallet, commissions, overdraft, recharge, wire transfers
+- **Commerce payments** — country-specific WhatsApp payment flows such as Brazil Payments
+
+Expand the sidebar for detailed guides.

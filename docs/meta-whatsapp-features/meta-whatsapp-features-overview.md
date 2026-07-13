@@ -12,4 +12,4 @@ slug: meta-whatsapp-features-overview
 
 # Meta WhatsApp Features
 
-Feature guides for Meta WhatsApp capabilities on the Gupshup Partner Platform, such as BSUID. Expand the sidebar for details. For core platform concepts (WABA, Embedded Signup, limits, coexistence), see [WhatsApp Basics](/docs/whatsapp-basics).
+Feature guides for Meta WhatsApp capabilities on the Gupshup Partner Platform, such as BSUID. Expand the sidebar for details. For core platform concepts (portfolio, WABA, phone numbers, limits, Embedded Signup, coexistence), see [WhatsApp Resources](/docs/whatsapp-resources).

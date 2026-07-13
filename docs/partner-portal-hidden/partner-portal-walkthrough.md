@@ -3,7 +3,7 @@ title: Partner Portal Walkthrough
 summary: Step-by-step walkthrough of core Partner Portal tasks.
 excerpt: Step-by-step walkthrough of core Partner Portal tasks.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 slug: partner-portal-walkthrough
