@@ -6,7 +6,7 @@ excerpt: >-
   from the Partner Portal / Self-Serve account to the new Partner Customer
   Portal (PCP) using the Migration API.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---

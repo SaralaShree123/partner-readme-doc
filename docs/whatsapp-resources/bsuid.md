@@ -12,7 +12,7 @@ metadata:
 ---
 # API Reference to enable BSUID
 
-[/update/docs/api-to-enable-bsuid-flag-for-an-app](/update/docs/api-to-enable-bsuid-flag-for-an-app)
+[API to enable BSUID flag for an app](/docs/api-to-enable-bsuid-flag-for-an-app)
 
 <br />
 

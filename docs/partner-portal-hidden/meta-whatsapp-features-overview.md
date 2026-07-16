@@ -4,7 +4,7 @@ icon: fa-duotone fa-sparkles
 summary: Meta WhatsApp platform features for partners.
 excerpt: Meta WhatsApp platform features for partners.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 slug: meta-whatsapp-features-overview

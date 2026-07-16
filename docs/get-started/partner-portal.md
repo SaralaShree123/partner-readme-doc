@@ -18,8 +18,4 @@ Use **Quickstarts** for the core Partner Portal path (signup → app → token �
 - [Create your first App](/docs/create-your-first-app)
 - [Generate Secret and Token](/docs/generate-secret-and-token)
 
-Additional portal topics:
-
-- [Partner Customer Portal](/docs/partner-customer-portal)
-- [Customer Portal migration](/docs/partner-customer-migration-to-partner-customer-portal-pcp)
-- [Support](/docs/support)
+For help, see [Support](/docs/support).

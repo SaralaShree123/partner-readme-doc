@@ -12,6 +12,6 @@ slug: whatsapp-resources
 
 # WhatsApp Resources
 
-Reference topics for the Meta WhatsApp Business Platform — business portfolios, WABAs, phone numbers, quality, limits, Embedded Signup, and coexistence.
+Reference topics for the Meta WhatsApp Business Platform — business portfolios, WABAs, phone numbers, quality, limits, Embedded Signup, coexistence, and features such as BSUID.
 
 These pages explain **what things are**. For implementation steps, use [Quickstarts](/docs/quickstarts), [Onboarding](/docs/onboarding-overview), and [Messaging](/docs/messaging-overview).
