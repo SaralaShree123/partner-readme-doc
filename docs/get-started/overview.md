@@ -1,13 +1,13 @@
 ---
 title: Overview
-icon: fa-duotone fa-hand-wave
-summary: Welcome to the Gupshup Partner Documentation Hub
-excerpt: Welcome to the Gupshup Partner Documentation Hub
+excerpt: Welcome to Gupshup
 deprecated: false
 hidden: false
+icon: fa-duotone fa-hand-wave
 metadata:
   robots: index
 slug: overview
+summary: Welcome to the Gupshup Partner Documentation Hub
 ---
 
 # Overview
