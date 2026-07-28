@@ -1,6 +1,6 @@
 ---
 title: Overview
-excerpt: Welcome to Gupshup
+excerpt: Welcome to the Gupshup Partner Documentation Hub
 deprecated: false
 hidden: false
 icon: fa-duotone fa-hand-wave
