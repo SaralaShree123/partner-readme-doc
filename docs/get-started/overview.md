@@ -58,7 +58,7 @@ From SaaS platforms to software vendors, Gupshup serves a diverse range of Partn
 
 ---
 
-## How it works in Gupshup
+## How it works
 
 Gupshup provides a developer-first, API-driven approach to WhatsApp Business messaging.
 Easily integrate, onboard clients, and manage messaging workflows within a scalable, partner-friendly ecosystem.
